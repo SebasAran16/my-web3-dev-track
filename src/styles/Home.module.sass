@@ -1,0 +1,422 @@
+// Variables
+$main-color: #6c41ad
+$secondary-color: #41FA57
+$sides-space: 0 2rem
+
+// Home Section //
+
+.highlightMain
+    color: $main-color
+
+.myName
+    text-shadow: 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 0px rgba(206,89,55,0)
+
+.fullstack
+    text-shadow: 0 0 10px #FFFFFF
+
+.sectionTitle
+    color: $secondary-color
+    text-shadow: 5px 2px 2px #000000
+    &::after
+        content: ""
+        width: 80%
+        background: $secondary-color
+        border: 2px solid black
+        height: 5px
+        display: block
+
+#homeSection
+    padding: $sides-space
+    background-image: url("/backgrounds/background-small.png")
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    height: 100vh
+    color: white
+    position: relative
+    top: 0
+    display: grid
+    grid-template-rows: 0.5fr 1fr 0.3fr
+    justify-items: center
+
+#homeContent
+    grid-area: 1 / 1 / 2 / -1
+    margin-top: 5rem
+    height: 100%
+    justify-self: flex-start
+    h3
+        opacity: 0.7
+        font-weight: 400
+
+#homeButtons
+    grid-area: 3 / 1 / -1 / -1
+    align-self: center
+    display: flex
+    justify-content: space-around
+    width: 100%
+    margin: auto
+    button
+        padding: 2rem
+        border-radius: 2rem
+        font-weight: 700
+        font-size: 1.2rem
+        border: 1px solid white
+        color: $secondary-color
+        background: #3333337f
+        text-shadow: 0 -1px 4px #FFF, 0 -2px 10px $main-color, 0 -10px 20px #ff8000, 0 -18px 40px #F00
+        &:hover
+            transform: scale(1.1)
+            cursor: pointer
+            opacity: 0.9
+        &:active
+            transform: none
+
+// About Section //
+
+#aboutSection
+    display: flex
+    flex-direction: column
+    align-items: center
+    overflow: hidden
+    box-sizing: border-box
+
+#aboutBackground
+    width: 100vw
+    height: 100vh
+    object-fit: cover
+    position: fixed
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    z-index: -1
+
+#aboutContent
+    position: relative
+    z-index: 1
+    width: 90%
+    heigth: 90%
+    margin: 5% 0
+    background-color: rgba(66, 250, 89, 0.7)
+    border-radius: 2rem
+    padding: 7%
+    display: grid
+    justify-items: center
+    img
+        border-radius: 1rem
+        margin: 7%
+        box-shadow: 10px 10px 19px 0px rgba(0,0,0,0.75)
+        transition: transform 0.3s
+        &:hover
+            transform: scale(1.08)
+    p
+        text-shadow: 0px -1px 2px white
+
+// Portfolio Section ///
+
+#portfolioSection
+    padding: $sides-space
+    padding-top: 2rem
+    background-color: $main-color
+    display: flex
+    flex-direction: column
+    box-shadow: 10px 5px 26px 0px rgba(0,0,0,0.75)
+
+    h3
+        margin-top: 2rem
+        text-shadow: 0px -2px 20px rgba(255,255,255,0.69)
+
+.swiper
+    width: 90%
+    padding: 1rem 0
+    text-align: center
+    box-shadow: 10px 5px 26px 0px rgba(0,0,0,0.75)
+    border-radius: 1rem
+    background: #AD5913
+    background: -moz-linear-gradient(-45deg, #AD5913 0%, #FA8C34 50%, #34DDFA 100%)
+    background: -webkit-linear-gradient(-45deg, #AD5913 0%, #FA8C34 50%, #34DDFA 100%)
+    background: linear-gradient(135deg, #AD5913 0%, #FA8C34 50%, #34DDFA 100%)
+    margin-top: 2rem
+    &:hover
+        cursor: grab
+
+.swiperSlide
+    display: flex
+    justify-content: center
+    align-items: center
+
+.swiperItem
+    width: 80%
+    padding: 1rem
+    margin: auto
+    a
+        text-decoration: none
+        color: $main-color
+        text-shadow: -4px -2px 3px $secondary-color
+
+.slideImages
+    border-radius: 50%
+    margin: 1rem 5%
+    transition: transform 0.3s
+    &:hover
+        transform: scale(1.05)
+
+// Projects Section //
+
+#projectsMade
+    display: flex
+    flex-direction: column
+    align-items: center
+    h3
+        align-self: flex-start
+
+.project
+    width: 90%
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 1rem
+    box-shadow: 10px 5px 26px 0px rgba(0,0,0,0.75)
+    border-radius: 1rem
+    background: #AD5913
+    background: -moz-radial-gradient(center, #AD5913 0%, #FA8C34 50%, #34DDFA 100%)
+    background: -webkit-radial-gradient(center, #AD5913 0%, #FA8C34 50%, #34DDFA 100%)
+    background: radial-gradient(ellipse at center, #AD5913 0%, #FA8C34 50%, #34DDFA 100%)
+    margin: 2rem 0
+    padding: 7%
+    *
+        margin: 0.3rem 0
+
+.projectTitleAndFocus
+    display: flex
+    flex-direction: column
+    align-items: center
+    *
+        margin: 0
+        color: $main-color
+        text-shadow: -4px -2px 3px $secondary-color
+    p
+        opacity: 0.6
+        color: white
+
+.projectImage
+    border-radius: 50%
+
+.projectImages
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.projectToolImage
+    margin: 0 0.1rem
+    transition: transform 0.3s
+    &:hover
+        transform: scale(1.1)
+
+.projectContent
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.projectButtons
+    display: flex
+    width: 100%
+    justify-content: space-around
+    button
+        padding: 0.5rem
+        margin: 0 1rem
+        width: 5rem
+        border-radius: 1rem
+        background: none
+        border: 3px solid $secondary-color
+        color: white
+        font-weight: 700
+        text-shadow: -2px 2px 2px #000000
+        transition: transform 0.5s
+        &:hover
+            transform: scale(1.1)
+            cursor: pointer
+        &:active
+            transform: none
+
+// Languages and tools Section //
+
+#languagesAndToolsContainer
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-bottom: 7%
+    h3
+        align-self: flex-start
+        margin-bottom: 2rem
+
+#languagesContainer
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+    align-items: center
+    justify-content: center
+
+.codeLanguage
+    width: 50px
+    border-radius: 0.5rem
+    margin: 3% 5%
+    transition: transform 0.3s
+    &:hover
+        transform: scale(1.15)
+
+@media screen and (min-width: 768px)
+
+    // Home Section //
+    #homeSection
+        background-image: url("/backgrounds/background-medium.png")
+
+    #homeButtons
+        justify-content: center
+        button
+            padding: 2.5rem
+            margin: 1rem 8%
+
+    // Portfolio Section //
+    .swiperItem
+        display: grid
+        grid-template-rows: 0.2fr 1fr
+        grid-template-columns: 0.5fr 1fr
+        grid-template-areas: "alias-title alias-title" "alias-teachers alias-text"
+        grid-row-gap: 2rem
+        padding: 2rem
+        h4
+            grid-area: alias-title
+            align-self: center
+        div
+            grid-area: alias-teachers
+            align-self: center
+            display: flex
+            flex-direction: column
+            justify-self: center
+            img
+                width: 80px
+                height: 80px
+        p
+            grid-area: alias-text
+            align-self: center
+
+    .codeLanguage
+        transform: scale(1.5)
+
+    // Projects //
+
+    .project
+        padding: 5%
+        button
+            padding: 1rem
+            width: 100%
+
+    .projectImages
+        img
+            transform: scale(1.3)
+
+@media screen and (min-width: 992px)
+
+    //Home Section //
+
+    #homeSection
+        background-size: cover
+        background-position: center 70%
+        background-image: url("/backgrounds/background-big.png")
+
+    #homeButtons
+        button
+            padding: 2.5rem
+            width: 20%
+            font-size: 25px
+
+    // About Section //
+
+    #aboutContent
+        grid-template-rows: 0.1fr 1fr
+        grid-template-columns: 1fr 1fr
+        grid-template-areas: "alias-title alias-title" "alias-me alias-myText"
+        grid-gap: 2rem
+        h2
+            grid-area: alias-title
+        p
+            grid-area: alias-myText
+            align-self: center
+
+    .picContainer
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+
+    #myPic
+        grid-area: alias-me
+        align-self: center
+        width: 280px
+        height: 360px
+        margin: 0
+
+    .picContainer
+        &:hover
+            cursor: wait
+            &::after
+                display: block !important
+        &::after
+            content: "Loading..."
+            display: none !important
+            margin: 0 40%
+            color: $main-color
+            font-weight: 700
+            font-size: 25px
+            text-shadow: -1px 3px 2px #FFFFFF
+
+    // Portfolio Section //
+
+    .swiperItem
+        grid-template-columns: 1fr 1fr
+        grid-column-gap: 2rem
+        div
+            flex-direction: row
+            img
+                width: 110px
+                height: 110px
+
+    // Projects //
+
+    .project
+        padding: 5%
+        display: grid
+        grid-template-rows: 0.2fr 1fr
+        grid-template-columns: 0.8fr 1fr
+        grid-template-areas: "alias-title alias-title" "alias-images alias-content"
+        grid-gap: 2rem
+        button
+            width: 140px
+
+    .projectTitleAndFocus
+        grid-area: alias-title
+
+    .projectImages
+        grid-area: alias-images
+        img
+            transform: scale(1.5)
+
+    .projectImage
+        margin-bottom: 7%
+
+    .projectContent
+        grid-area: alias-content
+
+    // Languages //
+
+    .codeLanguage
+        transform: scale(1.7)
+
+@media screen and (min-width: 1200px)
+    #aboutSection
+        padding: 0 10%
+
+    #portfolioSection
+        padding: 0 10%
+        padding-top: 2rem

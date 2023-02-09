@@ -1,0 +1,134 @@
+// Variables
+$main-color: #6C41AD
+$secondary-color: #41FA57
+$sides-space: 0 2rem
+
+// Header Styling //
+
+.highlightMain
+    color: $secondary-color
+
+#headerBar
+    display: flex
+    justify-content: space-between
+    position: absolute
+    top: 0
+    left: 0
+    color: white
+    width: 100%
+    height: 70px
+    z-index: 1
+
+#headerLeft
+    display: flex
+    align-items: center
+    padding: 0 5%
+    padding-right: 0
+    a
+        text-decoration: none
+        color: white
+
+#nameLogo
+    transition: transform 0.3s
+    text-shadow: -5px 6px 2px #000000
+    &:hover
+        cursor: pointer
+        transform: scale(1.1)
+        opacity: 0.9
+    &:active
+        transform: none
+        transition: none
+
+#headerRight
+    display: flex
+    align-items: center
+    padding: 0 5%
+    padding-left: 0
+    img
+        margin: 0 0.1rem
+        transition: transform 0.3s
+        &:hover
+            transform: scale(1.1)
+            opacity: 0.9
+            cursor: pointer
+
+.navToggler
+
+// Nav Stylyng //
+
+#navBar
+    display: flex
+    flex-direction: column
+    position: absolute
+    top: 0
+    right: 0
+    backdrop-filter: blur(20px)
+    border-radius: 2rem
+    overflow: hidden
+    width: 60vw
+    height: 60vh
+    padding: 1.5rem
+    align-items: center
+    button
+        padding: 1.2rem
+        border-radius: 1rem
+        margin-bottom: 2rem
+        font-weight: 700
+        text-shadow: 2px 4px 20px $secondary-color
+        width: 60%
+        background: none
+        border: 3px solid $secondary-color
+        color: white
+        font-size: 20px
+        transition: transform 0.3s
+        &:hover
+            transform: scale(1.05)
+            opacity: 0.92
+            cursor: pointer
+        &:active
+            box-shadow: 10px 10px 7px -7px rgba(0,0,0,0.75)
+            transform: none
+            transition: none
+    img
+        align-self: flex-end
+        margin-bottom: 4rem
+
+.hiddenNav
+    display: none !important
+
+.stickyHeader
+    position: sticky !important
+    z-index: 5 !important
+    backdrop-filter: blur(20px)
+
+@media screen and (min-width: 992px)
+    .navToggler
+        display: none
+
+    #headerBar
+        height: 80px
+        padding: 2rem 0
+
+    #navBar
+        display: flex !important
+        flex-direction: row
+        background: none
+        padding: 0
+        position: static
+        width: auto
+        height: auto
+        margin-left: 1rem
+        backdrop-filter: none
+        overflow: initial
+        button
+            padding: 0.5rem
+            height: 60px
+            margin: 0 1rem
+            background: none
+
+    #headerRight
+        justify-content: space-between
+
+@media screen and (min-width: 1200px)
+    #headerBar
+        justify-content: space-around
