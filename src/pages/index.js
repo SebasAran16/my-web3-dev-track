@@ -89,21 +89,21 @@ export default function Home() {
             />
           </div>
           <p>
-            I am Sebastian Zambrano Arango, I have always been very curious and
+            {`I am Sebastian Zambrano Arango, I have always been very curious and
             an enthusiast about technology. That lead me to discover Blockchain
             on 2021 and since then start learning about how the technology
             works, and as I loved it's capabilities and functionalities, I
-            decided I will dedicate to it.
+            decided I will dedicate to it.`}
             <br />
             <br />
-            With an school background of C language, I started learning Solidity
+            {`With an school background of C language, I started learning Solidity
             on my own with all the resources that there are out there, completed
             several courses and realized I needed to learn more than Solidity if
             I wanted to dedicate to it, it was there when I learned about
             security and optimization in Solidity and more Languages and tools
             for being a Web3 Fullstack Developer such as Javascript and React
             with NextJs. And for testing all what I have learned I am building a
-            protocol on my own which is in it's MVP phase right now.
+            protocol on my own which is in it's MVP phase right now.`}
             <br />
             <br />
             Lately I have been paying attention to AIs and figuring out how to
@@ -179,11 +179,11 @@ export default function Home() {
                   />
                 </div>
                 <p>
-                  Kind of a game, where you have to hack several contracts in
+                  {` Kind of a game, where you have to hack several contracts in
                   order to pass to the next level, some levels simulate hacks
                   that have happen in the Blockchain ecosystem and each of them
                   gives you the opportunity to learn about Smart Contract's
-                  functionality, security or optimization.
+                  functionality, security or optimization.`}
                 </p>
               </div>
             </SwiperSlide>
@@ -204,10 +204,10 @@ export default function Home() {
                   />
                 </div>
                 <p>
-                  Great tool to consolidate Solidity's syntax, did it after my
+                  {`Great tool to consolidate Solidity's syntax, did it after my
                   first Solidity course and it really help me to gain confidence
                   with the language for being really intereactive as you learn
-                  coding a Crypto Zombies game!
+                  coding a Crypto Zombies game!`}
                 </p>
               </div>
             </SwiperSlide>
@@ -231,10 +231,10 @@ export default function Home() {
                   />
                 </div>
                 <p>
-                  This was the first course that I took from Solidity, it was
+                  {`This was the first course that I took from Solidity, it was
                   very clear at explaning each of Solidity's functionalities,
                   and at the end we ended up building several projects to
-                  consolidate what we learned.
+                  consolidate what we learned.`}
                 </p>
               </div>
             </SwiperSlide>
@@ -363,12 +363,12 @@ export default function Home() {
                   />
                 </div>
                 <p>
-                  First course I did when I started my journey for a Web3
+                  {`First course I did when I started my journey for a Web3
                   Fullstack Dev, it was clear, helped me get and remember how
                   the logic of programming works and some of the basic
                   JavaScript functionalities, but as I had no background or
                   guidance, I did not get it's potential and went to learn
-                  Solidity.
+                  Solidity.`}
                 </p>
               </div>
             </SwiperSlide>
