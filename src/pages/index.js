@@ -72,10 +72,7 @@ export default function Home() {
       </section>
       <section data-splitting id={styles.aboutSection}>
         <video id={styles.aboutBackground} autoPlay loop muted>
-          <source
-            src="https://player.vimeo.com/external/368730818.sd.mp4?s=c3953421878536e1a7db904cae7dae03e7bfad19&profile_id=164&oauth2_token_id=57447761"
-            type="video/mp4"
-          />
+          <source src="/backgrounds/background-about.mp4" type="video/mp4" />
         </video>
         <article id={styles.aboutContent}>
           <h2 className={styles.sectionTitle}>Who am I?</h2>

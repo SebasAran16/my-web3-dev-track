@@ -111,8 +111,8 @@ export default function Header() {
           className={styles.navToggler}
           src="/icons/menu.png"
           alt="Menu Image"
-          width="40"
-          height="40"
+          width="35"
+          height="35"
           onClick={toggleNav}
         />
         <nav id={styles.navBar} className={styles.hiddenNav}>
@@ -120,8 +120,8 @@ export default function Header() {
             className={styles.navToggler}
             src="/icons/cross.png"
             alt="Cross Image"
-            width="40"
-            height="40"
+            width="30"
+            height="30"
             onClick={toggleNav}
           />
           <button
