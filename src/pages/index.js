@@ -436,7 +436,7 @@ export default function Home() {
                 {t("portfolio.projectsMade.mutantBeers.description.2")}
               </p>
               <div className={styles.projectButtons}>
-                <Link href="https://mutant-beers.vercel.app/" target="_blank">
+                <Link href="https://mutantsbeer.io/" target="_blank">
                   <button>
                     {t("portfolio.projectsMade.mutantBeers.siteButton")}
                   </button>
@@ -460,7 +460,7 @@ export default function Home() {
             <div className={styles.projectImages}>
               <Image
                 className={styles.projectImage}
-                src="/projects/defi-home.png"
+                src="/projects/nft-marketplace.png"
                 alt="NFT Marketplace Home Page"
                 width="200"
                 height="80"
@@ -518,7 +518,10 @@ export default function Home() {
                 {t("portfolio.projectsMade.nftMarketplace.description.2")}
               </p>
               <div className={styles.projectButtons}>
-                <Link href="">
+                <Link
+                  href="https://nextjs-nft-marketplace-fcc-three.vercel.app/"
+                  target="_blank"
+                >
                   <button>
                     {t("portfolio.projectsMade.nftMarketplace.siteButton")}
                   </button>
