@@ -22,26 +22,26 @@ export default function Header() {
   const navPressed = (e) => {
     const button = e.target;
     const clickHandler = (e) => {
-      switch (e.target.innerHTML) {
-        case "Home":
+      switch (e.target.id) {
+        case "home":
           const homeSection = document.querySelector(
             "#Home_homeSection__A1suR"
           );
           homeSection.scrollIntoView({ behaviour: "smooth" });
           break;
-        case "About Me":
+        case "about":
           const aboutSection = document.querySelector(
             "#Home_aboutSection__hyofv"
           );
           aboutSection.scrollIntoView({ behaviour: "smooth" });
           break;
-        case "Portfolio":
+        case "portfolio":
           const portfolioSection = document.querySelector(
             "#Home_portfolioSection__yENuo"
           );
           portfolioSection.scrollIntoView({ behaviour: "smooth" });
           break;
-        case "Contact Me":
+        case "contact":
           const contactSection = document.querySelector(
             "#Footer_footerContainer__L4ecT"
           );
@@ -147,6 +147,7 @@ export default function Header() {
             />
           </div>
           <button
+            id="home"
             onClick={(e) => {
               navPressed(e);
             }}
@@ -154,6 +155,7 @@ export default function Header() {
             {t("buttons.home")}
           </button>
           <button
+            id="about"
             onClick={(e) => {
               navPressed(e);
             }}
@@ -161,6 +163,7 @@ export default function Header() {
             {t("buttons.about")}
           </button>
           <button
+            id="portfolio"
             onClick={(e) => {
               navPressed(e);
             }}
@@ -168,6 +171,7 @@ export default function Header() {
             {t("buttons.portfolio")}
           </button>
           <button
+            id="contact"
             onClick={(e) => {
               navPressed(e);
             }}

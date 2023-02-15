@@ -14,30 +14,18 @@ export default function Home() {
   const navPressed = (e) => {
     const button = e.target;
     const clickHandler = (e) => {
-      switch (e.target.innerHTML) {
-        case "Home":
+      switch (e.target.id) {
+        case "About":
           const homeSection = document.querySelector(
-            "#Home_homeSection__A1suR"
+            "#Home_aboutSection__hyofv"
           );
           homeSection.scrollIntoView({ behaviour: "smooth" });
           break;
-        case "About Me":
+        case "Contact":
           const aboutSection = document.querySelector(
-            "#Home_aboutSection__hyofv"
-          );
-          aboutSection.scrollIntoView({ behaviour: "smooth" });
-          break;
-        case "Portfolio":
-          const portfolioSection = document.querySelector(
-            "#Home_portfolioSection__yENuo"
-          );
-          portfolioSection.scrollIntoView({ behaviour: "smooth" });
-          break;
-        case "Contact Me":
-          const contactSection = document.querySelector(
             "#Footer_footerContainer__L4ecT"
           );
-          contactSection.scrollIntoView({ behavior: "smooth" });
+          aboutSection.scrollIntoView({ behaviour: "smooth" });
           break;
       }
     };
@@ -62,6 +50,7 @@ export default function Home() {
         </div>
         <div id={styles.homeButtons}>
           <button
+            id="About"
             onClick={(e) => {
               navPressed(e);
             }}
@@ -69,6 +58,7 @@ export default function Home() {
             {t("home.firstButton")}
           </button>
           <button
+            id="Contact"
             onClick={(e) => {
               navPressed(e);
             }}
