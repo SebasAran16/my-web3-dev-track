@@ -1,0 +1,10 @@
+{
+  "form": {
+    "title": "Contactame",
+    "explanation": "Por favor, rellena el formulario:",
+    "name": "Nombre",
+    "mail": "Correo Electronico",
+    "message": "Mensaje",
+    "send": "Enviar"
+  }
+}

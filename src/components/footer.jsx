@@ -2,32 +2,35 @@ import React from "react";
 import styles from "@/styles/layout/Footer.module.sass";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation("footer");
+
   return (
     <footer id={styles.footerContainer}>
       <div id={styles.title}>
-        <h3>Contact Me:</h3>
-        <p>Please, use the form below:</p>
+        <h3>{t("form.title")}</h3>
+        <p>{t("form.explanation")}</p>
       </div>
       <div id={styles.form}>
         <form
           id={styles.mailForm}
-          action="https://formsubmit.co/sebastianarango201316@gmail.com"
+          action="https://formsubmit.co/albertof417@gmail.com"
           method="POST"
         >
           <input
             className={styles.formInput}
             type="text"
             name="name"
-            placeholder="Name"
+            placeholder={t("form.name")}
             required
           />
           <input
             className={styles.formInput}
             type="email"
             name="email"
-            placeholder="Email Address"
+            placeholder={t("form.mail")}
             required
           />
           <input
@@ -35,7 +38,7 @@ export default function Footer() {
             className={styles.formInput}
             type="text"
             name="message"
-            placeholder="Message"
+            placeholder={t("form.message")}
             required
           />
           <input
@@ -44,7 +47,7 @@ export default function Footer() {
             value="https://yourdomain.co/thanks.js"
           />
           <input type="hidden" name="_subject" value="SelfPage Mail Submit!" />
-          <button type="submit">Send</button>
+          <button type="submit">{t("form.send")}</button>
         </form>
       </div>
       <div id={styles.socialsIcons}>

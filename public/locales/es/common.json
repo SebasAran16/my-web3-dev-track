@@ -1,0 +1,102 @@
+{
+  "home": {
+    "me": {
+      "normal": "Yo soy ",
+      "highlight": "Sebastian Arango"
+    },
+    "whatIAm": {
+      "highlight": "Desarrollador Web3 Fullstack ",
+      "normal": "en proceso y"
+    },
+    "moreAbout": "Entusiasta Blockchain y Curioso por AI",
+    "firstButton": "Sobre mi",
+    "secondButton": "Contactame"
+  },
+  "about": {
+    "whoAmI": "Quien soy?",
+    "whoIAm": {
+      "1": "Soy Sebastian Zambrano Arango, siempre he sido muy curioso y un entusiasta de la tecnología. Eso me llevó a descubrir Blockchain en 2021 y desde entonces comencé a aprender sobre cómo funciona la tecnología, y como me encantaron sus capacidades y funcionalidades, decidí que me dedicaría a ello.",
+      "2": "Habiendo estudiado C++ en el colegio, comencé a aprender Solidity por mi cuenta con todos los recursos disponibles, completé varios cursos y me di cuenta de que necesitaba aprender más que Solidity si quería dedicarme a ello, fue entonces cuando aprendí sobre seguridad y optimización en Solidity junto con otros lenguajes y herramientas para ser un desarrollador Web3 Fullstack, como Javascript y React con NextJs. Y para probar todo lo que he aprendido, estoy construyendo mi propio protocolo, que se encuentra en su fase inicial en este momento.",
+      "3": "Últimamente he estado prestando atención a la inteligencia artificial y descubriendo cómo usarla en mis sesiones de estudio y codificación diarias para mejorar mi eficiencia."
+    }
+  },
+  "portfolio": {
+    "title": "Portafolio:",
+    "web3": {
+      "title": "Cursos Web3 hechos:",
+      "patrick": {
+        "title": "Aprende Blockchain, Solidity y Desarrollo Full Stack Web3 con JavaScript (32 horas)",
+        "description": "Este fue el mejor curso, más largo y avanzado que he realizado sobre Solidity hasta ahora, cubrió todos los aspectos necesarios para ser un Web3Fullstack, desde la sintaxis de Solidity hasta poder codificar nuestro propio mercado de NFT y desplegarlo en un sitio web. También se trataron temas importantes como la seguridad, los proxies y los tokens de gobernanza."
+      },
+      "ethernaut": {
+        "title": "Ethernaut - Openzeppelin",
+        "description": "Es una especie de juego en el que debes hackear varios contratos para pasar al siguiente nivel. Algunos niveles simulan ataques que han ocurrido en el ecosistema de Blockchain y cada uno de ellos te brinda la oportunidad de aprender sobre la funcionalidad, seguridad u optimización de los contratos inteligentes."
+      },
+      "cryptozombies": {
+        "title": "CryptoZombies",
+        "description": "Una gran herramienta para consolidar la sintaxis de Solidity. Lo hice después de mi primer curso de Solidity y realmente me ayudó a ganar confianza con el lenguaje al ser muy interactivo mientras aprendía a codificar un juego de Crypto Zombies."
+      },
+      "az": {
+        "title": "Solidity de la A a la Z",
+        "description": "Este fue el primer curso que tomé de Solidity, fue muy claro al explicar cada una de las funcionalidades de Solidity, y al final terminamos construyendo varios proyectos para consolidar lo que aprendimos."
+      }
+    },
+    "web2": {
+      "title": "Cursos Web2 hechos:",
+      "nextjs": {
+        "title": "Curso del framework de React: Next.js",
+        "description": {
+          "1": "Me ayudó a comprender cómo construir una aplicación NextJs y conocer todas las características y ventajas que tenemos al construir un proyecto con este increíble framework.",
+          "2": "Lo logramos construyendo todo un proyecto de sitio web, revisando cada una de las funcionalidades y usos de NextJs."
+        }
+      },
+      "zach": {
+        "title": "Bootcamp de desarrollo Front End (JavaScript, HTML, CSS)",
+        "description": "Este fue el curso que me tanto conocimientos como la confianza en Front End, siendo capaz de construir mis propias paginas Web despues de éste y ser capaz de aprender mas para mejorar tanto la UI como UX que mis desarrollos brindan tanto solo como en FrontendMentor."
+      },
+      "alchemy": {
+        "title": "Fundamentales de JavaScript",
+        "description": "Habia usado JavaScript antes, sim embargo, este era el curso que necesitaba para realmente saber lo que estaba haciendo en otros cursos, me hizo aprender lo fundamental para seguir aprendiendo y mejorando."
+      },
+      "freecode": {
+        "title": "JavaScript Básico",
+        "description": "El primer curso que hice cuando comencé mi camino para convertirme en un desarrollador Web3 Fullstack. Fue claro y me ayudó a comprender y recordar cómo funciona la lógica de programación y algunas de las funcionalidades básicas de JavaScript. Sin embargo, como no tenía experiencia previa ni orientación, no comprendí todo su potencial y decidí aprender Solidity."
+      }
+    },
+    "projectsMade": {
+      "title": "Proyectos Hechos:",
+      "defiContribute": {
+        "title": "Protocolo Defi Contribute (MVP)",
+        "skill": "Web3 Fullstack",
+        "description": {
+          "1": "Como la programación es la mejor forma de aprender, después de estudiar todo lo necesario para hacer un proyecto en Blockchain, con el FrontEnd requerido, ¡decidí hacer todo un protocolo Web3 por mi cuenta desde cero!",
+          "2": "Esto me ayudó a desafiarme a mí mismo y probar todo lo que había aprendido hasta ahora, y ver cómo funcionaría sin ninguna orientación, como había estado haciendo hasta entonces."
+        },
+        "siteButton": "Ver protocolo",
+        "codeButton": "Ver código"
+      },
+      "mutantBeers": {
+        "title": "Landing Page Cerveza Mutant Apes",
+        "skill": "Frontend",
+        "description": {
+          "1": "El primer proyecto en el que trabajé en el sector de TI.",
+          "2": "Fue una excelente manera de ver cómo funcionan los equipos en este sector y cómo encajar para tratar de hacer un gran producto final."
+        },
+        "siteButton": "Ver landing",
+        "codeButton": "Ver código"
+      },
+      "nftMarketplace": {
+        "title": "Mercado NFT",
+        "skill": "Web3 Fullstack",
+        "description": {
+          "1": "Durante el curso de Patrick Collins, creamos una colección completa de NFT, subiendo metadatos de NFT a NFT Storage, y también creamos un contrato de mercado completo para ver, listar, comprar y vender NFT.",
+          "2": "Fue un proyecto realmente complejo que me ayudó a familiarizarme con herramientas, pruebas, uso de blockchain (gas, costos, seguridad...) y ponerlo todo en un gran proyecto."
+        },
+        "siteButton": "Ver mercado",
+        "codeButton": "Ver código"
+      },
+      "moreProjects": "Muchos más por venir..."
+    },
+    "languages": "Lenguajes de Programación:"
+  }
+}

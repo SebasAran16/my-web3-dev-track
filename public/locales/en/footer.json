@@ -1,0 +1,10 @@
+{
+  "form": {
+    "title": "Contact Me",
+    "explanation": "Please, fill the form below:",
+    "name": "Name",
+    "mail": "Email",
+    "message": "Message",
+    "send": "Send"
+  }
+}

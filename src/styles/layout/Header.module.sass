@@ -66,13 +66,14 @@ $sides-space: 0 2rem
     border-radius: 2rem
     overflow: hidden
     width: 60vw
-    padding: 1.5rem
+    padding: 1rem
     align-items: center
     button
         padding: 1rem
         border-radius: 1rem
         margin-bottom: 10%
         font-weight: 700
+        text-align: center
         text-shadow: 2px 4px 20px $secondary-color
         width: 60%
         background: none
@@ -88,12 +89,40 @@ $sides-space: 0 2rem
             box-shadow: 10px 10px 7px -7px rgba(0,0,0,0.75)
             transform: none
             transition: none
-    img
-        align-self: flex-end
-        margin-bottom: 20%
 
 .hiddenNav
     display: none !important
+
+#firstsNav
+    display: flex
+    align-items: center
+    justify-content: space-around
+    margin-bottom: 20%
+    width: 100%
+
+#switcherContainer
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-right: 5%
+    display: flex
+    a
+        text-decoration: none
+        margin: 0.5rem
+        color: gray
+        transition: all 0.3s
+        &:hover
+            transform: scale(1.2)
+            opacity: 0.8
+        &:active
+            transform: none
+            p
+                color: white
+
+.activeLanguage
+    p
+        color: white
+        transform: scale(1.2)
 
 .stickyHeader
     position: sticky !important
@@ -124,6 +153,10 @@ $sides-space: 0 2rem
             height: 60px
             margin: 0 1rem
             background: none
+
+    #firstsNav
+        margin: 1rem
+        width: auto
 
     #headerRight
         justify-content: space-between

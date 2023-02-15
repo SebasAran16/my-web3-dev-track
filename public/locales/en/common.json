@@ -1,0 +1,102 @@
+{
+  "home": {
+    "me": {
+      "normal": "I am ",
+      "highlight": "Sebastian Arango,"
+    },
+    "whatIAm": {
+      "highlight": "Web3 Fullstack ",
+      "normal": "Apprentice and"
+    },
+    "moreAbout": "Blockchain Lover & AI Explorer",
+    "firstButton": "About Me",
+    "secondButton": "Contact Me"
+  },
+  "about": {
+    "whoAmI": "Who am I?",
+    "whoIAm": {
+      "1": "I am Sebastian Zambrano Arango, I have always been very curious and an enthusiast about technology. That lead me to discover Blockchain on 2021 and since then start learning about how the technology works, and as I loved it's capabilities and functionalities, I decided I will dedicate to it.",
+      "2": "With an school background of C language, I started learning Solidity on my own with all the resources that there are out there, completed several courses and realized I needed to learn more than Solidity if I wanted to dedicate to it, it was there when I learned about security and optimization in Solidity and more Languages and tools for being a Web3 Fullstack Developer such as Javascript and React with NextJs. And for testing all what I have learned I am building a protocol on my own which is in it's MVP phase right now.",
+      "3": "Lately I have been paying attention to AIs and figuring out how to use them in my daily study and coding sessions to improve my efficiency."
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio:",
+    "web3": {
+      "title": "Web3 Courses Done:",
+      "patrick": {
+        "title": "Learn Blockchain, Solidity, and Full Stack Web3 Development with JavaScript (32-Hour Course)",
+        "description": "This was the greatest, longest and most advanced course I have done on Solidity so far, this covered every aspect needed to be a Web3Fullstack, from Solidity Syntax to be able to code our own NFT Marketplace and deploy on a website! Also covered important topics as secuity, proxies and governance tokens."
+      },
+      "ethernaut": {
+        "title": "Ethernaut - Openzeppelin",
+        "description": "Kind of a game, where you have to hack several contracts in order to pass to the next level, some levels simulate hacks that have happen in the Blockchain ecosystem and each of them gives you the opportunity to learn about Smart Contract's functionality, security or optimization."
+      },
+      "cryptozombies": {
+        "title": "CryptoZombies",
+        "description": "Great tool to consolidate Solidity's syntax, did it after my first Solidity course and it really help me to gain confidence with the language for being really intereactive as you learn coding a Crypto Zombies game!"
+      },
+      "az": {
+        "title": "Solidity from A to Z",
+        "description": "This was the first course that I took from Solidity, it was very clear at explaning each of Solidity's functionalities, and at the end we ended up building several projects to consolidate what we learned."
+      }
+    },
+    "web2": {
+      "title": "Web2 Courses Done:",
+      "nextjs": {
+        "title": "Next.js React Framework Course",
+        "description": {
+          "1": "Helped me get how to build a NextJs app, and to know all the features and advantages that we have when building a project with this amazing framework.",
+          "2": "We do this by building a whole website project going through each of the NextJs functionalities and uses."
+        }
+      },
+      "zach": {
+        "title": "Frontend Web Development Bootcamp Course (JavaScript, HTML, CSS)",
+        "description": "This course was the one that gave me the confidence with Frontend, being able, after it, to build my own websites and keep learning about UI and UX building own projects and challenges in Frontend Mentor."
+      },
+      "alchemy": {
+        "title": "JavaScript Fundamentals",
+        "description": "I had used and learned JavaScript before, but I lacked some knowledge to really understand all what we did with it on some other courses, this made me really understand the Fundamentals to get it and keep improving."
+      },
+      "freecode": {
+        "title": "JavaScript Basics",
+        "description": "First course I did when I started my journey for a Web3 Fullstack Dev, it was clear, helped me get and remember how the logic of programming works and some of the basic JavaScript functionalities, but as I had no background or guidance, I did not get it's potential and went to learn Solidity."
+      }
+    },
+    "projectsMade": {
+      "title": "Projects Made:",
+      "defiContribute": {
+        "title": "DefiContribute Protocol (MVP)",
+        "skill": "Web3 Fullstack",
+        "description": {
+          "1": "As coding is best way to learn, after studying all required to do a project on Blockchain, with the FrontEnd required, I decided to do a whole Web3 Protocol on myself from scratch!",
+          "2": "This helped me challenge myself and try out all what I have learned so far and see how I would work without any guidance as I had been doing so far."
+        },
+        "siteButton": "See Site",
+        "codeButton": "See Code"
+      },
+      "mutantBeers": {
+        "title": "Landing Page Cerveza Mutant Apes",
+        "skill": "Frontend",
+        "description": {
+          "1": "First ever project where I have worked at in the IT sector.",
+          "2": "A really good way to see how teams on the sector work and fit in for trying to do a great end product!"
+        },
+        "siteButton": "See site",
+        "codeButton": "See code"
+      },
+      "nftMarketplace": {
+        "title": "NFT Marketplace",
+        "skill": "Web3 Fullstack",
+        "description": {
+          "1": "During course from Patrick Collins we created a whole NFT collection, uploading NFT metadata to NFT Storage and also created a whole Marketplace contract to see, list, buy and sell NFTs!",
+          "2": "A really complex project that help me familarize with tools, testing, blockchain usage (gas, costs, security...) and place it all into a great project!"
+        },
+        "siteButton": "See site",
+        "codeButton": "See code"
+      },
+      "moreProjects": "Many more coming..."
+    },
+    "languages": "Programming Languages:"
+  }
+}

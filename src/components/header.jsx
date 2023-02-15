@@ -2,8 +2,13 @@ import React, { useEffect } from "react";
 import styles from "@/styles/layout/Header.module.sass";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 export default function Header() {
+  const router = useRouter();
+  const { t } = useTranslation("header");
+
   const toggleNav = () => {
     const nav = document.querySelector(`#${styles.navBar}`);
     nav.classList.toggle(styles.hiddenNav);
@@ -116,41 +121,58 @@ export default function Header() {
           onClick={toggleNav}
         />
         <nav id={styles.navBar} className={styles.hiddenNav}>
-          <Image
-            className={styles.navToggler}
-            src="/icons/cross.png"
-            alt="Cross Image"
-            width="30"
-            height="30"
-            onClick={toggleNav}
-          />
+          <div id={styles.firstsNav}>
+            <div id={styles.switcherContainer}>
+              <Link
+                href="en"
+                className={router.locale == "en" ? styles.activeLanguage : ""}
+              >
+                <p>EN</p>
+              </Link>
+              <p>/</p>
+              <Link
+                href="/es"
+                className={router.locale == "es" ? styles.activeLanguage : ""}
+              >
+                <p>ES</p>
+              </Link>
+            </div>
+            <Image
+              className={styles.navToggler}
+              src="/icons/cross.png"
+              alt="Cross Image"
+              width="30"
+              height="30"
+              onClick={toggleNav}
+            />
+          </div>
           <button
             onClick={(e) => {
               navPressed(e);
             }}
           >
-            Home
+            {t("buttons.home")}
           </button>
           <button
             onClick={(e) => {
               navPressed(e);
             }}
           >
-            About Me
+            {t("buttons.about")}
           </button>
           <button
             onClick={(e) => {
               navPressed(e);
             }}
           >
-            Portfolio
+            {t("buttons.portfolio")}
           </button>
           <button
             onClick={(e) => {
               navPressed(e);
             }}
           >
-            Contact Me
+            {t("buttons.contact")}
           </button>
         </nav>
       </div>
