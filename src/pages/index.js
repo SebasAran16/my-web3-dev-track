@@ -89,7 +89,7 @@ export default function Home() {
             {t("about.whoIAm.2")}
             <br />
             <br />
-            {t("about.whoIAm.2")}
+            {t("about.whoIAm.3")}
           </p>
         </article>
       </section>
