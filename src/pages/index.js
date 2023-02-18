@@ -579,6 +579,7 @@ export const getStaticProps = async ({ locale }) => ({
       "common",
       "footer",
       "header",
+      "thanks",
     ])),
   },
 });

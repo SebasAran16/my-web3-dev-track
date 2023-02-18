@@ -1,0 +1,29 @@
+$main-color: #6C41AD
+$secondary-color: #41FA57
+$sides-space: 0 2rem
+
+#thanksSection
+    width: 100%
+    background-image: url(/backgrounds/thanks/medium-thanks-background.png)
+    background-repeat: no-repeat
+    background-size: cover
+    margin: auto
+    min-height: 100vh
+    display: grid
+    grid-template-rows: 100px 1fr
+    grid-template-columns: 1fr
+    h1
+        color: $secondary-color
+    p
+        color: white
+    a
+        text-decoration: none
+        color: $main-color
+
+#thanksContent
+    margin: 2rem auto
+    grid-area: 2 / 1 / -1 / -1
+
+@media screen and (min-width: 992px)
+    #thanksSection
+        background-image: url(/backgrounds/thanks/large-thanks-background.png)
