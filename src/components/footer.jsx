@@ -16,7 +16,7 @@ export default function Footer() {
       <div id={styles.form}>
         <form
           id={styles.mailForm}
-          action="https://formsubmit.co/albertof417@gmail.com"
+          action="https://formsubmit.co/sebastianarango201316@gmail.com"
           method="POST"
         >
           <input
