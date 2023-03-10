@@ -9,10 +9,10 @@ export default function Thanks() {
   return (
     <section id={styles.thanksSection}>
       <div id={styles.thanksContent}>
-        <h1>Thanks for submitting form</h1>
-        <h3>This might be the beginning of something big!</h3>
+        <h1>{t("title")}</h1>
+        <h3>{t("subtitle")}</h3>
         <p>
-          Go back to my portfolio <Link href="/">portfolio</Link>
+          {t("backText")} <Link href="/">{t("anchor")}</Link>
         </p>
       </div>
     </section>
@@ -21,11 +21,7 @@ export default function Thanks() {
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale ?? "en", [
-      "common",
-      "footer",
-      "header",
-    ])),
+    ...(await serverSideTranslations(locale ?? "en", ["header", "thanks"])),
   },
 });
 

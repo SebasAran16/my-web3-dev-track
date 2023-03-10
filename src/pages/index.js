@@ -567,6 +567,16 @@ export default function Home() {
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain-wordmark.svg"
             />
           </div>
+          <iframe
+            src="https://www.chatbase.co/chatbot-iframe/learnweb3-io-foiprs6gz"
+            width="100%"
+            height="700"
+            frameBorder="0"
+          ></iframe>
+          <script
+            src="https://cdn.jsdelivr.net/gh/yasserelsaid/chatbot@v0.1.3/index.min.js"
+            data-chatbotId="learnweb3-io-foiprs6gz"
+          ></script>
         </article>
       </section>
     </>
