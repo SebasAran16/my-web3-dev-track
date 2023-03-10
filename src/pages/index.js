@@ -7,9 +7,18 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useEffect } from "react";
 
 export default function Home() {
   const { t } = useTranslation("common");
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src =
+      "https://cdn.jsdelivr.net/gh/yasserelsaid/chatbot@v0.1.3/index.min.js";
+    script.dataset.chatbotId = "learnweb3-io-foiprs6gz";
+    document.head.appendChild(script);
+  });
 
   const navPressed = (e) => {
     const button = e.target;
@@ -573,10 +582,6 @@ export default function Home() {
             height="700"
             frameBorder="0"
           ></iframe>
-          <script
-            src="https://cdn.jsdelivr.net/gh/yasserelsaid/chatbot@v0.1.3/index.min.js"
-            data-chatbotId="learnweb3-io-foiprs6gz"
-          ></script>
         </article>
       </section>
     </>
