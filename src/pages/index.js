@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import styles from "@/styles/Home.module.sass";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
@@ -11,14 +12,6 @@ import { useEffect } from "react";
 
 export default function Home() {
   const { t } = useTranslation("common");
-
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src =
-      "https://cdn.jsdelivr.net/gh/yasserelsaid/chatbot@v0.1.3/index.min.js";
-    script.dataset.chatbotId = "learnweb3-io-foiprs6gz";
-    document.head.appendChild(script);
-  });
 
   const navPressed = (e) => {
     const button = e.target;
@@ -580,8 +573,12 @@ export default function Home() {
             src="https://www.chatbase.co/chatbot-iframe/learnweb3-io-foiprs6gz"
             width="100%"
             height="700"
-            frameBorder="0"
+            frameborder="0"
           ></iframe>
+          <Script
+            src="https://cdn.jsdelivr.net/gh/yasserelsaid/chatbot@v0.1.3/index.min.js"
+            data-chatbotId="learnweb3-io-foiprs6gz"
+          ></Script>
         </article>
       </section>
     </>
