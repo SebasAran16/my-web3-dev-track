@@ -437,7 +437,7 @@ export default function Home() {
                 {t("portfolio.projectsMade.mutantBeers.description.2")}
               </p>
               <div className={styles.projectButtons}>
-                <Link href="https://mutantsbeer.io/" target="_blank">
+                <Link href="https://mutant-beers.vercel.app/" target="_blank">
                   <button>
                     {t("portfolio.projectsMade.mutantBeers.siteButton")}
                   </button>
@@ -568,10 +568,6 @@ export default function Home() {
               src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain-wordmark.svg"
             />
           </div>
-          <Script
-            src="https://cdn.jsdelivr.net/gh/yasserelsaid/chatbot@v0.1.3/index.min.js"
-            data-chatbotId="learnweb3-io-foiprs6gz"
-          ></Script>
         </article>
       </section>
     </>
