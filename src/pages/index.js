@@ -94,8 +94,198 @@ export default function Home() {
           </p>
         </article>
       </section>
+
       <section id={styles.portfolioSection}>
         <h2 className={styles.sectionTitle}>{t("portfolio.title")}</h2>
+        <article>
+          <h3>Experience:</h3>
+          <article id={styles.experienceContainer}>
+            <div className={styles.experience}>
+              <h4>EtherMail</h4>
+              <Image
+                src="/experience/ethermail.png"
+                alt="EtherMail Logo"
+                width="380"
+                height="300"
+              />
+              <h5>6 months - Since 06/03/2023</h5>
+              <div>
+                <div>
+                  <span>Required Skills: </span>
+                  <div>
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/solidity.svg"
+                      alt="Solidity Icon"
+                      width="20"
+                      height="20"
+                    />
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/aws.svg"
+                      alt="AWS Icon"
+                      width="20"
+                      height="20"
+                    />
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/mongodb.svg"
+                      alt="MongoDB Icon"
+                      width="20"
+                      height="20"
+                    />
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/nestjs.svg"
+                      alt="NestJS Icon"
+                      width="20"
+                      height="20"
+                    />
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/typescript.svg"
+                      alt="Typescript Icon"
+                      width="20"
+                      height="20"
+                    />
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/javascript.svg"
+                      alt="Javascript Icon"
+                      width="20"
+                      height="20"
+                    />
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/kotlin.svg"
+                      alt="Kotlin Icon"
+                      width="20"
+                      height="20"
+                    />
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/chai.svg"
+                      alt="Chai Icon"
+                      width="20"
+                      height="20"
+                    />
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/html.svg"
+                      alt="HTML Icon"
+                      width="20"
+                      height="20"
+                    />
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/css.svg"
+                      alt="CSS Icon"
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+                </div>
+                <p>
+                  The possibility of learning an growing in this company is
+                  something that I will always be grateful for. <br />
+                  <br />
+                  Being working with an amazing product focusing on the purpose
+                  of the underlaying technology is something that I always
+                  desired when getting into Blockchain and EtherMail made me
+                  feel like that. <br />
+                  <br />
+                  The mixture of the constant practice of Web3 and Web2
+                  technology made all of my knowledge settle and build one that
+                  I did not have before.
+                </p>
+              </div>
+            </div>
+            <div className={styles.experience}>
+              <h4>Fiverr</h4>
+              <Image
+                src="/experience/fiverr.jpg"
+                alt="EtherMail Logo"
+                width="380"
+                height="300"
+              />
+              <h5>~3 months</h5>
+              <div>
+                <div>
+                  <span>Required Skills: </span>
+                  <div>
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/solidity.svg"
+                      alt="Solidity Icon"
+                      width="20"
+                      height="20"
+                    />
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/nextjs.svg"
+                      alt="NextJs Icon"
+                      width="20"
+                      height="20"
+                    />
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/mongodb.svg"
+                      alt="MongoDB Icon"
+                      width="20"
+                      height="20"
+                    />
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/typescript.svg"
+                      alt="Typescript Icon"
+                      width="20"
+                      height="20"
+                    />
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/javascript.svg"
+                      alt="Javascript Icon"
+                      width="20"
+                      height="20"
+                    />
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/chai.svg"
+                      alt="Chai Icon"
+                      width="20"
+                      height="20"
+                    />
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/html.svg"
+                      alt="HTML Icon"
+                      width="20"
+                      height="20"
+                    />
+                    <Image
+                      className={styles.experienceToolImage}
+                      src="/languagesAndTools/css.svg"
+                      alt="CSS Icon"
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+                </div>
+                <p>
+                  Working with different clients has allowed me to both improve
+                  my skills, adapting myself and learning depending on their
+                  needs and requirements, and also to improve my communication
+                  skills and candidness. <br />
+                  <br />
+                  Having worked from building projects from scratch with no team
+                  to teach someone how to code his first Smart Contract, leaving
+                  all the basis and resources to follow the study, has given me
+                  a solid basis to every project.
+                </p>
+              </div>
+            </div>
+          </article>
+        </article>
         <article id={styles.coursesContainer}>
           <h3>{t("portfolio.web3.title")}</h3>
           <Swiper
