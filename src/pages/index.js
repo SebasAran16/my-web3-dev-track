@@ -8,10 +8,12 @@ import "swiper/css/navigation";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { dates } from "@/constants/dates";
+import { useRouter } from "next/router";
 
 export default function Home() {
   const { t } = useTranslation("common");
   const currentDate = new Date();
+  const router = useRouter();
 
   const timeDifferenceEthermail = currentDate - dates.ethermailStart;
   const timeDifferenceFiverr = currentDate - dates.fiverrStart;
@@ -117,7 +119,7 @@ export default function Home() {
                   timeDifferenceEthermail / (1000 * 60 * 60 * 24 * 30.44)
                 ) +
                   " months - Since: " +
-                  dates.ethermailStart.toLocaleDateString(undefined, {
+                  dates.ethermailStart.toLocaleDateString(router.locale, {
                     year: "numeric",
                     month: "long",
                     day: "numeric",
