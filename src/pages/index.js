@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
 import styles from "@/styles/Home.module.sass";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
@@ -8,9 +7,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { dates } from "@/constants/dates";
 
 export default function Home() {
   const { t } = useTranslation("common");
+  const currentDate = new Date();
+
+  const timeDifferenceEthermail = currentDate - dates.ethermailStart;
+  const timeDifferenceFiverr = currentDate - dates.fiverrStart;
 
   const navPressed = (e) => {
     const button = e.target;
@@ -108,7 +112,17 @@ export default function Home() {
                 width="380"
                 height="300"
               />
-              <h5>6 months - Since 06/03/2023</h5>
+              <h5>
+                {Math.floor(
+                  timeDifferenceEthermail / (1000 * 60 * 60 * 24 * 30.44)
+                ) +
+                  " months - Since: " +
+                  dates.ethermailStart.toLocaleDateString(undefined, {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+              </h5>
               <div>
                 <div>
                   <span>Required Skills: </span>
@@ -208,7 +222,13 @@ export default function Home() {
                 width="380"
                 height="300"
               />
-              <h5>~3 months</h5>
+              <h5>
+                {"~" +
+                  Math.floor(
+                    timeDifferenceFiverr / (1000 * 60 * 60 * 24 * 30.44)
+                  ) +
+                  " months"}
+              </h5>
               <div>
                 <div>
                   <span>Required Skills: </span>
