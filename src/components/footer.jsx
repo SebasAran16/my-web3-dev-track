@@ -33,7 +33,7 @@ export default function Footer() {
             placeholder={t("form.mail")}
             required
           />
-          <input
+          <textarea
             id={styles.messageInput}
             className={styles.formInput}
             type="text"
