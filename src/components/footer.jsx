@@ -44,7 +44,7 @@ export default function Footer() {
           <input
             type="hidden"
             name="_next"
-            value="https://sebastianarango.tech/thanks"
+            value="https://sebastianarango.com/thanks"
           />
           <input type="hidden" name="_subject" value="SelfPage Mail Submit!" />
           <button type="submit">{t("form.send")}</button>
