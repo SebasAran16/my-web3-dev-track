@@ -1,4 +1,9 @@
 export const dates = {
-  ethermailStart: new Date("03/06/2023"),
-  fiverrStart: new Date("06/18/2023"),
+  ethermail: {
+    start: new Date("03/06/2023")
+  },
+  fiverr: {
+    start: new Date("06/18/2023"),
+    end: new Date("12/14/2023")
+  },
 };

@@ -15,8 +15,32 @@ export default function Home() {
   const currentDate = new Date();
   const router = useRouter();
 
-  const timeDifferenceEthermail = currentDate - dates.ethermailStart;
-  const timeDifferenceFiverr = currentDate - dates.fiverrStart;
+  const timeDifferenceEthermail = (dates.ethermail.end || currentDate) - dates.ethermail.start;
+  const timeDifferenceFiverr = (dates.fiverr.end || currentDate) - dates.fiverr.start;
+
+  const formatExperienceTime = (timeDifference) => {
+    const totalMonths = Math.floor(
+      timeDifference / (1000 * 60 * 60 * 24 * 30.44)
+    );
+
+    if (totalMonths < 12) {
+      return totalMonths + " months";
+    }
+
+    const years = Math.floor(totalMonths / 12);
+    const remainingMonths = totalMonths % 12;
+
+    if (remainingMonths === 0) {
+      return years + (years === 1 ? " year" : " years");
+    }
+
+    return (
+      years +
+      (years === 1 ? " year " : " years ") +
+      remainingMonths +
+      (remainingMonths === 1 ? " month" : " months")
+    );
+  };
 
   const navPressed = (e) => {
     const button = e.target;
@@ -115,11 +139,9 @@ export default function Home() {
                 height="300"
               />
               <h5>
-                {Math.floor(
-                  timeDifferenceEthermail / (1000 * 60 * 60 * 24 * 30.44)
-                ) +
-                  " months - Since: " +
-                  dates.ethermailStart.toLocaleDateString(router.locale, {
+                {formatExperienceTime(timeDifferenceEthermail) +
+                  " - Since: " +
+                  dates.ethermail.start.toLocaleDateString(router.locale, {
                     year: "numeric",
                     month: "long",
                     day: "numeric",
@@ -225,11 +247,7 @@ export default function Home() {
                 height="300"
               />
               <h5>
-                {"~" +
-                  Math.floor(
-                    timeDifferenceFiverr / (1000 * 60 * 60 * 24 * 30.44)
-                  ) +
-                  " months"}
+                {"~" + formatExperienceTime(timeDifferenceFiverr)}
               </h5>
               <div>
                 <div>
