@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/Home.module.sass";
@@ -63,10 +64,51 @@ export default function Home() {
     button.addEventListener("click", clickHandler(e));
   };
 
+  const [bgLoaded, setBgLoaded] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const imgSmall = new window.Image();
+    const imgMedium = new window.Image();
+    const imgBig = new window.Image();
+
+    imgSmall.src = "/backgrounds/background-small.png";
+    imgMedium.src = "/backgrounds/background-medium.png";
+    imgBig.src = "/backgrounds/background-big.png";
+
+    const handleLoad = () => {
+      if (
+        (window.innerWidth < 768 && imgSmall.complete) ||
+        (window.innerWidth >= 768 && window.innerWidth < 992 && imgMedium.complete) ||
+        (window.innerWidth >= 992 && imgBig.complete)
+      ) {
+        setBgLoaded(true);
+      }
+    };
+
+    imgSmall.onload = handleLoad;
+    imgMedium.onload = handleLoad;
+    imgBig.onload = handleLoad;
+
+    // Check if already loaded from cache
+    handleLoad();
+  }, []);
+
   return (
     <>
-      <section id={styles.homeSection}>
-        <div id={styles.homeContent}>
+      <section
+        id={styles.homeSection}
+        className={bgLoaded ? styles.bgLoaded : ""}
+      >
+        {!bgLoaded && <div className={styles.loadingSpinner}></div>}
+        <div
+          id={styles.homeContent}
+          style={{
+            opacity: bgLoaded ? 1 : 0,
+            transition: "opacity 0.5s ease-in-out",
+          }}
+        >
           <h1>
             {t("home.me.normal")}
             <span className={styles.myName}>{t("home.me.highlight")}</span>

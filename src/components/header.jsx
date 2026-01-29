@@ -93,6 +93,7 @@ export default function Header() {
               alt="Linkin Icon"
               width="30"
               height="30"
+              priority
             />
           </Link>
           <Link href="https://github.com/SebasAran16" target="_blank">
@@ -101,6 +102,7 @@ export default function Header() {
               alt="Github Icon"
               width="30"
               height="30"
+              priority
             />
           </Link>
           <Link href="https://twitter.com/Sebas_aran16" target="_blank">
@@ -109,6 +111,7 @@ export default function Header() {
               alt="Twitter Icon"
               width="30"
               height="30"
+              priority
             />
           </Link>
         </div>
@@ -119,6 +122,7 @@ export default function Header() {
           width="35"
           height="35"
           onClick={toggleNav}
+          priority
         />
         <nav id={styles.navBar} className={styles.hiddenNav}>
           <div id={styles.firstsNav}>

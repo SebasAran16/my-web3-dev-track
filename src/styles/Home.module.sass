@@ -31,7 +31,6 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
 
 #homeSection
     padding: $sides-space
-    background-image: url("/backgrounds/background-small.png")
     background-repeat: no-repeat
     background-size: cover
     background-position: center
@@ -42,6 +41,31 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
     display: grid
     grid-template-rows: 0.5fr 1fr 0.3fr
     justify-items: center
+    @media screen and (min-width: 992px)
+        background-position: center 70%
+
+.bgLoaded
+    background-image: url("/backgrounds/background-small.png")
+    @media screen and (min-width: 768px)
+        background-image: url("/backgrounds/background-medium.png")
+    @media screen and (min-width: 992px)
+        background-image: url("/backgrounds/background-big.png")
+
+.loadingSpinner
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 50px
+    height: 50px
+    border: 5px solid rgba(255, 255, 255, 0.3)
+    border-radius: 50%
+    border-top-color: $secondary-color
+    animation: spin 1s ease-in-out infinite
+
+@keyframes spin
+    to
+        transform: translate(-50%, -50%) rotate(360deg)
 
 #homeContent
     grid-area: 1 / 1 / 2 / -1
@@ -321,9 +345,6 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
 @media screen and (min-width: 768px)
 
     // Home Section //
-    #homeSection
-        background-image: url("/backgrounds/background-medium.png")
-
     #homeButtons
         justify-content: center
         button
@@ -378,11 +399,6 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
 @media screen and (min-width: 992px)
 
     //Home Section //
-
-    #homeSection
-        background-size: cover
-        background-position: center 70%
-        background-image: url("/backgrounds/background-big.png")
 
     #homeButtons
         button
