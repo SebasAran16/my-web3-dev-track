@@ -1,29 +1,50 @@
 // Variables
-$main-color: navy
-$secondary-color: #41FA57
+$main-color: #0d0d0d
+$secondary-color: #FF2D7B
+$accent-color: #00F0FF
+$acid-color: #E5FF00
 $sides-space: 0 2rem
-$main-border-radius: 1rem
-$main-box-shadow: 10px 10px 19px 0px rgba(0,0,0,0.75)
-$lavender-gray: rgba(205, 209, 228, 0.25)
+$main-border-radius: 0
+$main-box-shadow: 4px 4px 0px $secondary-color
+$card-bg: rgba(20, 20, 30, 0.9)
 
 // Home Section //
 
 .myName
-    text-shadow: 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 0px rgba(206,89,55,0)
+    text-shadow: 3px 3px 0px $secondary-color, -1px -1px 0px $accent-color
+    animation: glitchText 3s infinite
+
+@keyframes glitchText
+    0%, 92%, 100%
+        transform: none
+        opacity: 1
+    93%
+        transform: skewX(-2deg) translateX(2px)
+        opacity: 0.8
+    94%
+        transform: skewX(3deg) translateX(-2px)
+        text-shadow: 3px 3px 0px $accent-color, -1px -1px 0px $secondary-color
+    95%
+        transform: none
+        opacity: 1
 
 .fullstack
-    text-shadow: 0 0 10px #FFFFFF
+    text-shadow: 2px 2px 0px $accent-color
+    color: $accent-color !important
 
 .sectionTitle
     color: $secondary-color
-    text-shadow: 5px 2px 2px #000000
+    text-shadow: 2px 2px 0px $main-color
+    border-left: 4px solid $secondary-color
+    padding-left: 1rem
     &::after
         content: ""
-        width: 80%
-        background: $secondary-color
-        border: 2px solid black
-        height: 5px
+        width: 100%
+        background: linear-gradient(90deg, $secondary-color, $accent-color)
+        border: none
+        height: 2px
         display: block
+        margin-top: 0.5rem
 
 #homeSection
     padding: $sides-space
@@ -38,6 +59,19 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
     display: grid
     grid-template-rows: 0.5fr 1fr 0.3fr
     justify-items: center
+    &::before
+        content: ""
+        position: absolute
+        inset: 0
+        background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.1) 2px, rgba(0,0,0,0.1) 4px)
+        pointer-events: none
+        z-index: 1
+    &::after
+        content: ""
+        position: absolute
+        inset: 0
+        background: linear-gradient(180deg, rgba(13,13,13,0.3) 0%, rgba(255,45,123,0.08) 50%, rgba(0,240,255,0.08) 100%)
+        pointer-events: none
     @media screen and (min-width: 768px)
         background-image: url("/backgrounds/background-medium.png")
     @media screen and (min-width: 992px)
@@ -49,9 +83,12 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
     margin-top: 5rem
     height: 100%
     justify-self: flex-start
+    z-index: 2
     h3
         opacity: 0.7
         font-weight: 400
+        color: $accent-color
+        font-style: italic
 
 #homeButtons
     grid-area: 3 / 1 / -1 / -1
@@ -60,21 +97,39 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
     justify-content: space-around
     width: 100%
     margin: auto
+    z-index: 2
     button
-        padding: 2rem
-        border-radius: 2rem
+        padding: 1.5rem 2rem
+        border-radius: 0
         font-weight: 700
         font-size: 1.2rem
-        border: 1px solid white
-        color: $secondary-color
-        background: #3333337f
-        text-shadow: 0 -1px 4px #FFF, 0 -2px 10px $main-color, 0 -10px 20px #ff8000, 0 -18px 40px #F00
+        border: 2px solid $secondary-color
+        color: white
+        background: rgba(255, 45, 123, 0.15)
+        text-shadow: none
+        text-transform: uppercase
+        letter-spacing: 0.1em
+        position: relative
+        transition: all 0.2s ease
+        &::before
+            content: ""
+            position: absolute
+            top: -2px
+            left: -2px
+            right: -2px
+            bottom: -2px
+            background: linear-gradient(135deg, $secondary-color, $accent-color)
+            z-index: -1
+            opacity: 0
+            transition: opacity 0.2s
         &:hover
-            transform: scale(1.1)
+            transform: translate(-2px, -2px)
+            box-shadow: 4px 4px 0px $accent-color
             cursor: pointer
-            opacity: 0.9
+            background: rgba(255, 45, 123, 0.3)
         &:active
-            transform: none
+            transform: translate(0, 0)
+            box-shadow: none
 
 // About Section //
 
@@ -85,22 +140,15 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
     overflow: hidden
     box-sizing: border-box
     position: relative
-    background: linear-gradient(135deg, #0a0a2e 0%, #1a1a4e 25%, #0d2137 50%, #1b0533 75%, #0a0a2e 100%)
-    background-size: 400% 400%
-    animation: gradientShift 15s ease infinite
-
-@keyframes gradientShift
-    0%
-        background-position: 0% 50%
-    50%
-        background-position: 100% 50%
-    100%
-        background-position: 0% 50%
+    background: #0a0a0a
+    border-top: 2px solid $secondary-color
+    border-bottom: 2px solid $accent-color
 
 .aboutOverlay
     position: absolute
     inset: 0
-    background: radial-gradient(ellipse at 20% 50%, rgba(65, 250, 87, 0.05) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(0, 0, 128, 0.15) 0%, transparent 50%)
+    background: repeating-linear-gradient(90deg, transparent, transparent 50%, rgba(0, 240, 255, 0.02) 50%, rgba(0, 240, 255, 0.02) 100%), repeating-linear-gradient(0deg, transparent, transparent 50%, rgba(255, 45, 123, 0.02) 50%, rgba(255, 45, 123, 0.02) 100%)
+    background-size: 60px 60px
     pointer-events: none
 
 #aboutContent
@@ -108,22 +156,28 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
     z-index: 1
     width: 90%
     margin: 5% 0
-    background-color: rgba(1,1,122, 0.6)
-    border-radius: 2rem
+    background-color: $card-bg
+    border-radius: 0
+    border: 1px solid rgba(255, 45, 123, 0.3)
     padding: 7%
     display: grid
     justify-items: center
     backdrop-filter: blur(4px)
     img
-        border-radius: 1rem
+        border-radius: 0
         margin: 7%
-        box-shadow: 10px 10px 19px 0px rgba(0,0,0,0.75)
-        transition: transform 0.3s
+        box-shadow: 6px 6px 0px $secondary-color
+        border: 2px solid $accent-color
+        transition: all 0.3s
+        filter: grayscale(30%) contrast(1.1)
         &:hover
-            transform: scale(1.08)
+            transform: translate(-3px, -3px)
+            box-shadow: 9px 9px 0px $secondary-color
+            filter: grayscale(0%) contrast(1.2)
     p
-        text-shadow: 0px -1px 2px black
-        font-weight: 700
+        text-shadow: none
+        font-weight: 400
+        color: #c0c0c0
 
 // Experience
 
@@ -138,9 +192,10 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
     flex-direction: column
     align-items: center
     margin: 2rem 0
-    border-radius: $main-border-radius
-    background-color: $lavender-gray
-    box-shadow: $main-box-shadow
+    border-radius: 0
+    background-color: $card-bg
+    border: 1px solid rgba(0, 240, 255, 0.3)
+    box-shadow: 4px 4px 0px $accent-color
     width: 100%
     padding: 2rem 3rem
     *
@@ -148,10 +203,14 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
     > img
         width: 80%
         height: 60%
-        border-radius: 2rem
+        border-radius: 0
+        filter: grayscale(20%)
+        border: 1px solid rgba(255, 45, 123, 0.2)
     > h4
-        color: $secondary-color
-        text-shadow: -4px -2px 3px $main-color
+        color: $accent-color
+        text-shadow: none
+        text-transform: uppercase
+        letter-spacing: 0.1em
     > div
         display: flex
         flex-direction: column
@@ -175,30 +234,33 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
     width: 30px
     height: 30px
     margin: 0.2rem 0.1rem
-    transition: transform 0.3s
+    transition: all 0.2s
+    filter: brightness(0.8) saturate(0.8)
     &:hover
         transform: scale(1.2)
+        filter: brightness(1.2) saturate(1.5) drop-shadow(0 0 4px $accent-color)
 
 // Portfolio Section ///
 
 #portfolioSection
     padding: $sides-space
     padding-top: 2rem
-    background-color: $main-color
+    background-color: #0a0a0a
     display: flex
     flex-direction: column
-    box-shadow: 10px 5px 26px 0px rgba(0,0,0,0.75)
+    border-top: 1px solid rgba(255, 45, 123, 0.2)
     h3
         margin-top: 2rem
-        text-shadow: 0px -2px 20px rgba(255,255,255,0.69)
+        text-shadow: none
 
 .swiper
     width: 90%
     padding: 1rem 0
     text-align: center
-    box-shadow: 10px 5px 26px 0px rgba(0,0,0,0.75)
-    border-radius: 1rem
-    background: linear-gradient(135deg, #2368a1 0%, #053155 50%, #942bf6 100%)
+    box-shadow: 4px 4px 0px $secondary-color
+    border-radius: 0
+    background: $card-bg
+    border: 1px solid rgba(255, 45, 123, 0.3)
     margin-top: 2rem
     &:hover
         cursor: grab
@@ -214,15 +276,24 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
     margin: auto
     a
         text-decoration: none
-        color: $main-color
-        text-shadow: -4px -2px 3px $secondary-color
+        color: $accent-color
+        text-shadow: none
+        border-bottom: 1px dashed $accent-color
+        transition: color 0.2s
+        &:hover
+            color: $secondary-color
+            border-color: $secondary-color
 
 .slideImages
-    border-radius: 50%
+    border-radius: 0
     margin: 1rem 5%
-    transition: transform 0.3s
+    transition: all 0.3s
+    filter: grayscale(30%)
+    border: 2px solid transparent
     &:hover
         transform: scale(1.05)
+        filter: grayscale(0%) drop-shadow(0 0 8px $accent-color)
+        border-color: $accent-color
 
 // Projects Section //
 
@@ -239,13 +310,23 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
     flex-direction: column
     align-items: center
     padding: 1rem
-    box-shadow: 10px 5px 26px 0px rgba(0,0,0,0.75)
-    border-radius: 1rem
-    background: linear-gradient(135deg, rgb(35, 104, 161) 0%, #053155 50%, #942bf6 100%)
+    box-shadow: 6px 6px 0px $secondary-color
+    border-radius: 0
+    background: $card-bg
+    border: 1px solid rgba(255, 45, 123, 0.3)
     margin: 2rem 0
     padding: 7%
+    position: relative
     *
         margin: 0.3rem 0
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 4px
+        height: 100%
+        background: linear-gradient(180deg, $secondary-color, $accent-color)
 
 .projectTitleAndFocus
     display: flex
@@ -253,14 +334,17 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
     align-items: center
     *
         margin: 0
-        color: $main-color
-        text-shadow: -4px -2px 3px $secondary-color
+        color: $accent-color
+        text-shadow: none
+        text-transform: uppercase
     p
         opacity: 0.6
-        color: white
+        color: #888
+        text-transform: none
 
 .projectImage
-    border-radius: 50%
+    border-radius: 0
+    border: 2px solid rgba(0, 240, 255, 0.3)
 
 .projectImages
     display: flex
@@ -269,9 +353,11 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
 
 .projectToolImage
     margin: 0 0.1rem
-    transition: transform 0.3s
+    transition: all 0.3s
+    filter: brightness(0.8)
     &:hover
         transform: scale(1.1)
+        filter: brightness(1.2) drop-shadow(0 0 4px $secondary-color)
 
 .projectContent
     display: flex
@@ -286,18 +372,24 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
         padding: 0.5rem
         margin: 0 1rem
         width: 5rem
-        border-radius: 1rem
+        border-radius: 0
         background: none
-        border: 3px solid $secondary-color
+        border: 2px solid $secondary-color
         color: white
         font-weight: 700
-        text-shadow: -2px 2px 2px #000000
-        transition: transform 0.5s
+        text-shadow: none
+        text-transform: uppercase
+        letter-spacing: 0.05em
+        font-size: 0.75rem
+        transition: all 0.2s
         &:hover
-            transform: scale(1.1)
+            transform: translate(-2px, -2px)
+            box-shadow: 4px 4px 0px $accent-color
             cursor: pointer
+            background: rgba(255, 45, 123, 0.15)
         &:active
-            transform: none
+            transform: translate(0, 0)
+            box-shadow: none
 
 // Languages and tools Section //
 
@@ -319,11 +411,13 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
 
 .codeLanguage
     width: 50px
-    border-radius: 0.5rem
+    border-radius: 0
     margin: 3% 5%
-    transition: transform 0.3s
+    transition: all 0.3s
+    filter: grayscale(50%) brightness(0.9)
     &:hover
         transform: scale(1.15)
+        filter: grayscale(0%) brightness(1.2) drop-shadow(0 0 6px $accent-color)
 
 @media screen and (min-width: 768px)
 
@@ -331,7 +425,7 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
     #homeButtons
         justify-content: center
         button
-            padding: 2.5rem
+            padding: 2rem 2.5rem
             margin: 1rem 8%
 
     // Portfolio Section //
@@ -415,10 +509,11 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
             content: "Loading..."
             display: none !important
             margin: 0 40%
-            color: $secondary-color
+            color: $accent-color
             font-weight: 700
             font-size: 25px
-            text-shadow: -1px 3px 2px $main-color
+            text-shadow: none
+            font-family: 'Space Mono', monospace
 
     #myPic
         grid-area: alias-me

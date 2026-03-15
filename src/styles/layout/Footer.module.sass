@@ -1,11 +1,8 @@
 // Variables
-$main-color: #6C41AD
-$secondary-color: #41FA57
+$main-color: #0d0d0d
+$secondary-color: #FF2D7B
+$accent-color: #00F0FF
 $sides-space: 1rem 2rem
-
-// #footerContainer
-//     position: relative
-//     top: calc(100vh - 50px)
 
 #footerContainer
     display: grid
@@ -14,6 +11,7 @@ $sides-space: 1rem 2rem
     grid-template-areas: "alias-title alias-socials" "alias-form alias-socials"
     background: none
     padding: $sides-space
+    border-top: 2px solid $secondary-color
     *
         color: $secondary-color
         font-weight: 700
@@ -21,7 +19,10 @@ $sides-space: 1rem 2rem
 #title
     grid-area: alias-title
     h3
-        text-shadow: $main-color 3px 5px 2px
+        text-shadow: none
+        color: $accent-color
+        border-left: 4px solid $accent-color
+        padding-left: 1rem
 
 // MailForm //
 
@@ -34,36 +35,47 @@ $sides-space: 1rem 2rem
     width: 90%
     button
         padding: 1rem
-        border-radius: 1rem
-        color: $secondary-color
+        border-radius: 0
+        color: white
         width: 60%
         align-self: center
         font-weight: 700
-        background: none
-        border: 3px solid white
-        font-size: 20px
+        background: rgba(255, 45, 123, 0.15)
+        border: 2px solid $secondary-color
+        font-size: 18px
+        text-transform: uppercase
+        letter-spacing: 0.1em
         margin: 1rem 0
-        transition: transform 0.3s
+        transition: all 0.2s
         &:hover
-            transform: scale(1.05)
+            transform: translate(-2px, -2px)
+            box-shadow: 4px 4px 0px $accent-color
             cursor: pointer
-            opacity: 0.85
         &:active
-            transform: none
+            transform: translate(0, 0)
+            box-shadow: none
 
 .formInput
     padding: 0.5rem
     color: white !important
     font-weight: 400 !important
-    background: none
+    background: rgba(255, 255, 255, 0.03)
     border: none
-    border-bottom: 2px solid white
+    border-bottom: 2px solid rgba(0, 240, 255, 0.4)
+    border-left: 2px solid transparent
     margin: 1rem 0
+    font-family: 'Space Mono', monospace
+    transition: all 0.2s
     &:focus
-        border-bottom: 3px solid $secondary-color
+        border-bottom: 2px solid $accent-color
+        border-left: 2px solid $accent-color
         outline: none
+        background: rgba(0, 240, 255, 0.05)
     &::placeholder
-        color: white
+        color: #555
+        text-transform: uppercase
+        letter-spacing: 0.05em
+        font-size: 0.85em
 
 #messageInput
     height: 100px
@@ -76,19 +88,19 @@ $sides-space: 1rem 2rem
     justify-content: center
     margin: auto
     img
-        transition: transform 0.3s
+        transition: all 0.3s
         margin: 50% 0
+        filter: brightness(0.7)
         &:hover
-            transform: scale(1.15)
-            opacity: 0.9
+            filter: brightness(1.2) drop-shadow(0 0 6px $accent-color)
         &:active
-            opacity: 1
+            filter: brightness(1)
             transform: none
 
 @media screen and (min-width: 768px)
     #socialsIcons
         img
-            transform: scale(1.3 )
+            transform: scale(1.3)
 
 @media screen and (min-width: 992px)
     #socialsIcons

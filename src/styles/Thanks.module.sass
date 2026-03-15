@@ -1,5 +1,6 @@
-$main-color: #6C41AD
-$secondary-color: #41FA57
+$main-color: #0d0d0d
+$secondary-color: #FF2D7B
+$accent-color: #00F0FF
 $sides-space: 0 2rem
 
 #thanksSection
@@ -12,20 +13,43 @@ $sides-space: 0 2rem
     display: grid
     grid-template-rows: 100px 1fr
     grid-template-columns: 1fr
+    position: relative
+    &::after
+        content: ""
+        position: absolute
+        inset: 0
+        background: rgba(13, 13, 13, 0.6)
+        pointer-events: none
     h1
-        color: $secondary-color
-        text-shadow: 0 0 10px black
+        color: $accent-color
+        text-shadow: 3px 3px 0px $secondary-color
+        position: relative
+        z-index: 1
     h3
-        text-shadow: 2px 2px 2px #FFFFFF
-    p
+        text-shadow: none
         color: white
+        position: relative
+        z-index: 1
+    p
+        color: #c0c0c0
+        position: relative
+        z-index: 1
     a
         text-decoration: none
-        color: $main-color
+        color: $secondary-color
+        border-bottom: 1px dashed $secondary-color
+        position: relative
+        z-index: 1
+        transition: color 0.2s
+        &:hover
+            color: $accent-color
+            border-color: $accent-color
 
 #thanksContent
     margin: 2rem auto
     grid-area: 2 / 1 / -1 / -1
+    position: relative
+    z-index: 1
 
 @media screen and (min-width: 992px)
     #thanksSection
