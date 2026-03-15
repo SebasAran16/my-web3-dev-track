@@ -4,13 +4,9 @@ $secondary-color: #41FA57
 $sides-space: 0 2rem
 $main-border-radius: 1rem
 $main-box-shadow: 10px 10px 19px 0px rgba(0,0,0,0.75)
-
 $lavender-gray: rgba(205, 209, 228, 0.25)
 
 // Home Section //
-
-.highlightMain
-    color: $main-color
 
 .myName
     text-shadow: 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 2px 2px 0px rgba(206,89,55,0)
@@ -31,6 +27,7 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
 
 #homeSection
     padding: $sides-space
+    background-image: url("/backgrounds/background-small.png")
     background-repeat: no-repeat
     background-size: cover
     background-position: center
@@ -41,31 +38,11 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
     display: grid
     grid-template-rows: 0.5fr 1fr 0.3fr
     justify-items: center
-    @media screen and (min-width: 992px)
-        background-position: center 70%
-
-.bgLoaded
-    background-image: url("/backgrounds/background-small.png")
     @media screen and (min-width: 768px)
         background-image: url("/backgrounds/background-medium.png")
     @media screen and (min-width: 992px)
         background-image: url("/backgrounds/background-big.png")
-
-.loadingSpinner
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-    width: 50px
-    height: 50px
-    border: 5px solid rgba(255, 255, 255, 0.3)
-    border-radius: 50%
-    border-top-color: $secondary-color
-    animation: spin 1s ease-in-out infinite
-
-@keyframes spin
-    to
-        transform: translate(-50%, -50%) rotate(360deg)
+        background-position: center 70%
 
 #homeContent
     grid-area: 1 / 1 / 2 / -1
@@ -107,29 +84,36 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
     align-items: center
     overflow: hidden
     box-sizing: border-box
+    position: relative
+    background: linear-gradient(135deg, #0a0a2e 0%, #1a1a4e 25%, #0d2137 50%, #1b0533 75%, #0a0a2e 100%)
+    background-size: 400% 400%
+    animation: gradientShift 15s ease infinite
 
-#aboutBackground
-    width: 100vw
-    height: 100vh
-    object-fit: cover
-    position: fixed
-    left: 0
-    right: 0
-    top: 0
-    bottom: 0
-    z-index: -1
+@keyframes gradientShift
+    0%
+        background-position: 0% 50%
+    50%
+        background-position: 100% 50%
+    100%
+        background-position: 0% 50%
+
+.aboutOverlay
+    position: absolute
+    inset: 0
+    background: radial-gradient(ellipse at 20% 50%, rgba(65, 250, 87, 0.05) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(0, 0, 128, 0.15) 0%, transparent 50%)
+    pointer-events: none
 
 #aboutContent
     position: relative
     z-index: 1
     width: 90%
-    heigth: 90%
     margin: 5% 0
     background-color: rgba(1,1,122, 0.6)
     border-radius: 2rem
     padding: 7%
     display: grid
     justify-items: center
+    backdrop-filter: blur(4px)
     img
         border-radius: 1rem
         margin: 7%
@@ -137,7 +121,6 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
         transition: transform 0.3s
         &:hover
             transform: scale(1.08)
-            color: $secondary-color
     p
         text-shadow: 0px -1px 2px black
         font-weight: 700
@@ -424,15 +407,6 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
         flex-direction: column
         align-items: center
         justify-content: center
-
-    #myPic
-        grid-area: alias-me
-        align-self: center
-        width: 280px
-        height: 360px
-        margin: 0
-
-    .picContainer
         &:hover
             cursor: wait
             &::after
@@ -445,6 +419,13 @@ $lavender-gray: rgba(205, 209, 228, 0.25)
             font-weight: 700
             font-size: 25px
             text-shadow: -1px 3px 2px $main-color
+
+    #myPic
+        grid-area: alias-me
+        align-self: center
+        width: 280px
+        height: 360px
+        margin: 0
 
     // Portfolio Section //
 
