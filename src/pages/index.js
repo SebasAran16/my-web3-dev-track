@@ -10,6 +10,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { dates } from "@/constants/dates";
 import { useRouter } from "next/router";
+import HexText from "@/components/HexText";
 import {
   experiences,
   web3Courses,
@@ -123,15 +124,30 @@ export default function Home() {
         <div id={styles.homeContent}>
           <h1>
             {t("home.me.normal")}
-            <span className={styles.myName}>{t("home.me.highlight")}</span>
+            <HexText
+              as="span"
+              text={t("home.me.highlight")}
+              className={styles.myName}
+              staggerMs={40}
+              threshold={0.1}
+            />
           </h1>
           <h2>
-            <span className={styles.fullstack}>
-              {t("home.whatIAm.highlight")}
-            </span>
+            <HexText
+              as="span"
+              text={t("home.whatIAm.highlight")}
+              className={styles.fullstack}
+              staggerMs={35}
+              threshold={0.1}
+            />
             {t("home.whatIAm.normal")}
           </h2>
-          <h3>{t("home.moreAbout")}</h3>
+          <HexText
+            as="h3"
+            text={t("home.moreAbout")}
+            staggerMs={25}
+            threshold={0.1}
+          />
         </div>
         <div id={styles.homeButtons}>
           <button onClick={() => scrollTo(aboutRef)}>
@@ -146,7 +162,13 @@ export default function Home() {
       <section ref={aboutRef} id={styles.aboutSection}>
         <div className={styles.aboutOverlay} />
         <article id={styles.aboutContent}>
-          <h2 className={styles.sectionTitle}>{t("about.whoAmI")}</h2>
+          <HexText
+            as="h2"
+            text={t("about.whoAmI")}
+            className={styles.sectionTitle}
+            staggerMs={40}
+            threshold={0.3}
+          />
           <div className={styles.picContainer}>
             <Image
               id={styles.myPic}
@@ -169,10 +191,21 @@ export default function Home() {
       </section>
 
       <section id={styles.portfolioSection}>
-        <h2 className={styles.sectionTitle}>{t("portfolio.title")}</h2>
+        <HexText
+          as="h2"
+          text={t("portfolio.title")}
+          className={styles.sectionTitle}
+          staggerMs={40}
+          threshold={0.3}
+        />
 
         <article>
-          <h3>Experience:</h3>
+          <HexText
+            as="h3"
+            text="Experience:"
+            staggerMs={50}
+            threshold={0.3}
+          />
           <article id={styles.experienceContainer}>
             {experiences.map((exp) => {
               const timeDiff =
@@ -188,18 +221,28 @@ export default function Home() {
 
               return (
                 <div className={styles.experience} key={exp.key}>
-                  <h4>{exp.name}</h4>
+                  <HexText
+                    as="h4"
+                    text={exp.name}
+                    staggerMs={35}
+                    threshold={0.3}
+                  />
                   <Image
                     src={exp.image.src}
                     alt={exp.image.alt}
                     width="380"
                     height="300"
                   />
-                  <h5>
-                    {exp.key === "fiverr"
-                      ? timeStr
-                      : `${timeStr} - Since: ${dateStr}`}
-                  </h5>
+                  <HexText
+                    as="h5"
+                    text={
+                      exp.key === "fiverr"
+                        ? timeStr
+                        : `${timeStr} - Since: ${dateStr}`
+                    }
+                    staggerMs={20}
+                    threshold={0.3}
+                  />
                   <div>
                     <div>
                       <span>Required Skills: </span>
@@ -235,19 +278,44 @@ export default function Home() {
         </article>
 
         <article id={styles.coursesContainer}>
-          <h3>{t("portfolio.web3.title")}</h3>
+          <HexText
+            as="h3"
+            text={t("portfolio.web3.title")}
+            staggerMs={40}
+            threshold={0.3}
+          />
           <CourseSwiper courses={web3Courses} t={t} />
-          <h3>{t("portfolio.web2.title")}</h3>
+          <HexText
+            as="h3"
+            text={t("portfolio.web2.title")}
+            staggerMs={40}
+            threshold={0.3}
+          />
           <CourseSwiper courses={web2Courses} t={t} />
         </article>
 
         <article id={styles.projectsMade}>
-          <h3>{t("portfolio.projectsMade.title")}</h3>
+          <HexText
+            as="h3"
+            text={t("portfolio.projectsMade.title")}
+            staggerMs={35}
+            threshold={0.3}
+          />
           {projects.map((project) => (
             <div className={styles.project} key={project.key}>
               <div className={styles.projectTitleAndFocus}>
-                <h4>{t(project.titleKey)}</h4>
-                <p>{t(project.skillKey)}</p>
+                <HexText
+                  as="h4"
+                  text={t(project.titleKey)}
+                  staggerMs={30}
+                  threshold={0.3}
+                />
+                <HexText
+                  as="p"
+                  text={t(project.skillKey)}
+                  staggerMs={20}
+                  threshold={0.3}
+                />
               </div>
               <div className={styles.projectImages}>
                 <Image
@@ -297,7 +365,13 @@ export default function Home() {
         </article>
 
         <article id={styles.languagesAndToolsContainer}>
-          <h3 className={styles.sectionTitle}>{t("portfolio.languages")}</h3>
+          <HexText
+            as="h3"
+            text={t("portfolio.languages")}
+            className={styles.sectionTitle}
+            staggerMs={35}
+            threshold={0.3}
+          />
           <div id={styles.languagesContainer}>
             {codeLanguages.map((lang) => (
               <img
