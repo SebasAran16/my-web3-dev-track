@@ -1,11 +1,17 @@
 import "@/styles/globals.sass";
 import MainLayout from "@/layouts/main-layout";
 import { appWithTranslation } from "next-i18next";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function App({ Component, pageProps }) {
   const getLayout =
     Component.getLayout || ((page) => <MainLayout>{page}</MainLayout>);
-  return getLayout(<Component {...pageProps} />);
+  return (
+    <>
+      {getLayout(<Component {...pageProps} />)}
+      <SpeedInsights />
+    </>
+  );
 }
 
 export default appWithTranslation(App);
