@@ -112,7 +112,6 @@ export default function Home() {
   const currentDate = new Date();
   const router = useRouter();
   const aboutRef = useRef(null);
-  const footerRef = useRef(null);
 
   const scrollTo = (ref) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -120,7 +119,7 @@ export default function Home() {
 
   return (
     <>
-      <section id={styles.homeSection}>
+      <section data-section="home" id={styles.homeSection}>
         <div id={styles.homeContent}>
           <h1>
             {t("home.me.normal")}
@@ -153,13 +152,13 @@ export default function Home() {
           <button onClick={() => scrollTo(aboutRef)}>
             {t("home.firstButton")}
           </button>
-          <button onClick={() => scrollTo(footerRef)}>
+          <button onClick={() => document.querySelector('footer')?.scrollIntoView({ behavior: 'smooth' })}>
             {t("home.secondButton")}
           </button>
         </div>
       </section>
 
-      <section ref={aboutRef} id={styles.aboutSection}>
+      <section ref={aboutRef} data-section="about" id={styles.aboutSection}>
         <div className={styles.aboutOverlay} />
         <article id={styles.aboutContent}>
           <HexText
@@ -190,7 +189,7 @@ export default function Home() {
         </article>
       </section>
 
-      <section id={styles.portfolioSection}>
+      <section data-section="portfolio" id={styles.portfolioSection}>
         <HexText
           as="h2"
           text={t("portfolio.title")}

@@ -20,38 +20,12 @@ export default function Header() {
   };
 
   const navPressed = (e) => {
-    const button = e.target;
-    const clickHandler = (e) => {
-      switch (e.target.id) {
-        case "home":
-          const homeSection = document.querySelector(
-            "#Home_homeSection__A1suR"
-          );
-          homeSection.scrollIntoView({ behaviour: "smooth" });
-          break;
-        case "about":
-          const aboutSection = document.querySelector(
-            "#Home_aboutSection__hyofv"
-          );
-          aboutSection.scrollIntoView({ behaviour: "smooth" });
-          break;
-        case "portfolio":
-          const portfolioSection = document.querySelector(
-            "#Home_portfolioSection__yENuo"
-          );
-          portfolioSection.scrollIntoView({ behaviour: "smooth" });
-          break;
-        case "contact":
-          const contactSection = document.querySelector(
-            "#Footer_footerContainer__L4ecT"
-          );
-          contactSection.scrollIntoView({ behavior: "smooth" });
-          break;
-      }
-      closeNav();
-    };
-
-    button.addEventListener("click", clickHandler(e));
+    const id = e.target.id;
+    const el = id === "contact"
+      ? document.querySelector("footer")
+      : document.querySelector(`[data-section="${id}"]`);
+    el?.scrollIntoView({ behavior: "smooth" });
+    closeNav();
   };
 
   useEffect(() => {
@@ -128,14 +102,16 @@ export default function Header() {
           <div id={styles.firstsNav}>
             <div id={styles.switcherContainer}>
               <Link
-                href="en"
+                href={router.asPath}
+                locale="en"
                 className={router.locale == "en" ? styles.activeLanguage : ""}
               >
                 <p>EN</p>
               </Link>
               <p>/</p>
               <Link
-                href="/es"
+                href={router.asPath}
+                locale="es"
                 className={router.locale == "es" ? styles.activeLanguage : ""}
               >
                 <p>ES</p>

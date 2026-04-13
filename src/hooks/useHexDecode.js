@@ -84,8 +84,11 @@ export function useHexDecode(text, options = {}) {
     };
   }, [text, staggerMs, scrambleIntervalMs]);
 
+  // Reset when text changes (e.g. language switch)
   useEffect(() => {
     if (!text) return;
+    hasStarted.current = false;
+    setHasDecoded(false);
     // Initialize with hex
     setDisplayText(
       text
