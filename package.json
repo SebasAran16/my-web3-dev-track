@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
+    "@vercel/speed-insights": "^2.0.0",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "i18next": "^22.4.9",
@@ -21,5 +22,5 @@
     "sass": "^1.58.0",
     "splitting": "^1.0.6",
     "swiper": "^9.0.2"
-  }
+  },
 }
