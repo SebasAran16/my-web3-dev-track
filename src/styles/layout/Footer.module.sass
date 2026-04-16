@@ -55,6 +55,31 @@ $sides-space: 1rem 2rem
             transform: translate(0, 0)
             box-shadow: none
 
+#cvButton
+    display: inline-block
+    padding: 1rem
+    color: white !important
+    width: 60%
+    max-width: 90%
+    margin: 1rem 0 0 0
+    text-align: center
+    font-weight: 700
+    background: rgba(0, 240, 255, 0.1)
+    border: 2px solid $accent-color
+    font-size: 18px
+    text-transform: uppercase
+    letter-spacing: 0.1em
+    text-decoration: none
+    transition: all 0.2s
+    &:hover
+        transform: translate(-2px, -2px)
+        box-shadow: 4px 4px 0px $secondary-color
+        cursor: pointer
+        background: rgba(0, 240, 255, 0.2)
+    &:active
+        transform: translate(0, 0)
+        box-shadow: none
+
 .formInput
     padding: 0.5rem
     color: white !important

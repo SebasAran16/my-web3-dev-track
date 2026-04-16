@@ -98,6 +98,31 @@ $sides-space: 0 2rem
             transform: translate(0, 0)
             box-shadow: none
 
+.cvButton
+    padding: 1rem
+    border-radius: 0
+    margin-bottom: 10%
+    font-weight: 700
+    text-align: center
+    text-shadow: none
+    width: 60%
+    background: rgba(0, 240, 255, 0.1)
+    border: 2px solid $accent-color
+    color: white
+    font-size: 18px
+    text-transform: uppercase
+    letter-spacing: 0.1em
+    text-decoration: none
+    transition: all 0.2s
+    &:hover
+        transform: translate(-2px, -2px)
+        box-shadow: 4px 4px 0px $secondary-color
+        cursor: pointer
+        background: rgba(0, 240, 255, 0.2)
+    &:active
+        transform: translate(0, 0)
+        box-shadow: none
+
 .hiddenNav
     display: none !important
 
@@ -151,6 +176,7 @@ $sides-space: 0 2rem
     #navBar
         display: flex !important
         flex-direction: row
+        align-items: center
         background: none
         padding: 0
         position: static
@@ -168,6 +194,13 @@ $sides-space: 0 2rem
             border: 1px solid transparent
             &:hover
                 border-color: $secondary-color
+
+    .cvButton
+        width: auto
+        margin: 0 1rem
+        margin-bottom: 0
+        padding: 0.75rem 1rem
+        font-size: 14px
 
     #firstsNav
         margin: 1rem

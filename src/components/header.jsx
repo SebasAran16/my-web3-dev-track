@@ -158,6 +158,14 @@ export default function Header() {
           >
             {t("buttons.contact")}
           </button>
+          <a
+            className={styles.cvButton}
+            href="/cv.pdf"
+            download="Sebastian-Arango-CV.pdf"
+            onClick={closeNav}
+          >
+            {t("buttons.cv")}
+          </a>
         </nav>
       </div>
     </header>
