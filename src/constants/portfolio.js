@@ -71,6 +71,12 @@ export const experiences = [
           "Development of FE, BE & EVM Smart Contracts to integrate both ERC20 and ERC721 airdrop tooling on the platform.",
       },
       {
+        name: "Marketing Hub",
+        href: "https://ethermail.io/marketing-hub",
+        description:
+          "Created, maintained and continuously extended the platform's CRM-like tool end-to-end — a Web3-native dashboard for audience management, segmentation and email campaign orchestration.",
+      },
+      {
         name: "Certik Audit",
         href: "https://skynet.certik.com/projects/ethermail",
         description:
