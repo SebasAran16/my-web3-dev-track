@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/Home.module.sass";
@@ -11,7 +11,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { dates } from "@/constants/dates";
 import { useRouter } from "next/router";
 import HexText from "@/components/HexText";
-import { useLenis } from "@/providers/LenisProvider";
+import { useLenis, useLenisScroll } from "@/providers/LenisProvider";
 import { useParallax } from "@/hooks/useParallax";
 import {
   experiences,
@@ -116,6 +116,41 @@ export default function Home() {
   const aboutRef = useRef(null);
   const lenis = useLenis();
   const picParallaxRef = useParallax({ speed: 0.08 });
+  const nameWrapRef = useRef(null);
+  const burstTimeoutRef = useRef(null);
+
+  useLenisScroll(({ velocity }) => {
+    const el = nameWrapRef.current;
+    if (!el) return;
+    if (Math.abs(velocity) > 35) {
+      el.classList.add(styles.glitchBurst);
+      if (burstTimeoutRef.current) clearTimeout(burstTimeoutRef.current);
+      burstTimeoutRef.current = setTimeout(() => {
+        el.classList.remove(styles.glitchBurst);
+      }, 450);
+    }
+  });
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("[data-section]");
+    if (!sections.length) return undefined;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !entry.target.dataset.swept) {
+            entry.target.dataset.swept = "1";
+            entry.target.classList.add(styles.sectionSwept);
+            setTimeout(() => {
+              entry.target.classList.remove(styles.sectionSwept);
+            }, 1100);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   const scrollTo = (ref) => {
     const target = ref.current;
@@ -143,13 +178,15 @@ export default function Home() {
         <div id={styles.homeContent}>
           <h1>
             {t("home.me.normal")}
-            <HexText
-              as="span"
-              text={t("home.me.highlight")}
-              className={styles.myName}
-              staggerMs={40}
-              threshold={0.1}
-            />
+            <span ref={nameWrapRef} className={styles.myNameWrap}>
+              <HexText
+                as="span"
+                text={t("home.me.highlight")}
+                className={styles.myName}
+                staggerMs={40}
+                threshold={0.1}
+              />
+            </span>
           </h1>
           <h2>
             <HexText
