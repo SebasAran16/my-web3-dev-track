@@ -115,7 +115,7 @@ export default function Home() {
   const router = useRouter();
   const aboutRef = useRef(null);
   const lenis = useLenis();
-  const picParallaxRef = useParallax({ speed: 0.08 });
+  const picParallaxRef = useParallax({ speed: 0.08, minWidth: 992 });
   const nameWrapRef = useRef(null);
   const burstTimeoutRef = useRef(null);
 
