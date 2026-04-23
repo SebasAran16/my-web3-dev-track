@@ -1,7 +1,8 @@
 export const experiences = [
   {
-    key: "ethermail",
+    key: "ethermail-intern",
     name: "EtherMail",
+    role: "Web3 Fullstack Intern Developer",
     image: { src: "/experience/ethermail.png", alt: "EtherMail Logo" },
     tools: [
       { src: "/languagesAndTools/solidity.svg", alt: "Solidity" },
@@ -19,6 +20,62 @@ export const experiences = [
       "The possibility of learning an growing in this company is something that I will always be grateful for.",
       "Being working with an amazing product focusing on the purpose of the underlaying technology is something that I always desired when getting into Blockchain and EtherMail made me feel like that.",
       "The mixture of the constant practice of Web3 and Web2 technology made all of my knowledge settle and build one that I did not have before.",
+    ],
+    projects: [
+      {
+        name: "Smart Contract Monitoring",
+        href: "https://ethermail.io/engagement-booster",
+        description:
+          "Development from scratch of a BE system to monitor Smart Contract data from synced events. DB design and sustainable-code focused.",
+      },
+    ],
+  },
+  {
+    key: "ethermail-senior",
+    name: "EtherMail",
+    role: "Senior Web3 Fullstack Developer",
+    image: { src: "/experience/ethermail.png", alt: "EtherMail Logo" },
+    tools: [
+      { src: "/languagesAndTools/solidity.svg", alt: "Solidity" },
+      { src: "/languagesAndTools/aws.svg", alt: "AWS" },
+      { src: "/languagesAndTools/mongodb.svg", alt: "MongoDB" },
+      { src: "/languagesAndTools/nestjs.svg", alt: "NestJS" },
+      { src: "/languagesAndTools/typescript.svg", alt: "Typescript" },
+      { src: "/languagesAndTools/javascript.svg", alt: "Javascript" },
+      { src: "/languagesAndTools/kotlin.svg", alt: "Kotlin" },
+      { src: "/languagesAndTools/chai.svg", alt: "Chai" },
+      { src: "/languagesAndTools/html.svg", alt: "HTML" },
+      { src: "/languagesAndTools/css.svg", alt: "CSS" },
+    ],
+    description: [
+      "Promoted to lead the Web3 surface of the product: project planning, team management and audit assessment became part of the day-to-day.",
+      "Owning features end-to-end — from smart contract design to production rollout — while helping the team keep a high bar on code quality and security.",
+    ],
+    projects: [
+      {
+        name: "Tx-Ray",
+        href: "https://ethermail.io/eaaw",
+        description:
+          "Scalable system designed to decode transactions on the fly and show them in a user-friendly way through email.",
+      },
+      {
+        name: "EMT Strategy",
+        href: "https://ethermail.io/emt/pools/",
+        description:
+          "Development of the EMT Token together with two strategy contracts for recurring user pools and an investor cliff vesting contract.",
+      },
+      {
+        name: "Email-Airdrops",
+        href: "https://ethermail.io/reward-emails",
+        description:
+          "Development of FE, BE & EVM Smart Contracts to integrate both ERC20 and ERC721 airdrop tooling on the platform.",
+      },
+      {
+        name: "Certik Audit",
+        href: "https://skynet.certik.com/projects/ethermail",
+        description:
+          "Coordinated and assessed the Certik audit of EtherMail's contracts.",
+      },
     ],
   },
   {

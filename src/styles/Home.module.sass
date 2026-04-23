@@ -240,6 +240,41 @@ $card-bg: rgba(20, 20, 30, 0.9)
         transform: scale(1.2)
         filter: brightness(1.2) saturate(1.5) drop-shadow(0 0 4px $accent-color)
 
+.experience .experienceRole
+    color: $secondary-color
+    text-transform: uppercase
+    letter-spacing: 0.15em
+    text-shadow: none
+    font-weight: 700
+    text-align: center
+
+.experience .experienceProjects
+    list-style: none
+    padding: 1rem 0 0 0
+    margin: 1.5rem 0 0 0
+    width: 100%
+    border-top: 1px dashed rgba(0, 240, 255, 0.25)
+    > li
+        margin: 0.75rem 0
+        padding: 0.25rem 0 0.25rem 1rem
+        border-left: 2px solid $secondary-color
+        line-height: 1.6
+        text-align: left
+        > a
+            color: $accent-color
+            text-transform: uppercase
+            letter-spacing: 0.08em
+            font-weight: 700
+            text-decoration: none
+            border-bottom: 1px solid transparent
+            transition: color 0.25s ease, border-bottom-color 0.25s ease, text-shadow 0.25s ease
+        > a:hover
+            color: $acid-color
+            border-bottom-color: $acid-color
+            text-shadow: 0 0 6px $acid-color
+        > span
+            color: #c0c0c0
+
 // Portfolio Section ///
 
 #portfolioSection

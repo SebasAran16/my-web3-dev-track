@@ -207,16 +207,24 @@ export default function Home() {
           />
           <article id={styles.experienceContainer}>
             {experiences.map((exp) => {
+              const endDate = dates[exp.key].end;
               const timeDiff =
-                (dates[exp.key].end || currentDate) - dates[exp.key].start;
-              const timeStr =
-                exp.key === "fiverr"
-                  ? "~" + formatExperienceTime(timeDiff)
-                  : formatExperienceTime(timeDiff);
-              const dateStr = dates[exp.key].start.toLocaleDateString(
+                (endDate || currentDate) - dates[exp.key].start;
+              const durationStr = formatExperienceTime(timeDiff);
+              const startDateStr = dates[exp.key].start.toLocaleDateString(
                 router.locale,
                 { year: "numeric", month: "long", day: "numeric" }
               );
+              const endDateStr = endDate
+                ? endDate.toLocaleDateString(router.locale, {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })
+                : null;
+              const timeText = endDate
+                ? `~${durationStr} · ${startDateStr} → ${endDateStr}`
+                : `${durationStr} - Since: ${startDateStr}`;
 
               return (
                 <div className={styles.experience} key={exp.key}>
@@ -226,6 +234,15 @@ export default function Home() {
                     staggerMs={35}
                     threshold={0.3}
                   />
+                  {exp.role && (
+                    <HexText
+                      as="h5"
+                      text={exp.role}
+                      staggerMs={25}
+                      threshold={0.3}
+                      className={styles.experienceRole}
+                    />
+                  )}
                   <Image
                     src={exp.image.src}
                     alt={exp.image.alt}
@@ -234,11 +251,7 @@ export default function Home() {
                   />
                   <HexText
                     as="h5"
-                    text={
-                      exp.key === "fiverr"
-                        ? timeStr
-                        : `${timeStr} - Since: ${dateStr}`
-                    }
+                    text={timeText}
                     staggerMs={20}
                     threshold={0.3}
                   />
@@ -269,6 +282,20 @@ export default function Home() {
                         </React.Fragment>
                       ))}
                     </p>
+                    {exp.projects && exp.projects.length > 0 && (
+                      <ul className={styles.experienceProjects}>
+                        {exp.projects.map((project) => (
+                          <li key={project.href}>
+                            <Link href={project.href} target="_blank">
+                              {project.name}
+                            </Link>
+                            {project.description && (
+                              <span> — {project.description}</span>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </div>
               );
