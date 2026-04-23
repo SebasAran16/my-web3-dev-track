@@ -11,6 +11,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { dates } from "@/constants/dates";
 import { useRouter } from "next/router";
 import HexText from "@/components/HexText";
+import { useLenis } from "@/providers/LenisProvider";
+import { useParallax } from "@/hooks/useParallax";
 import {
   experiences,
   web3Courses,
@@ -112,9 +114,27 @@ export default function Home() {
   const currentDate = new Date();
   const router = useRouter();
   const aboutRef = useRef(null);
+  const lenis = useLenis();
+  const picParallaxRef = useParallax({ speed: 0.08 });
 
   const scrollTo = (ref) => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
+    const target = ref.current;
+    if (!target) return;
+    if (lenis) {
+      lenis.scrollTo(target, { duration: 1.2 });
+    } else {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToFooter = () => {
+    const footer = document.querySelector("footer");
+    if (!footer) return;
+    if (lenis) {
+      lenis.scrollTo(footer, { duration: 1.2 });
+    } else {
+      footer.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -152,7 +172,7 @@ export default function Home() {
           <button onClick={() => scrollTo(aboutRef)}>
             {t("home.firstButton")}
           </button>
-          <button onClick={() => document.querySelector('footer')?.scrollIntoView({ behavior: 'smooth' })}>
+          <button onClick={scrollToFooter}>
             {t("home.secondButton")}
           </button>
         </div>
@@ -169,13 +189,15 @@ export default function Home() {
             threshold={0.3}
           />
           <div className={styles.picContainer}>
-            <Image
-              id={styles.myPic}
-              src="/my-pic.jpeg"
-              alt="Picture of me"
-              width="200"
-              height="280"
-            />
+            <div ref={picParallaxRef} className={styles.picParallax}>
+              <Image
+                id={styles.myPic}
+                src="/my-pic.jpeg"
+                alt="Picture of me"
+                width="200"
+                height="280"
+              />
+            </div>
           </div>
           <p>
             {t("about.whoIAm.1")}
@@ -206,7 +228,8 @@ export default function Home() {
             threshold={0.3}
           />
           <article id={styles.experienceContainer}>
-            {experiences.map((exp) => {
+            {experiences.map((exp, i, arr) => {
+              const linksToPrev = i > 0 && arr[i - 1].name === exp.name;
               const endDate = dates[exp.key].end;
               const timeDiff =
                 (endDate || currentDate) - dates[exp.key].start;
@@ -227,7 +250,20 @@ export default function Home() {
                 : `${durationStr} - Since: ${startDateStr}`;
 
               return (
-                <div className={styles.experience} key={exp.key}>
+                <React.Fragment key={exp.key}>
+                  {linksToPrev && (
+                    <div
+                      className={styles.experienceLink}
+                      aria-hidden="true"
+                    >
+                      <span className={styles.experienceLinkLine} />
+                      <span className={styles.experienceLinkLabel}>
+                        &gt; PROMOTED
+                      </span>
+                      <span className={styles.experienceLinkLine} />
+                    </div>
+                  )}
+                <div className={styles.experience}>
                   <HexText
                     as="h4"
                     text={exp.name}
@@ -298,6 +334,7 @@ export default function Home() {
                     )}
                   </div>
                 </div>
+                </React.Fragment>
               );
             })}
           </article>

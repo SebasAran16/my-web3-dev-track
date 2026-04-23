@@ -4,10 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import { useLenis } from "@/providers/LenisProvider";
 
 export default function Header() {
   const router = useRouter();
   const { t } = useTranslation("header");
+  const lenis = useLenis();
 
   const toggleNav = () => {
     const nav = document.querySelector(`#${styles.navBar}`);
@@ -24,7 +26,15 @@ export default function Header() {
     const el = id === "contact"
       ? document.querySelector("footer")
       : document.querySelector(`[data-section="${id}"]`);
-    el?.scrollIntoView({ behavior: "smooth" });
+    if (!el) {
+      closeNav();
+      return;
+    }
+    if (lenis) {
+      lenis.scrollTo(el, { offset: 0, duration: 1.2 });
+    } else {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
     closeNav();
   };
 
@@ -98,7 +108,11 @@ export default function Header() {
           onClick={toggleNav}
           priority
         />
-        <nav id={styles.navBar} className={styles.hiddenNav}>
+        <nav
+          id={styles.navBar}
+          className={styles.hiddenNav}
+          data-lenis-prevent
+        >
           <div id={styles.firstsNav}>
             <div id={styles.switcherContainer}>
               <Link

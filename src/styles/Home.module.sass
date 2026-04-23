@@ -240,6 +240,44 @@ $card-bg: rgba(20, 20, 30, 0.9)
         transform: scale(1.2)
         filter: brightness(1.2) saturate(1.5) drop-shadow(0 0 4px $accent-color)
 
+.picParallax
+    display: flex
+    align-items: center
+    justify-content: center
+    will-change: transform
+
+.experienceLink
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: 100%
+    margin: -2rem 0
+    pointer-events: none
+    position: relative
+    z-index: 1
+
+.experienceLinkLine
+    display: block
+    width: 2px
+    height: 1.5rem
+    background: linear-gradient(to bottom, $secondary-color, $accent-color)
+    box-shadow: 2px 0 0 rgba(0, 240, 255, 0.25), -2px 0 0 rgba(255, 45, 123, 0.2)
+
+.experienceLinkLabel
+    font-family: 'Space Mono', monospace
+    font-weight: 700
+    font-size: 0.85rem
+    letter-spacing: 0.3em
+    color: $accent-color
+    padding: 0.4rem 1rem
+    margin: 0
+    background-color: $main-color
+    border: 1px solid $accent-color
+    box-shadow: 3px 3px 0px $secondary-color
+    text-transform: uppercase
+    text-shadow: none
+    white-space: nowrap
+
 .experience .experienceRole
     color: $secondary-color
     text-transform: uppercase
