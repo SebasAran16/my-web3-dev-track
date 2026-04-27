@@ -67,6 +67,37 @@ $display-font: 'Cormorant Garamond', 'Inter', Georgia, serif
         border-color: $accent-hover
         color: $primary-ink
 
+.variantToggle
+    display: inline-flex
+    border: 1px solid $primary-ink
+    background: #ffffff
+    padding: 0
+    overflow: hidden
+
+.variantTab
+    appearance: none
+    background: transparent
+    border: none
+    font-family: $body-font
+    font-weight: 600
+    font-size: 0.78rem
+    letter-spacing: 0.18em
+    text-transform: uppercase
+    color: $primary-ink
+    padding: 0.6rem 1.1rem
+    cursor: pointer
+    transition: all 0.18s ease
+    border-right: 1px solid $rule-light
+    &:last-child
+        border-right: none
+    &:hover
+        color: $accent
+.variantTabActive
+    background: $primary-ink
+    color: $accent
+    &:hover
+        color: $accent
+
 .cvPage
     width: 100%
     max-width: 210mm
