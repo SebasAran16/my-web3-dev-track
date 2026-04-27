@@ -172,13 +172,15 @@ export default function Header() {
           >
             {t("buttons.contact")}
           </button>
-          <Link
-            className={styles.cvButton}
-            href="/cv"
-            onClick={closeNav}
-          >
-            {t("buttons.cv")}
-          </Link>
+          {process.env.NODE_ENV !== "production" && (
+            <Link
+              className={styles.cvButton}
+              href="/cv"
+              onClick={closeNav}
+            >
+              {t("buttons.cv")}
+            </Link>
+          )}
         </nav>
       </div>
     </header>

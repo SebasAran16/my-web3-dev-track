@@ -76,3 +76,10 @@ export default function CVPage() {
 }
 
 CVPage.getLayout = (page) => page;
+
+export async function getStaticProps() {
+  if (process.env.environment === "production") {
+    return { notFound: true };
+  }
+  return { props: {} };
+}
