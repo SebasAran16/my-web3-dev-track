@@ -54,7 +54,7 @@ export default function CVPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
           rel="stylesheet"
         />
       </Head>
@@ -89,7 +89,9 @@ export default function CVPage() {
             <SidebarSection title="Contact Information:">
               <p className={styles.contactItem}>
                 <span className={styles.contactLabel}>E-Mail:</span>
-                <span>{cvData.contact.email}</span>
+                <a href={`mailto:${cvData.contact.email}`}>
+                  {cvData.contact.email}
+                </a>
               </p>
               <p className={styles.contactItem}>
                 <span className={styles.contactLabel}>Location:</span>

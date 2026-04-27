@@ -1,21 +1,25 @@
-// Colors picked to match the original PDF
-$sidebar-bg: #D9E6EC
-$page-bg: #ffffff
-$name-blue: #1C8AC7
-$name-shadow: #0F4F72
-$primary-ink: #1a3a5c
-$heading-ink: #1C8AC7
-$body-ink: #1a3a5c
-$muted-ink: #22456a
-$divider: linear-gradient(90deg, #1C8AC7, #6EC1E4)
-$body-font: 'Open Sans', 'Montserrat', 'Segoe UI', system-ui, sans-serif
-$display-font: 'Montserrat', 'Segoe UI', system-ui, sans-serif
+// Modern professional palette — deep navy sidebar, white main, muted-gold accent
+$sidebar-bg: #1F2D3D
+$sidebar-text: #DDE3EA
+$sidebar-text-strong: #FFFFFF
+$sidebar-muted: #A6B0BC
+$page-bg: #FFFFFF
+$accent: #C9A961
+$accent-hover: #B89651
+$primary-ink: #1F2D3D
+$heading-ink: #1F2D3D
+$body-ink: #2C3849
+$muted-ink: #5C6878
+$rule-light: rgba(31, 45, 61, 0.18)
+$rule-dark: rgba(255, 255, 255, 0.18)
+$body-font: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif
+$display-font: 'Cormorant Garamond', 'Inter', Georgia, serif
 
 .pageBackground
     min-height: 100vh
     width: 100%
-    padding: 2rem 1rem
-    background-color: #e9eef2
+    padding: 2.5rem 1rem
+    background-color: #EDEEF2
     font-family: $body-font
     color: $body-ink
     display: flex
@@ -34,33 +38,34 @@ $display-font: 'Montserrat', 'Segoe UI', system-ui, sans-serif
 .controlBack
     color: $primary-ink
     text-decoration: none
-    font-family: $display-font
-    font-weight: 600
-    font-size: 0.9rem
+    font-family: $body-font
+    font-weight: 500
+    font-size: 0.85rem
     letter-spacing: 0.02em
-    padding: 0.5rem 1rem
+    padding: 0.55rem 1.1rem
     border: 1px solid $primary-ink
-    background: #ffffff
-    transition: all 0.15s ease
+    background: transparent
+    transition: all 0.18s ease
     &:hover
         background: $primary-ink
         color: #ffffff
 
 .controlDownload
-    color: #ffffff
-    background: $name-blue
-    border: 1px solid $name-blue
-    font-family: $display-font
-    font-weight: 700
-    font-size: 0.9rem
-    letter-spacing: 0.05em
+    color: $primary-ink
+    background: $accent
+    border: 1px solid $accent
+    font-family: $body-font
+    font-weight: 600
+    font-size: 0.8rem
+    letter-spacing: 0.12em
     text-transform: uppercase
-    padding: 0.6rem 1.25rem
+    padding: 0.65rem 1.35rem
     cursor: pointer
-    transition: all 0.15s ease
+    transition: all 0.18s ease
     &:hover
-        background: $name-shadow
-        border-color: $name-shadow
+        background: $accent-hover
+        border-color: $accent-hover
+        color: $primary-ink
 
 .cvPage
     width: 100%
@@ -80,10 +85,10 @@ $display-font: 'Montserrat', 'Segoe UI', system-ui, sans-serif
 
 .sidebar
     background: $sidebar-bg
-    padding: 0.9rem 0.8rem
+    padding: 1rem 0.95rem
     font-size: 10.5px
-    line-height: 1.4
-    color: $body-ink
+    line-height: 1.45
+    color: $sidebar-text
     display: flex
     flex-direction: column
     justify-content: space-between
@@ -102,72 +107,88 @@ $display-font: 'Montserrat', 'Segoe UI', system-ui, sans-serif
     object-fit: cover
     width: 120px
     height: 120px
-    border: 3px solid #ffffff
+    border: 2px solid $accent
+    box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.12)
 
 .sidebarSection
     margin-bottom: 0
-    color: $body-ink
+    color: $sidebar-text
 
 .sidebarSection:last-child
     margin-bottom: 0
     margin-top: 0
 
 .sidebarTitle
-    color: $heading-ink
-    font-family: $display-font
-    font-weight: 800
-    font-size: 11.5px
-    letter-spacing: 0.04em
+    color: $sidebar-text-strong
+    font-family: $body-font
+    font-weight: 600
+    font-size: 10.5px
+    letter-spacing: 0.18em
     text-transform: uppercase
-    margin: 0 0 0.25rem 0
-    padding-bottom: 0.1rem
-    text-decoration: underline
-    text-decoration-thickness: 2px
-    text-underline-offset: 2px
+    margin: 0 0 0.45rem 0
+    padding-bottom: 0.45rem
+    border-bottom: 1px solid $rule-dark
+    text-decoration: none
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        left: 0
+        bottom: -1px
+        width: 24px
+        height: 1px
+        background: $accent
 
 .contactItem
-    margin: 0.12rem 0
-    font-size: 10.5px
-    line-height: 1.35
-    word-break: break-word
-    color: #0a1f35
-    > span
-        color: #0a1f35
-        font-weight: 500
-    > span + span
-        display: block
-        color: #0a1f35
-        font-weight: 500
-    a
-        color: #0a1f35 !important
-        font-weight: 500
-        text-decoration: none
-        word-break: break-all
-        &:hover
-            text-decoration: underline
-
-.contactLabel
-    font-weight: 800 !important
-    color: $primary-ink !important
-    margin-right: 0.25rem
-
-.text
     margin: 0.18rem 0
     font-size: 10.5px
-    line-height: 1.4
-    color: $body-ink
+    line-height: 1.45
+    word-break: break-word
+    color: $sidebar-text
+    > span
+        color: $sidebar-text
+        font-weight: 400
+    > span + span
+        display: block
+        color: $sidebar-text
+        font-weight: 400
+    a
+        color: $sidebar-text !important
+        font-weight: 400
+        text-decoration: none
+        word-break: break-all
+        transition: color 0.18s ease
+        &:hover
+            color: $accent !important
+
+.contactLabel
+    font-weight: 600 !important
+    color: $accent !important
+    margin-right: 0.4rem
+    text-transform: uppercase
+    font-size: 9.5px
+    letter-spacing: 0.1em
+
+.text
+    margin: 0.2rem 0
+    font-size: 10.5px
+    line-height: 1.55
+    color: $sidebar-text
+    font-weight: 300
 
 .languages
     list-style: none
     padding: 0
     margin: 0
-    color: $body-ink
+    color: $sidebar-text
     li
-        margin: 0.08rem 0
+        margin: 0.18rem 0
         font-size: 10.5px
-        color: $body-ink
+        color: $sidebar-text
+        font-weight: 400
     strong
-        font-weight: 700
+        font-weight: 600
+        color: $sidebar-text-strong
 
 .softSkills
     list-style: none
@@ -175,14 +196,16 @@ $display-font: 'Montserrat', 'Segoe UI', system-ui, sans-serif
     margin: 0
     display: grid
     grid-template-columns: 1fr 1fr
-    gap: 0.05rem 0.35rem
-    color: $body-ink
+    gap: 0.15rem 0.5rem
+    color: $sidebar-text
     li
         font-size: 10.5px
-        font-style: italic
-        font-weight: 600
-        color: $body-ink
-        line-height: 1.35
+        font-weight: 400
+        color: $sidebar-text
+        line-height: 1.4
+        em
+            font-style: normal
+            color: $sidebar-text
         &:nth-last-child(-n+3)
             grid-column: span 2
 
@@ -190,170 +213,229 @@ $display-font: 'Montserrat', 'Segoe UI', system-ui, sans-serif
 
 .main
     background: $page-bg
-    padding: 0.95rem 1.1rem
-    font-size: 11.5px
+    padding: 0.9rem 1.1rem
+    font-size: 11px
     line-height: 1.45
     color: $body-ink
     display: flex
     flex-direction: column
+    justify-content: space-between
     height: 100%
     min-height: 0
     overflow: hidden
 
 .nameHeader
-    margin-bottom: 0.7rem
+    margin-bottom: 0
     flex-shrink: 0
+    padding-bottom: 0.4rem
+    border-bottom: 1px solid $rule-light
 
 .name
     font-family: $display-font
-    font-weight: 900
-    color: $name-blue
-    font-size: 1.8rem
-    line-height: 1.05
-    letter-spacing: 0.01em
-    text-transform: uppercase
-    text-shadow: 3px 3px 0 $name-shadow, -1px -1px 0 #bce2f5
+    font-weight: 600
+    color: $primary-ink
+    font-size: 2.1rem
+    line-height: 1.0
+    letter-spacing: -0.005em
+    text-transform: none
+    text-shadow: none
     margin: 0
     overflow-wrap: break-word
     > span
         display: inline
-        margin-right: 0.28em
+        margin-right: 0.25em
     > span:last-child
         margin-right: 0
+    > span:first-child
+        color: $accent
+        font-weight: 700
+    > span:nth-child(2),
+    > span:nth-child(3)
+        font-weight: 500
+        color: $muted-ink
 
 .roleTitle
-    font-family: $display-font
-    font-weight: 700
-    font-style: italic
-    color: $name-blue
-    font-size: 0.9rem
-    letter-spacing: 0.12em
-    text-decoration: underline
-    text-decoration-thickness: 2px
-    text-underline-offset: 4px
-    margin: 0.3rem 0 0 0
+    font-family: $body-font
+    font-weight: 500
+    font-style: normal
+    color: $accent
+    font-size: 0.7rem
+    letter-spacing: 0.3em
+    text-decoration: none
+    text-transform: uppercase
+    margin: 0.4rem 0 0 0
 
 .mainSection
-    margin-bottom: 0.6rem
+    margin-bottom: 0
     page-break-inside: avoid
     flex-shrink: 0
 
 .mainSection:last-child
     margin-bottom: 0
-    margin-top: auto
+    margin-top: 0
     flex-shrink: 1
 
 .mainTitle
-    color: $heading-ink
-    font-family: $display-font
-    font-weight: 800
-    font-size: 1.05rem
-    letter-spacing: 0.05em
+    color: $primary-ink
+    font-family: $body-font
+    font-weight: 600
+    font-size: 0.7rem
+    letter-spacing: 0.28em
     text-transform: uppercase
-    margin: 0 0 0.45rem 0
-    text-decoration: underline
-    text-decoration-thickness: 2px
-    text-underline-offset: 3px
-    border-bottom: none
-    position: relative
+    margin: 0 0 0.4rem 0
+    text-decoration: none
+    border-bottom: 1px solid $rule-light
     padding-bottom: 0.3rem
+    position: relative
     &::after
         content: ""
         position: absolute
         left: 0
-        bottom: -2px
-        width: 100%
-        height: 2px
-        background: $divider
+        bottom: -1px
+        width: 32px
+        height: 1px
+        background: $accent
 
 .job
-    margin-bottom: 0.45rem
+    margin-bottom: 0.4rem
     color: $body-ink
     page-break-inside: avoid
 .job:last-child
     margin-bottom: 0
+.job + .job
+    padding-top: 0.45rem
+    margin-top: 0.1rem
+    position: relative
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 36px
+        height: 1px
+        background: $accent
+        opacity: 0.7
 
 .jobHeader
-    font-family: $display-font
+    font-family: $body-font
     font-weight: 700
     color: $primary-ink
     font-size: 0.95rem
     margin: 0
-    line-height: 1.3
+    line-height: 1.35
+    letter-spacing: -0.005em
 
 .jobCompany
+    font-family: $body-font
     font-size: 11.5px
-    color: $muted-ink
-    margin: 0.05rem 0
+    color: $accent
+    margin: 0.1rem 0
+    font-style: normal
+    font-weight: 600
+    letter-spacing: 0.05em
+    text-transform: uppercase
+    em
+        font-style: normal
 
 .jobAbilities
-    margin: 0.2rem 0
-    font-size: 11px
-    line-height: 1.4
+    margin: 0.3rem 0
+    font-size: 11.5px
+    line-height: 1.55
     color: $body-ink
+    font-weight: 400
+    strong
+        color: $primary-ink
+        font-weight: 600
 
 .accomplishmentsLabel
-    margin: 0.2rem 0 0.1rem 0
-    font-size: 11px
-    color: $body-ink
+    margin: 0.3rem 0 0.15rem 0
+    font-size: 10px
+    color: $primary-ink
+    text-transform: uppercase
+    letter-spacing: 0.16em
+    font-weight: 700
+    strong, em
+        font-style: normal
+        font-weight: 700
 
 .accomplishments
-    padding-left: 1.05rem
+    padding-left: 1.15rem
     margin: 0.1rem 0
     color: $body-ink
     li
-        margin: 0.15rem 0
-        font-size: 11px
-        line-height: 1.4
+        margin: 0.25rem 0
+        font-size: 11.5px
+        line-height: 1.55
         color: $body-ink
+        &::marker
+            color: $accent
+            font-weight: 600
+        strong
+            color: $primary-ink
+            font-weight: 600
         a
-            color: $name-blue
+            color: $primary-ink
             text-decoration: none
+            border-bottom: 1px solid $accent
             word-break: break-all
+            transition: color 0.18s ease
             &:hover
-                text-decoration: underline
+                color: $accent
 
 .extraLink
     margin: 0.35rem 0
-    font-size: 11.5px
-    text-decoration: underline
+    font-size: 11px
+    text-decoration: none
     color: $primary-ink
+    font-weight: 500
+    strong
+        font-weight: 500
     a
         color: $primary-ink
+        text-decoration: none
+        border-bottom: 1px solid $accent
+        &:hover
+            color: $accent
 
 .education
     margin-bottom: 0.3rem
 
 .educationInstitution
-    font-family: $display-font
-    font-weight: 700
+    font-family: $body-font
+    font-weight: 600
     color: $primary-ink
-    font-size: 0.88rem
+    font-size: 0.78rem
     margin: 0
     line-height: 1.25
+    letter-spacing: -0.005em
 
 .educationDescription
-    font-size: 11px
-    margin: 0
+    font-size: 10.5px
+    margin: 0.02rem 0 0 0
     color: $muted-ink
     line-height: 1.35
+    em
+        font-style: normal
 
 .course
     margin-bottom: 0.3rem
 
 .courseTitle
-    font-family: $display-font
-    font-weight: 700
+    font-family: $body-font
+    font-weight: 600
     color: $primary-ink
-    font-size: 0.85rem
+    font-size: 0.76rem
     margin: 0
     line-height: 1.25
+    letter-spacing: -0.005em
 
 .courseProvider
-    font-size: 11px
-    margin: 0
+    font-size: 10.5px
+    margin: 0.02rem 0 0 0
     color: $muted-ink
     line-height: 1.35
+    em
+        font-style: normal
 
 // Responsive //
 
@@ -414,9 +496,10 @@ $display-font: 'Montserrat', 'Segoe UI', system-ui, sans-serif
         height: 100%
         -webkit-print-color-adjust: exact
         print-color-adjust: exact
-        color: $body-ink !important
+        background: $sidebar-bg !important
+        color: $sidebar-text !important
         a
-            color: $body-ink !important
+            color: $sidebar-text !important
             text-decoration: none
     .main
         height: 100%
@@ -424,7 +507,5 @@ $display-font: 'Montserrat', 'Segoe UI', system-ui, sans-serif
         -webkit-print-color-adjust: exact
         print-color-adjust: exact
         a
-            color: $body-ink !important
+            color: $primary-ink !important
             text-decoration: none
-        .accomplishments a
-            color: $name-blue !important
