@@ -172,14 +172,13 @@ export default function Header() {
           >
             {t("buttons.contact")}
           </button>
-          <a
+          <Link
             className={styles.cvButton}
-            href="/cv.pdf"
-            download="Sebastian-Arango-CV.pdf"
+            href="/cv"
             onClick={closeNav}
           >
             {t("buttons.cv")}
-          </a>
+          </Link>
         </nav>
       </div>
     </header>
