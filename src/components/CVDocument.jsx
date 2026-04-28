@@ -2,14 +2,6 @@ import React from "react";
 import Image from "next/image";
 import styles from "@/styles/CV.module.sass";
 
-function renderInlineBold(text) {
-  if (!text) return null;
-  const parts = text.split(/\*\*(.+?)\*\*/g);
-  return parts.map((part, i) =>
-    i % 2 === 1 ? <strong key={i}>{part}</strong> : part
-  );
-}
-
 function Paragraph({ children }) {
   return <p className={styles.text}>{children}</p>;
 }
@@ -143,82 +135,60 @@ export default function CVDocument({ data }) {
                   {job.location}. {job.company}
                 </em>
               </p>
-              <p className={styles.jobAbilities}>
-                <strong>Abilities Acquired:</strong>{" "}
-                {renderInlineBold(job.abilities)}
-              </p>
               {job.accomplishments && job.accomplishments.length > 0 && (
-                <>
-                  <p className={styles.accomplishmentsLabel}>
-                    <strong>
-                      <em>Main Accomplishements:</em>
-                    </strong>
-                  </p>
-                  <ol className={styles.accomplishments}>
-                    {job.accomplishments.map((a) => (
-                      <li key={a.name}>
-                        <strong>
-                          {a.name}
-                          {a.url && (
-                            <>
-                              {" ("}
-                              <a
-                                href={a.url}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                {a.url}
-                              </a>
-                              {")"}
-                            </>
-                          )}
-                          :
-                        </strong>{" "}
-                        {a.description}
-                      </li>
-                    ))}
-                  </ol>
-                  {job.extraLink && (
-                    <p className={styles.extraLink}>
+                <ol className={styles.accomplishments}>
+                  {job.accomplishments.map((a) => (
+                    <li key={a.name}>
                       <strong>
-                        {job.extraLink.label}:{" "}
-                        <a
-                          href={job.extraLink.url}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          {job.extraLink.url}
-                        </a>
-                      </strong>
-                    </p>
-                  )}
-                </>
+                        {a.url ? (
+                          <a
+                            href={a.url}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {a.name}
+                          </a>
+                        ) : (
+                          a.name
+                        )}
+                        :
+                      </strong>{" "}
+                      {a.description}
+                    </li>
+                  ))}
+                </ol>
               )}
             </article>
           ))}
         </MainSection>
 
-        <MainSection title="Education:">
-          {data.education.map((edu) => (
-            <div className={styles.education} key={edu.institution}>
-              <p className={styles.educationInstitution}>{edu.institution}</p>
-              <p className={styles.educationDescription}>
-                <em>{edu.description}</em>
-              </p>
-            </div>
-          ))}
-        </MainSection>
+        {data.education && data.education.length > 0 && (
+          <MainSection title="Education:">
+            {data.education.map((edu) => (
+              <div className={styles.education} key={edu.institution}>
+                <p className={styles.educationInstitution}>
+                  {edu.institution}
+                </p>
+                <p className={styles.educationDescription}>
+                  <em>{edu.description}</em>
+                </p>
+              </div>
+            ))}
+          </MainSection>
+        )}
 
-        <MainSection title="Additional Courses:">
-          {data.additionalCourses.map((course) => (
-            <div className={styles.course} key={course.title}>
-              <p className={styles.courseTitle}>{course.title}</p>
-              <p className={styles.courseProvider}>
-                <em>{course.provider}</em>
-              </p>
-            </div>
-          ))}
-        </MainSection>
+        {data.additionalCourses && data.additionalCourses.length > 0 && (
+          <MainSection title="Additional Courses:">
+            {data.additionalCourses.map((course) => (
+              <div className={styles.course} key={course.title}>
+                <p className={styles.courseTitle}>{course.title}</p>
+                <p className={styles.courseProvider}>
+                  <em>{course.provider}</em>
+                </p>
+              </div>
+            ))}
+          </MainSection>
+        )}
       </main>
     </div>
   );

@@ -1,11 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/Home.module.sass";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
+import { Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { dates } from "@/constants/dates";
@@ -57,13 +58,94 @@ function ToolIcon({ src, alt, className }) {
   );
 }
 
+function ProjectSwiper({ projects: items, t }) {
+  return (
+    <Swiper
+      spaceBetween={50}
+      slidesPerView={1}
+      navigation
+      pagination={{ clickable: true }}
+      modules={[Navigation, Pagination]}
+      className={`${styles.swiper} ${styles.projectSwiper}`}
+    >
+      {items.map((project) => (
+        <SwiperSlide className={styles.swiperSlide} key={project.key}>
+          <div className={styles.project}>
+            <div className={styles.projectTitleAndFocus}>
+              <HexText
+                as="h4"
+                text={t(project.titleKey)}
+                staggerMs={30}
+                threshold={0.3}
+              />
+              <HexText
+                as="p"
+                text={t(project.skillKey)}
+                staggerMs={20}
+                threshold={0.3}
+              />
+            </div>
+            <div className={styles.projectImages}>
+              <Image
+                className={styles.projectImage}
+                src={project.image.src}
+                alt={project.image.alt}
+                width="200"
+                height="80"
+              />
+              <div className={styles.toolForProject}>
+                {project.tools.map((tool) => (
+                  <ToolIcon
+                    key={tool.src}
+                    src={tool.src}
+                    alt={tool.alt}
+                    className={styles.projectToolImage}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className={styles.projectContent}>
+              <p>
+                {project.descriptionKeys.map((key, i) => (
+                  <React.Fragment key={key}>
+                    {i > 0 && (
+                      <>
+                        <br />
+                        <br />
+                      </>
+                    )}
+                    {t(key)}
+                  </React.Fragment>
+                ))}
+              </p>
+              <div className={styles.projectButtons}>
+                {project.siteUrl && (
+                  <Link href={project.siteUrl} target="_blank">
+                    <button>{t(project.siteButtonKey)}</button>
+                  </Link>
+                )}
+                {project.codeUrl && (
+                  <Link href={project.codeUrl} target="_blank">
+                    <button>{t(project.codeButtonKey)}</button>
+                  </Link>
+                )}
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
+}
+
 function CourseSwiper({ courses, t }) {
   return (
     <Swiper
       spaceBetween={50}
       slidesPerView={1}
       navigation
-      modules={[Navigation]}
+      pagination={{ clickable: true, dynamicBullets: false }}
+      modules={[Navigation, Pagination]}
       className={styles.swiper}
     >
       {courses.map((course) => {
@@ -109,6 +191,12 @@ function CourseSwiper({ courses, t }) {
   );
 }
 
+const PROJECT_TABS = [
+  { key: "ethermail", labelKey: "portfolio.projectsMade.tabs.ethermail" },
+  { key: "mutantApes", labelKey: "portfolio.projectsMade.tabs.mutantApes" },
+  { key: "personal", labelKey: "portfolio.projectsMade.tabs.personal" },
+];
+
 export default function Home() {
   const { t } = useTranslation("common");
   const currentDate = new Date();
@@ -118,6 +206,11 @@ export default function Home() {
   const picParallaxRef = useParallax({ speed: 0.08, minWidth: 992 });
   const nameWrapRef = useRef(null);
   const burstTimeoutRef = useRef(null);
+  const [projectTab, setProjectTab] = useState("ethermail");
+  const visibleProjects = useMemo(
+    () => projects.filter((p) => p.category === projectTab),
+    [projectTab]
+  );
 
   useLenisScroll(({ velocity }) => {
     const el = nameWrapRef.current;
@@ -401,67 +494,30 @@ export default function Home() {
             staggerMs={35}
             threshold={0.3}
           />
-          {projects.map((project) => (
-            <div className={styles.project} key={project.key}>
-              <div className={styles.projectTitleAndFocus}>
-                <HexText
-                  as="h4"
-                  text={t(project.titleKey)}
-                  staggerMs={30}
-                  threshold={0.3}
-                />
-                <HexText
-                  as="p"
-                  text={t(project.skillKey)}
-                  staggerMs={20}
-                  threshold={0.3}
-                />
-              </div>
-              <div className={styles.projectImages}>
-                <Image
-                  className={styles.projectImage}
-                  src={project.image.src}
-                  alt={project.image.alt}
-                  width="200"
-                  height="80"
-                />
-                <div className={styles.toolForProject}>
-                  {project.tools.map((tool) => (
-                    <ToolIcon
-                      key={tool.src}
-                      src={tool.src}
-                      alt={tool.alt}
-                      className={styles.projectToolImage}
-                    />
-                  ))}
-                </div>
-              </div>
-              <div className={styles.projectContent}>
-                <p>
-                  {project.descriptionKeys.map((key, i) => (
-                    <React.Fragment key={key}>
-                      {i > 0 && (
-                        <>
-                          <br />
-                          <br />
-                        </>
-                      )}
-                      {t(key)}
-                    </React.Fragment>
-                  ))}
-                </p>
-                <div className={styles.projectButtons}>
-                  <Link href={project.siteUrl} target="_blank">
-                    <button>{t(project.siteButtonKey)}</button>
-                  </Link>
-                  <Link href={project.codeUrl} target="_blank">
-                    <button>{t(project.codeButtonKey)}</button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          ))}
-          <h5>{t("portfolio.projectsMade.moreProjects")}</h5>
+          <div className={styles.projectTabs} role="tablist">
+            {PROJECT_TABS.map((tab) => (
+              <button
+                key={tab.key}
+                type="button"
+                role="tab"
+                aria-selected={projectTab === tab.key}
+                onClick={() => setProjectTab(tab.key)}
+                className={`${styles.projectTab} ${
+                  projectTab === tab.key ? styles.projectTabActive : ""
+                }`}
+              >
+                {t(tab.labelKey)}
+              </button>
+            ))}
+          </div>
+          <ProjectSwiper
+            key={projectTab}
+            projects={visibleProjects}
+            t={t}
+          />
+          <h5 className={styles.moreProjectsLine}>
+            {t("portfolio.projectsMade.moreProjects")}
+          </h5>
         </article>
 
         <article id={styles.languagesAndToolsContainer}>

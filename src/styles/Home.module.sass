@@ -360,15 +360,37 @@ $card-bg: rgba(20, 20, 30, 0.9)
 
 .swiper
     width: 90%
-    padding: 1rem 0
+    padding: 1rem 0 2.4rem 0
     text-align: center
     box-shadow: 4px 4px 0px $secondary-color
     border-radius: 0
     background: $card-bg
     border: 1px solid rgba(255, 45, 123, 0.3)
     margin-top: 2rem
+    position: relative
     &:hover
         cursor: grab
+    :global(.swiper-pagination)
+        bottom: 0.6rem
+        position: absolute
+        z-index: 5
+    :global(.swiper-pagination-bullet)
+        width: 10px
+        height: 10px
+        margin: 0 5px !important
+        border-radius: 0
+        background: transparent
+        border: 1.5px solid $secondary-color
+        opacity: 0.85
+        transition: all 0.2s ease
+        &:hover
+            background: rgba(255, 45, 123, 0.35)
+    :global(.swiper-pagination-bullet-active)
+        background: $accent-color
+        border-color: $accent-color
+        box-shadow: 2px 2px 0 $secondary-color
+        opacity: 1
+        transform: rotate(45deg)
 
 .swiperSlide
     display: flex
@@ -406,19 +428,66 @@ $card-bg: rgba(20, 20, 30, 0.9)
     display: flex
     flex-direction: column
     align-items: center
+    padding-bottom: 3rem
     h3
         align-self: flex-start
+
+.moreProjectsLine
+    margin: 2rem 0 2rem 0
+    align-self: center
+    text-align: center
+    color: $secondary-color
+    text-shadow: none
+
+.projectSwiper
+    margin-top: 1.25rem
+
+.projectTabs
+    display: inline-flex
+    align-self: center
+    margin-top: 1.5rem
+    border: 1px solid $secondary-color
+    background: rgba(13, 13, 13, 0.6)
+    padding: 0
+    overflow: hidden
+    box-shadow: 4px 4px 0px $accent-color
+
+.projectTab
+    appearance: none
+    background: transparent
+    border: none
+    font-family: 'Space Mono', monospace
+    font-weight: 700
+    font-size: 0.85rem
+    letter-spacing: 0.18em
+    text-transform: uppercase
+    color: #c0c0c0
+    padding: 0.7rem 1.4rem
+    cursor: pointer
+    transition: color 0.2s ease, background 0.2s ease
+    border-right: 1px solid rgba(255, 45, 123, 0.4)
+    text-shadow: none
+    &:last-child
+        border-right: none
+    &:hover
+        color: $accent-color
+
+.projectTabActive
+    background: $secondary-color
+    color: #0d0d0d
+    &:hover
+        color: #0d0d0d
 
 .project
     width: 94%
     display: flex
     flex-direction: column
     align-items: center
-    box-shadow: 6px 6px 0px $secondary-color
     border-radius: 0
-    background: $card-bg
-    border: 1px solid rgba(255, 45, 123, 0.3)
-    margin: 2rem 0
+    background: transparent
+    border: none
+    box-shadow: none
+    margin: 0
     padding: 5%
     position: relative
     *
@@ -502,9 +571,34 @@ $card-bg: rgba(20, 20, 30, 0.9)
     flex-direction: column
     align-items: center
     margin-bottom: 7%
+    padding: 2.5rem 1rem 3.5rem
+    position: relative
+    overflow: hidden
+    background: linear-gradient(180deg, #0a0a14 0%, #11111e 45%, #0a0a14 100%)
+    border-top: 1px solid rgba(0, 240, 255, 0.25)
+    border-bottom: 1px solid rgba(255, 45, 123, 0.25)
+    box-shadow: inset 0 0 80px rgba(0, 240, 255, 0.04)
     h3
         align-self: flex-start
         margin-bottom: 2rem
+        position: relative
+        z-index: 2
+    &::before
+        content: ""
+        position: absolute
+        inset: 0
+        background-image: radial-gradient(circle at 1px 1px, rgba(0, 240, 255, 0.18) 1px, transparent 0)
+        background-size: 28px 28px
+        pointer-events: none
+        opacity: 0.45
+        z-index: 0
+    &::after
+        content: ""
+        position: absolute
+        inset: 0
+        background: repeating-linear-gradient(0deg, transparent 0%, transparent 3px, rgba(0, 240, 255, 0.025) 3px, rgba(0, 240, 255, 0.025) 4px), radial-gradient(ellipse at 20% 0%, rgba(255, 45, 123, 0.07), transparent 60%), radial-gradient(ellipse at 80% 100%, rgba(0, 240, 255, 0.07), transparent 60%)
+        pointer-events: none
+        z-index: 0
 
 #languagesContainer
     display: flex
@@ -512,16 +606,27 @@ $card-bg: rgba(20, 20, 30, 0.9)
     width: 100%
     align-items: center
     justify-content: center
+    position: relative
+    z-index: 2
 
 .codeLanguage
     width: 50px
+    height: 50px
+    object-fit: contain
+    box-sizing: content-box
     border-radius: 0
-    margin: 3% 5%
-    transition: all 0.3s
-    filter: grayscale(50%) brightness(0.9)
+    margin: 0.7rem
+    padding: 0.7rem
+    background: #f4f6fa
+    border: 1px solid rgba(0, 240, 255, 0.4)
+    box-shadow: 3px 3px 0 rgba(255, 45, 123, 0.5)
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease
+    filter: none
     &:hover
-        transform: scale(1.15)
-        filter: grayscale(0%) brightness(1.2) drop-shadow(0 0 6px $accent-color)
+        transform: translate(-3px, -3px)
+        box-shadow: 6px 6px 0 $secondary-color
+        border-color: $accent-color
+        background: #ffffff
 
 // Section entrance scan-line sweep //
 
@@ -602,7 +707,10 @@ $card-bg: rgba(20, 20, 30, 0.9)
             align-self: center
 
     .codeLanguage
-        transform: scale(1.5)
+        width: 70px
+        height: 70px
+        padding: 0.85rem
+        margin: 1rem
 
     // Projects //
 
@@ -711,7 +819,10 @@ $card-bg: rgba(20, 20, 30, 0.9)
     // Languages //
 
     .codeLanguage
-        transform: scale(1.7)
+        width: 84px
+        height: 84px
+        padding: 1rem
+        margin: 1.1rem
 
 @media screen and (min-width: 1200px)
     #aboutSection

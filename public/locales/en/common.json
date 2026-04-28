@@ -61,10 +61,73 @@
       "freecode": {
         "title": "JavaScript Basics",
         "description": "First course I did when I started my journey for a Web3 Fullstack Dev, it was clear, helped me get and remember how the logic of programming works and some of the basic JavaScript functionalities, but as I had no background or guidance, I did not get it's potential and went to learn Solidity."
+      },
+      "sql": {
+        "title": "Databases for Developers: Foundations",
+        "description": "Oracle Dev Gym course covering the foundations of SQL — querying, joining, filtering, grouping and modifying relational data, plus the basics of schema design. Finished with a 95% grade."
       }
     },
     "projectsMade": {
       "title": "Projects Made:",
+      "tabs": {
+        "ethermail": "EtherMail",
+        "mutantApes": "Mutant Apes",
+        "personal": "Personal"
+      },
+      "openclaw": {
+        "title": "OpenClaw AI Skill — EtherMail",
+        "skill": "AI / DevOps Tooling",
+        "description": {
+          "1": "Built an OpenClaw skill that gives AI agents full visibility into how EtherMail's services run locally and on remote servers via Docker.",
+          "2": "Used for automated debugging and operational insight — agents can now reason about the platform's runtime without manual context."
+        },
+        "siteButton": "Open Skill"
+      },
+      "marketingHub": {
+        "title": "Marketing Hub — EtherMail",
+        "skill": "Fullstack Web3 / CRM",
+        "description": {
+          "1": "Created, maintained and continuously extended a CRM-like marketing tool end-to-end — a Web3-native dashboard for audience management, segmentation and email campaign orchestration.",
+          "2": "Vue, Nuxt and Nest across the stack, processing large data volumes through Redis, MySQL and MongoDB."
+        },
+        "siteButton": "Visit Site"
+      },
+      "emailAirdrops": {
+        "title": "Email-Airdrops — EtherMail",
+        "skill": "Smart Contracts / Fullstack",
+        "description": {
+          "1": "Development of FE, BE & EVM Smart Contracts to send ERC20 and ERC721 tokens via email.",
+          "2": "Full integration into the platform, allowing campaigns to deliver token rewards directly to inboxes."
+        },
+        "siteButton": "Visit Site"
+      },
+      "emtStrategy": {
+        "title": "EMT Strategy — EtherMail",
+        "skill": "Smart Contracts / DeFi",
+        "description": {
+          "1": "Development of the EMT Token together with two strategy contracts: a recurring user pool and an investor cliff vesting contract.",
+          "2": "End-to-end test coverage with Chai and audited rollouts to mainnet."
+        },
+        "siteButton": "Visit Pools"
+      },
+      "txRay": {
+        "title": "Tx-Ray — EtherMail",
+        "skill": "Backend / Web3 / Email",
+        "description": {
+          "1": "Scalable backend service that decodes EVM transactions on the fly and presents them in a user-friendly way through email.",
+          "2": "Built end-to-end across BE and FE to make on-chain activity readable for non-technical users."
+        },
+        "siteButton": "Visit Site"
+      },
+      "smartContractMonitoring": {
+        "title": "Smart Contract Monitoring — EtherMail",
+        "skill": "Backend / Data",
+        "description": {
+          "1": "Designed and implemented from scratch a backend system to ingest and monitor on-chain Smart Contract events in real time.",
+          "2": "Schema design and sustainable-code focus to support long-term observability and analytics."
+        },
+        "siteButton": "Visit Site"
+      },
       "defiContribute": {
         "title": "DefiContribute Protocol (MVP)",
         "skill": "Web3 Fullstack",

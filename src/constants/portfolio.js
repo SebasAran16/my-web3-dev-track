@@ -117,6 +117,13 @@ export const web3Courses = [
     ],
   },
   {
+    key: "az",
+    href: "https://www.udemy.com/course/solidity-a-z/",
+    titleKey: "portfolio.web3.az.title",
+    descriptionKey: "portfolio.web3.az.description",
+    images: [{ src: "/teachers/udemy.png", alt: "Udemy Logo" }],
+  },
+  {
     key: "ethernaut",
     href: "https://ethernaut.openzeppelin.com/",
     titleKey: "portfolio.web3.ethernaut.title",
@@ -130,16 +137,16 @@ export const web3Courses = [
     descriptionKey: "portfolio.web3.ethernaut.description",
     images: [{ src: "/teachers/cryptozombies.png", alt: "Cryptozombies Logo" }],
   },
-  {
-    key: "az",
-    href: "https://www.udemy.com/course/solidity-a-z/",
-    titleKey: "portfolio.web3.az.title",
-    descriptionKey: "portfolio.web3.az.description",
-    images: [{ src: "/teachers/udemy.png", alt: "Udemy Logo" }],
-  },
 ];
 
 export const web2Courses = [
+  {
+    key: "sql",
+    href: "/certificates/sql-foundations.pdf",
+    titleKey: "portfolio.web2.sql.title",
+    descriptionKey: "portfolio.web2.sql.description",
+    images: [{ src: "/teachers/oracle-dev-gym.svg", alt: "Oracle Dev Gym Logo" }],
+  },
   {
     key: "nextjs",
     href: "https://www.youtube.com/watch?v=KjY94sAKLlw",
@@ -181,21 +188,151 @@ export const web2Courses = [
   },
 ];
 
+const ethermailImage = {
+  src: "/experience/ethermail.png",
+  alt: "EtherMail",
+};
+
 export const projects = [
   {
-    key: "defiContribute",
-    titleKey: "portfolio.projectsMade.defiContribute.title",
-    skillKey: "portfolio.projectsMade.defiContribute.skill",
+    key: "openclaw",
+    category: "ethermail",
+    titleKey: "portfolio.projectsMade.openclaw.title",
+    skillKey: "portfolio.projectsMade.openclaw.skill",
     descriptionKeys: [
-      "portfolio.projectsMade.defiContribute.description.1",
-      "portfolio.projectsMade.defiContribute.description.2",
+      "portfolio.projectsMade.openclaw.description.1",
+      "portfolio.projectsMade.openclaw.description.2",
     ],
-    siteButtonKey: "portfolio.projectsMade.defiContribute.siteButton",
-    codeButtonKey: "portfolio.projectsMade.defiContribute.codeButton",
-    siteUrl: "https://defi-contribute.vercel.app/",
+    siteButtonKey: "portfolio.projectsMade.openclaw.siteButton",
+    siteUrl: "https://clawhub.ai/ethersuite/moltmail-ethermail",
+    codeUrl: null,
+    image: ethermailImage,
+    tools: [
+      { src: "/languagesAndTools/aws.svg", alt: "AWS" },
+      { src: "/languagesAndTools/typescript.svg", alt: "Typescript" },
+      { src: "/languagesAndTools/javascript.svg", alt: "Javascript" },
+    ],
+  },
+  {
+    key: "marketingHub",
+    category: "ethermail",
+    titleKey: "portfolio.projectsMade.marketingHub.title",
+    skillKey: "portfolio.projectsMade.marketingHub.skill",
+    descriptionKeys: [
+      "portfolio.projectsMade.marketingHub.description.1",
+      "portfolio.projectsMade.marketingHub.description.2",
+    ],
+    siteButtonKey: "portfolio.projectsMade.marketingHub.siteButton",
+    siteUrl: "https://ethermail.io/marketing-hub",
+    codeUrl: null,
+    image: ethermailImage,
+    tools: [
+      { src: "/languagesAndTools/nestjs.svg", alt: "NestJS" },
+      { src: "/languagesAndTools/mongodb.svg", alt: "MongoDB" },
+      { src: "/languagesAndTools/typescript.svg", alt: "Typescript" },
+      { src: "/languagesAndTools/javascript.svg", alt: "Javascript" },
+      { src: "/languagesAndTools/html.svg", alt: "HTML" },
+      { src: "/languagesAndTools/css.svg", alt: "CSS" },
+    ],
+  },
+  {
+    key: "emailAirdrops",
+    category: "ethermail",
+    titleKey: "portfolio.projectsMade.emailAirdrops.title",
+    skillKey: "portfolio.projectsMade.emailAirdrops.skill",
+    descriptionKeys: [
+      "portfolio.projectsMade.emailAirdrops.description.1",
+      "portfolio.projectsMade.emailAirdrops.description.2",
+    ],
+    siteButtonKey: "portfolio.projectsMade.emailAirdrops.siteButton",
+    siteUrl: "https://ethermail.io/reward-emails",
+    codeUrl: null,
+    image: ethermailImage,
+    tools: [
+      { src: "/languagesAndTools/solidity.svg", alt: "Solidity" },
+      { src: "/languagesAndTools/nestjs.svg", alt: "NestJS" },
+      { src: "/languagesAndTools/mongodb.svg", alt: "MongoDB" },
+      { src: "/languagesAndTools/typescript.svg", alt: "Typescript" },
+      { src: "/languagesAndTools/javascript.svg", alt: "Javascript" },
+    ],
+  },
+  {
+    key: "emtStrategy",
+    category: "ethermail",
+    titleKey: "portfolio.projectsMade.emtStrategy.title",
+    skillKey: "portfolio.projectsMade.emtStrategy.skill",
+    descriptionKeys: [
+      "portfolio.projectsMade.emtStrategy.description.1",
+      "portfolio.projectsMade.emtStrategy.description.2",
+    ],
+    siteButtonKey: "portfolio.projectsMade.emtStrategy.siteButton",
+    siteUrl: "https://ethermail.io/emt/pools/",
+    codeUrl: null,
+    image: ethermailImage,
+    tools: [
+      { src: "/languagesAndTools/solidity.svg", alt: "Solidity" },
+      { src: "/languagesAndTools/javascript.svg", alt: "Javascript" },
+      { src: "/languagesAndTools/chai.svg", alt: "Chai" },
+    ],
+  },
+  {
+    key: "txRay",
+    category: "ethermail",
+    titleKey: "portfolio.projectsMade.txRay.title",
+    skillKey: "portfolio.projectsMade.txRay.skill",
+    descriptionKeys: [
+      "portfolio.projectsMade.txRay.description.1",
+      "portfolio.projectsMade.txRay.description.2",
+    ],
+    siteButtonKey: "portfolio.projectsMade.txRay.siteButton",
+    siteUrl: "https://ethermail.io/eaaw",
+    codeUrl: null,
+    image: ethermailImage,
+    tools: [
+      { src: "/languagesAndTools/nestjs.svg", alt: "NestJS" },
+      { src: "/languagesAndTools/mongodb.svg", alt: "MongoDB" },
+      { src: "/languagesAndTools/typescript.svg", alt: "Typescript" },
+      { src: "/languagesAndTools/javascript.svg", alt: "Javascript" },
+    ],
+  },
+  {
+    key: "smartContractMonitoring",
+    category: "ethermail",
+    titleKey: "portfolio.projectsMade.smartContractMonitoring.title",
+    skillKey: "portfolio.projectsMade.smartContractMonitoring.skill",
+    descriptionKeys: [
+      "portfolio.projectsMade.smartContractMonitoring.description.1",
+      "portfolio.projectsMade.smartContractMonitoring.description.2",
+    ],
+    siteButtonKey: "portfolio.projectsMade.smartContractMonitoring.siteButton",
+    siteUrl: "https://ethermail.io/engagement-booster",
+    codeUrl: null,
+    image: ethermailImage,
+    tools: [
+      { src: "/languagesAndTools/solidity.svg", alt: "Solidity" },
+      { src: "/languagesAndTools/nestjs.svg", alt: "NestJS" },
+      { src: "/languagesAndTools/mongodb.svg", alt: "MongoDB" },
+      { src: "/languagesAndTools/typescript.svg", alt: "Typescript" },
+    ],
+  },
+  {
+    key: "nftMarketplace",
+    category: "personal",
+    titleKey: "portfolio.projectsMade.nftMarketplace.title",
+    skillKey: "portfolio.projectsMade.nftMarketplace.skill",
+    descriptionKeys: [
+      "portfolio.projectsMade.nftMarketplace.description.1",
+      "portfolio.projectsMade.nftMarketplace.description.2",
+    ],
+    siteButtonKey: "portfolio.projectsMade.nftMarketplace.siteButton",
+    codeButtonKey: "portfolio.projectsMade.nftMarketplace.codeButton",
+    siteUrl: "https://nextjs-nft-marketplace-fcc-three.vercel.app/",
     codeUrl:
-      "https://github.com/SebasAran16/hardhat-defi-contribute",
-    image: { src: "/projects/defi-home.png", alt: "DefiContribute Home Page" },
+      "https://github.com/SebasAran16/hardhat-nft-marketplace-fcc",
+    image: {
+      src: "/projects/nft-marketplace.png",
+      alt: "NFT Marketplace Home Page",
+    },
     tools: [
       { src: "/languagesAndTools/solidity.svg", alt: "Solidity" },
       { src: "/languagesAndTools/nextjs.svg", alt: "NextJs" },
@@ -207,6 +344,7 @@ export const projects = [
   },
   {
     key: "mutantBeers",
+    category: "mutantApes",
     titleKey: "portfolio.projectsMade.mutantBeers.title",
     skillKey: "portfolio.projectsMade.mutantBeers.skill",
     descriptionKeys: [
@@ -228,22 +366,20 @@ export const projects = [
     ],
   },
   {
-    key: "nftMarketplace",
-    titleKey: "portfolio.projectsMade.nftMarketplace.title",
-    skillKey: "portfolio.projectsMade.nftMarketplace.skill",
+    key: "defiContribute",
+    category: "personal",
+    titleKey: "portfolio.projectsMade.defiContribute.title",
+    skillKey: "portfolio.projectsMade.defiContribute.skill",
     descriptionKeys: [
-      "portfolio.projectsMade.nftMarketplace.description.1",
-      "portfolio.projectsMade.nftMarketplace.description.2",
+      "portfolio.projectsMade.defiContribute.description.1",
+      "portfolio.projectsMade.defiContribute.description.2",
     ],
-    siteButtonKey: "portfolio.projectsMade.nftMarketplace.siteButton",
-    codeButtonKey: "portfolio.projectsMade.nftMarketplace.codeButton",
-    siteUrl: "https://nextjs-nft-marketplace-fcc-three.vercel.app/",
+    siteButtonKey: "portfolio.projectsMade.defiContribute.siteButton",
+    codeButtonKey: "portfolio.projectsMade.defiContribute.codeButton",
+    siteUrl: "https://defi-contribute.vercel.app/",
     codeUrl:
-      "https://github.com/SebasAran16/hardhat-nft-marketplace-fcc",
-    image: {
-      src: "/projects/nft-marketplace.png",
-      alt: "NFT Marketplace Home Page",
-    },
+      "https://github.com/SebasAran16/hardhat-defi-contribute",
+    image: { src: "/projects/defi-home.png", alt: "DefiContribute Home Page" },
     tools: [
       { src: "/languagesAndTools/solidity.svg", alt: "Solidity" },
       { src: "/languagesAndTools/nextjs.svg", alt: "NextJs" },

@@ -61,10 +61,73 @@
       "freecode": {
         "title": "JavaScript Básico",
         "description": "El primer curso que hice cuando comencé mi camino para convertirme en un desarrollador Web3 Fullstack. Fue claro y me ayudó a comprender y recordar cómo funciona la lógica de programación y algunas de las funcionalidades básicas de JavaScript. Sin embargo, como no tenía experiencia previa ni orientación, no comprendí todo su potencial y decidí aprender Solidity."
+      },
+      "sql": {
+        "title": "Databases for Developers: Foundations",
+        "description": "Curso de Oracle Dev Gym sobre los fundamentos de SQL — consultas, joins, filtrado, agrupaciones y modificación de datos relacionales, además de las bases del diseño de esquemas. Finalizado con una nota del 95%."
       }
     },
     "projectsMade": {
       "title": "Proyectos Hechos:",
+      "tabs": {
+        "ethermail": "EtherMail",
+        "mutantApes": "Mutant Apes",
+        "personal": "Personales"
+      },
+      "openclaw": {
+        "title": "OpenClaw AI Skill — EtherMail",
+        "skill": "AI / Herramientas DevOps",
+        "description": {
+          "1": "Creé una skill de OpenClaw que da a los agentes de IA visibilidad completa sobre cómo funcionan los servicios de EtherMail tanto en local como en servidores remotos mediante Docker.",
+          "2": "Se usa para debugging automático y observabilidad — los agentes ahora pueden razonar sobre el runtime de la plataforma sin contexto manual."
+        },
+        "siteButton": "Ver Skill"
+      },
+      "marketingHub": {
+        "title": "Marketing Hub — EtherMail",
+        "skill": "Fullstack Web3 / CRM",
+        "description": {
+          "1": "Creé, mantuve y extendí continuamente una herramienta de marketing tipo CRM end-to-end — un dashboard Web3-native para gestión de audiencias, segmentación y orquestación de campañas de email.",
+          "2": "Vue, Nuxt y Nest en todo el stack, procesando grandes volúmenes de datos con Redis, MySQL y MongoDB."
+        },
+        "siteButton": "Ver sitio"
+      },
+      "emailAirdrops": {
+        "title": "Email-Airdrops — EtherMail",
+        "skill": "Smart Contracts / Fullstack",
+        "description": {
+          "1": "Desarrollo de FE, BE y Smart Contracts EVM para enviar tokens ERC20 y ERC721 por email.",
+          "2": "Integración completa en la plataforma, permitiendo a las campañas entregar recompensas en tokens directamente al inbox."
+        },
+        "siteButton": "Ver sitio"
+      },
+      "emtStrategy": {
+        "title": "EMT Strategy — EtherMail",
+        "skill": "Smart Contracts / DeFi",
+        "description": {
+          "1": "Desarrollo del token EMT junto a dos contratos de estrategia: un pool recurrente para usuarios y un contrato de vesting con cliff para inversores.",
+          "2": "Cobertura completa de tests con Chai y despliegues auditados a mainnet."
+        },
+        "siteButton": "Ver Pools"
+      },
+      "txRay": {
+        "title": "Tx-Ray — EtherMail",
+        "skill": "Backend / Web3 / Email",
+        "description": {
+          "1": "Servicio backend escalable que decodifica transacciones EVM al vuelo y las presenta de forma amigable por email.",
+          "2": "Construido end-to-end en BE y FE para que la actividad on-chain sea legible para usuarios no técnicos."
+        },
+        "siteButton": "Ver sitio"
+      },
+      "smartContractMonitoring": {
+        "title": "Smart Contract Monitoring — EtherMail",
+        "skill": "Backend / Datos",
+        "description": {
+          "1": "Diseñé e implementé desde cero un sistema backend para ingerir y monitorizar eventos de Smart Contracts on-chain en tiempo real.",
+          "2": "Diseño de esquema y código sostenible para soportar observabilidad y analítica a largo plazo."
+        },
+        "siteButton": "Ver sitio"
+      },
       "defiContribute": {
         "title": "Protocolo Defi Contribute (MVP)",
         "skill": "Web3 Fullstack",
