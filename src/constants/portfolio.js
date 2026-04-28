@@ -188,11 +188,6 @@ export const web2Courses = [
   },
 ];
 
-const ethermailImage = {
-  src: "/experience/ethermail.png",
-  alt: "EtherMail",
-};
-
 export const projects = [
   {
     key: "openclaw",
@@ -206,7 +201,10 @@ export const projects = [
     siteButtonKey: "portfolio.projectsMade.openclaw.siteButton",
     siteUrl: "https://clawhub.ai/ethersuite/moltmail-ethermail",
     codeUrl: null,
-    image: ethermailImage,
+    image: {
+      src: "/projects/ethermail/openclaw.png",
+      alt: "OpenClaw EtherMail Skill",
+    },
     tools: [
       { src: "/languagesAndTools/aws.svg", alt: "AWS" },
       { src: "/languagesAndTools/typescript.svg", alt: "Typescript" },
@@ -225,7 +223,10 @@ export const projects = [
     siteButtonKey: "portfolio.projectsMade.marketingHub.siteButton",
     siteUrl: "https://ethermail.io/marketing-hub",
     codeUrl: null,
-    image: ethermailImage,
+    image: {
+      src: "/projects/ethermail/marketing-hub.png",
+      alt: "EtherMail Marketing Hub",
+    },
     tools: [
       { src: "/languagesAndTools/nestjs.svg", alt: "NestJS" },
       { src: "/languagesAndTools/mongodb.svg", alt: "MongoDB" },
@@ -247,7 +248,10 @@ export const projects = [
     siteButtonKey: "portfolio.projectsMade.emailAirdrops.siteButton",
     siteUrl: "https://ethermail.io/reward-emails",
     codeUrl: null,
-    image: ethermailImage,
+    image: {
+      src: "/projects/ethermail/email-airdrops.png",
+      alt: "EtherMail Reward Emails / Airdrops",
+    },
     tools: [
       { src: "/languagesAndTools/solidity.svg", alt: "Solidity" },
       { src: "/languagesAndTools/nestjs.svg", alt: "NestJS" },
@@ -268,7 +272,10 @@ export const projects = [
     siteButtonKey: "portfolio.projectsMade.emtStrategy.siteButton",
     siteUrl: "https://ethermail.io/emt/pools/",
     codeUrl: null,
-    image: ethermailImage,
+    image: {
+      src: "/projects/ethermail/emt-strategy.png",
+      alt: "EMT Strategy Pools",
+    },
     tools: [
       { src: "/languagesAndTools/solidity.svg", alt: "Solidity" },
       { src: "/languagesAndTools/javascript.svg", alt: "Javascript" },
@@ -287,7 +294,10 @@ export const projects = [
     siteButtonKey: "portfolio.projectsMade.txRay.siteButton",
     siteUrl: "https://ethermail.io/eaaw",
     codeUrl: null,
-    image: ethermailImage,
+    image: {
+      src: "/projects/ethermail/tx-ray.png",
+      alt: "EtherMail Tx-Ray",
+    },
     tools: [
       { src: "/languagesAndTools/nestjs.svg", alt: "NestJS" },
       { src: "/languagesAndTools/mongodb.svg", alt: "MongoDB" },
@@ -307,7 +317,10 @@ export const projects = [
     siteButtonKey: "portfolio.projectsMade.smartContractMonitoring.siteButton",
     siteUrl: "https://ethermail.io/engagement-booster",
     codeUrl: null,
-    image: ethermailImage,
+    image: {
+      src: "/projects/ethermail/smart-contract-monitoring.png",
+      alt: "Smart Contract Monitoring",
+    },
     tools: [
       { src: "/languagesAndTools/solidity.svg", alt: "Solidity" },
       { src: "/languagesAndTools/nestjs.svg", alt: "NestJS" },

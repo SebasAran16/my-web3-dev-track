@@ -90,8 +90,8 @@ function ProjectSwiper({ projects: items, t }) {
                 className={styles.projectImage}
                 src={project.image.src}
                 alt={project.image.alt}
-                width="200"
-                height="80"
+                width={640}
+                height={360}
               />
               <div className={styles.toolForProject}>
                 {project.tools.map((tool) => (
@@ -470,23 +470,6 @@ export default function Home() {
           </article>
         </article>
 
-        <article id={styles.coursesContainer}>
-          <HexText
-            as="h3"
-            text={t("portfolio.web3.title")}
-            staggerMs={40}
-            threshold={0.3}
-          />
-          <CourseSwiper courses={web3Courses} t={t} />
-          <HexText
-            as="h3"
-            text={t("portfolio.web2.title")}
-            staggerMs={40}
-            threshold={0.3}
-          />
-          <CourseSwiper courses={web2Courses} t={t} />
-        </article>
-
         <article id={styles.projectsMade}>
           <HexText
             as="h3"
@@ -518,6 +501,23 @@ export default function Home() {
           <h5 className={styles.moreProjectsLine}>
             {t("portfolio.projectsMade.moreProjects")}
           </h5>
+        </article>
+
+        <article id={styles.coursesContainer}>
+          <HexText
+            as="h3"
+            text={t("portfolio.web3.title")}
+            staggerMs={40}
+            threshold={0.3}
+          />
+          <CourseSwiper courses={web3Courses} t={t} />
+          <HexText
+            as="h3"
+            text={t("portfolio.web2.title")}
+            staggerMs={40}
+            threshold={0.3}
+          />
+          <CourseSwiper courses={web2Courses} t={t} />
         </article>
 
         <article id={styles.languagesAndToolsContainer}>
