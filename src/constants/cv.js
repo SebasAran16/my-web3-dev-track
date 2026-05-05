@@ -81,6 +81,18 @@ export const cvWeb3Data = {
           description:
             "Built an OpenClaw skill that gives AI agents full visibility into how EtherMail's services run locally and on remote servers via Docker — used for automated debugging and operational insight.",
         },
+        {
+          name: "Lean Wallet",
+          url: null,
+          description:
+            "Built end-to-end a standalone Web3 wallet dApp with MetaMask-style UX, chain switching, transaction-rejection flows and EtherMail wallet-provider integration — used as the embeddable wallet across partner products.",
+        },
+        {
+          name: "Email Infrastructure Security",
+          url: null,
+          description:
+            "Hardened the inbound and outbound MTA layer with JWT spoofing prevention, SPF revert logic and multi-domain (moltmail) support — locking down mail at the protocol level for the platform's users.",
+        },
       ],
     },
     {
@@ -106,6 +118,24 @@ export const cvWeb3Data = {
           url: "https://ethermail.io/reward-emails",
           description:
             "Development of FE, BE & EVM Smart Contracts to send ERC20 and ERC721 tokens via email — full integration into the platform's product surface.",
+        },
+        {
+          name: "Token Staking Contract",
+          url: null,
+          description:
+            "Strategized and owned a multi-tenant staking system from scratch — Solidity contracts built on top of OpenZeppelin with deposit/withdrawal flows, min/max constraints, multi-tenant isolation and Foundry invariant tests for formal verification.",
+        },
+        {
+          name: "EtherMail Wallet Provider",
+          url: null,
+          description:
+            "Built and maintained a published Wagmi + viem connector library with EIP-1559 support, MetaMask-style UX, chain switching and provider error recovery — used by every partner integrating EtherMail wallets.",
+        },
+        {
+          name: "Login & Subscribe Widgets",
+          url: null,
+          description:
+            "Built iframe-embeddable login (mobile autologin, visibility controls) and subscribe widgets (Web3 ID conditional logic) — drop-in components partners install in minutes.",
         },
       ],
     },
@@ -207,6 +237,24 @@ export const cvFullstackData = {
           description:
             "Built an OpenClaw skill that gives AI agents full visibility into how the platform's services run locally and on remote servers via Docker — used for automated debugging and operational insight.",
         },
+        {
+          name: "Email Server Infrastructure",
+          url: null,
+          description:
+            "Owned the inbound and outbound MTA pipeline at scale — multi-domain SMTP, quota plugins for per-user rate limiting, JWT/SPF spoofing prevention, Docker-orchestrated deployment on AWS.",
+        },
+        {
+          name: "High-Throughput Email Blast Engine",
+          url: null,
+          description:
+            "Refactored the email blast algorithm to batch-process recipients, parallelize the automation pipeline and surface progress feedback — serves millions of messages with versioned statistics and reliable recipient calculation.",
+        },
+        {
+          name: "Dapplets Integration Framework",
+          url: null,
+          description:
+            "Designed and shipped a dapplets (integrations) system in the EMS API with multi-filter queries, configurable applet limits and TypeScript migrations — enables third-party integrations into the product surface.",
+        },
       ],
     },
     {
@@ -219,13 +267,31 @@ export const cvFullstackData = {
           name: "Email Marketing Suite",
           url: "https://ethermail.io/marketing-hub",
           description:
-            "Built an Email Marketing solution from scratch and continuously extended it with a full suite of features — audience segmenting, lists management and campaign orchestration. Vue, Nuxt and Nest across the stack.",
+            "Built an Email Marketing solution and continuously extended it with a full suite of features — audience segmenting, lists management and campaign orchestration. Vue, Nuxt and Nest across the stack.",
         },
         {
           name: "Email Infrastructure",
           url: null,
           description:
             "Managed email servers processing millions of messages with Docker, IMAP and SMTP on AWS — load balancing, monitoring and redundancy across the fleet.",
+        },
+        {
+          name: "EtherMail Wallet Provider",
+          url: null,
+          description:
+            "Built and maintained a published Wagmi + viem connector library with EIP-1559 support, MetaMask-style UX, chain switching and provider error recovery — used by every partner integrating EtherMail wallets.",
+        },
+        {
+          name: "Login & Subscribe Widgets",
+          url: null,
+          description:
+            "Built iframe-embeddable login (mobile autologin, visibility controls) and subscribe widgets (Web3 ID conditional logic) — drop-in components partners install in minutes.",
+        },
+        {
+          name: "Multi-tenant Staking Platform",
+          url: null,
+          description:
+            "Built end-to-end — Solidity contracts on top of OpenZeppelin with formal Foundry invariants, Nest backend with tenant isolation and Vue/Nuxt UX showing live balances.",
         },
       ],
     },
