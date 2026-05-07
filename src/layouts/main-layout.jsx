@@ -18,7 +18,9 @@ export default function MainLayout({ children }) {
         <title>{OG_TITLE}</title>
         <meta name="description" content={OG_DESCRIPTION} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon-192.png" />
 
         {/* Open Graph */}
         <meta property="og:type" content="website" />

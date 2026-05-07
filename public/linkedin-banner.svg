@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396">
+  <defs>
+    <linearGradient id="lbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a14"/>
+      <stop offset="50%" stop-color="#11111e"/>
+      <stop offset="100%" stop-color="#0a0a14"/>
+    </linearGradient>
+    <linearGradient id="laccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF2D7B"/>
+      <stop offset="100%" stop-color="#00F0FF"/>
+    </linearGradient>
+    <pattern id="lgrid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#00F0FF" opacity="0.18"/>
+    </pattern>
+    <pattern id="lscan" width="100%" height="4" patternUnits="userSpaceOnUse">
+      <rect width="100%" height="1" fill="rgba(0,240,255,0.05)"/>
+    </pattern>
+  </defs>
+
+  <!-- background -->
+  <rect width="1584" height="396" fill="url(#lbg)"/>
+  <rect width="1584" height="396" fill="url(#lgrid)"/>
+  <rect width="1584" height="396" fill="url(#lscan)"/>
+
+  <!-- top + bottom accent strips -->
+  <rect x="0" y="0" width="1584" height="3" fill="#FF2D7B"/>
+  <rect x="0" y="393" width="1584" height="3" fill="#00F0FF"/>
+
+  <!-- corner brackets -->
+  <path d="M 30 30 L 30 90 M 30 30 L 90 30" stroke="#E5FF00" stroke-width="3" fill="none"/>
+  <path d="M 1554 30 L 1554 90 M 1554 30 L 1494 30" stroke="#E5FF00" stroke-width="3" fill="none"/>
+  <path d="M 30 366 L 30 306 M 30 366 L 90 366" stroke="#FF2D7B" stroke-width="3" fill="none"/>
+  <path d="M 1554 366 L 1554 306 M 1554 366 L 1494 366" stroke="#00F0FF" stroke-width="3" fill="none"/>
+
+  <!-- hex decorative line top -->
+  <text x="120" y="60" font-family="DejaVu Sans Mono, Liberation Mono, monospace" font-size="14" fill="#00F0FF" opacity="0.35" letter-spacing="3">0x5EBA5714N · ARANGO · 537H3R · 53N10R · DEV</text>
+
+  <!-- name with hard shadow (cyan main + magenta offset) -->
+  <text x="124" y="180" font-family="DejaVu Sans Mono, Liberation Mono, monospace" font-weight="900" font-size="84" fill="#FF2D7B" letter-spacing="-2">SEBASTIAN ARANGO</text>
+  <text x="120" y="176" font-family="DejaVu Sans Mono, Liberation Mono, monospace" font-weight="900" font-size="84" fill="#00F0FF" letter-spacing="-2">SEBASTIAN ARANGO</text>
+
+  <!-- divider stub -->
+  <rect x="120" y="200" width="220" height="2" fill="#FF2D7B"/>
+
+  <!-- role tagline -->
+  <text x="120" y="240" font-family="DejaVu Sans Mono, Liberation Mono, monospace" font-weight="700" font-size="26" fill="#E5FF00" letter-spacing="6">&gt; SENIOR WEB3 FULLSTACK DEVELOPER</text>
+
+  <!-- experience highlights -->
+  <text x="120" y="300" font-family="DejaVu Sans Mono, Liberation Mono, monospace" font-weight="400" font-size="20" fill="#c0c0c0" letter-spacing="2">3+ yrs @ ETHERMAIL · SMART CONTRACTS · EMAIL INFRA AT SCALE · AI AGENTS</text>
+
+  <!-- tech chips row -->
+  <g font-family="DejaVu Sans Mono, Liberation Mono, monospace" font-size="14" font-weight="700" letter-spacing="2">
+    <rect x="120" y="332" width="100" height="32" fill="none" stroke="#FF2D7B" stroke-width="2"/>
+    <text x="170" y="354" fill="#ffffff" text-anchor="middle">SOLIDITY</text>
+
+    <rect x="232" y="332" width="92" height="32" fill="none" stroke="#FF2D7B" stroke-width="2"/>
+    <text x="278" y="354" fill="#ffffff" text-anchor="middle">NESTJS</text>
+
+    <rect x="336" y="332" width="74" height="32" fill="none" stroke="#FF2D7B" stroke-width="2"/>
+    <text x="373" y="354" fill="#ffffff" text-anchor="middle">VUE</text>
+
+    <rect x="422" y="332" width="84" height="32" fill="none" stroke="#FF2D7B" stroke-width="2"/>
+    <text x="464" y="354" fill="#ffffff" text-anchor="middle">NUXT</text>
+
+    <rect x="518" y="332" width="100" height="32" fill="none" stroke="#00F0FF" stroke-width="2"/>
+    <text x="568" y="354" fill="#ffffff" text-anchor="middle">DOCKER</text>
+
+    <rect x="630" y="332" width="74" height="32" fill="none" stroke="#00F0FF" stroke-width="2"/>
+    <text x="667" y="354" fill="#ffffff" text-anchor="middle">AWS</text>
+
+    <rect x="716" y="332" width="84" height="32" fill="none" stroke="#00F0FF" stroke-width="2"/>
+    <text x="758" y="354" fill="#ffffff" text-anchor="middle">LLMs</text>
+
+    <rect x="812" y="332" width="106" height="32" fill="none" stroke="#E5FF00" stroke-width="2"/>
+    <text x="865" y="354" fill="#ffffff" text-anchor="middle">CLAUDE</text>
+  </g>
+
+  <!-- right side stats / highlights -->
+  <g font-family="DejaVu Sans Mono, Liberation Mono, monospace" font-weight="700">
+    <text x="1554" y="130" font-size="18" fill="#FF2D7B" text-anchor="end" letter-spacing="3">SHIPPED</text>
+    <text x="1554" y="165" font-size="56" fill="#00F0FF" text-anchor="end" letter-spacing="-1">100M+</text>
+    <text x="1554" y="190" font-size="14" fill="#c0c0c0" text-anchor="end" letter-spacing="3">ROWS PROCESSED</text>
+
+    <text x="1554" y="240" font-size="18" fill="#FF2D7B" text-anchor="end" letter-spacing="3">EMAILS DELIVERED</text>
+    <text x="1554" y="280" font-size="48" fill="#E5FF00" text-anchor="end" letter-spacing="-1">MILLIONS</text>
+  </g>
+
+  <!-- url + handle -->
+  <text x="120" y="84" font-family="DejaVu Sans Mono, Liberation Mono, monospace" font-size="16" fill="#00F0FF" letter-spacing="3" font-weight="700">› SEBASTIANARANGO.COM</text>
+  <text x="1554" y="84" font-family="DejaVu Sans Mono, Liberation Mono, monospace" font-size="16" fill="#FF2D7B" text-anchor="end" letter-spacing="3" font-weight="700">@SEBASARAN16</text>
+</svg>
