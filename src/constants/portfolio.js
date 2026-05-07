@@ -135,7 +135,7 @@ export const web3Courses = [
     href: "https://cryptozombies.io/",
     titleKey: "portfolio.web3.cryptozombies.title",
     descriptionKey: "portfolio.web3.ethernaut.description",
-    images: [{ src: "/teachers/cryptozombies.png", alt: "Cryptozombies Logo" }],
+    images: [{ src: "/teachers/cryptozombies.webp", alt: "Cryptozombies Logo" }],
   },
 ];
 
@@ -370,7 +370,7 @@ export const projects = [
     codeUrl:
       "https://github.com/SebasAran16/mutant-beers-landing-page",
     image: {
-      src: "/projects/mutant-apes-home.png",
+      src: "/projects/mutant-apes-home.webp",
       alt: "Mutant Apes Home Page",
     },
     tools: [
@@ -392,7 +392,7 @@ export const projects = [
     siteUrl: "https://defi-contribute.vercel.app/",
     codeUrl:
       "https://github.com/SebasAran16/hardhat-defi-contribute",
-    image: { src: "/projects/defi-home.png", alt: "DefiContribute Home Page" },
+    image: { src: "/projects/defi-home.webp", alt: "DefiContribute Home Page" },
     tools: [
       { src: "/languagesAndTools/solidity.svg", alt: "Solidity" },
       { src: "/languagesAndTools/nextjs.svg", alt: "NextJs" },
