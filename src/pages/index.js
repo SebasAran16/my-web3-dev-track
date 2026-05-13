@@ -280,6 +280,7 @@ export default function Home() {
                     alt={exp.image.alt}
                     width="380"
                     height="300"
+                    loading="eager"
                   />
                   <HexText
                     as="h5"
