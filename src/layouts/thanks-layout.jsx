@@ -2,7 +2,6 @@ import React from "react";
 import Header from "@/components/header";
 import styles from "@/styles/layout/MainLayout.module.sass";
 import Head from "next/head";
-import "../../public/fonts/Montserrat.module.css";
 
 const SITE_URL = "https://sebastianarango.com";
 const OG_IMAGE = `${SITE_URL}/og-image.png`;

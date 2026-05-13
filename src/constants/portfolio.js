@@ -406,27 +406,27 @@ export const projects = [
 
 export const codeLanguages = [
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg",
+    src: "/languagesAndTools/solidity.svg",
     alt: "Solidity",
   },
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    src: "/languagesAndTools/javascript.svg",
     alt: "Javascript",
   },
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg",
+    src: "/languagesAndTools/html5-original-wordmark.svg",
     alt: "HTML5",
   },
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg",
+    src: "/languagesAndTools/css3-original-wordmark.svg",
     alt: "CSS3",
   },
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+    src: "/languagesAndTools/c-original.svg",
     alt: "C",
   },
   {
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain-wordmark.svg",
+    src: "/languagesAndTools/graphql-plain-wordmark.svg",
     alt: "GraphQL",
   },
 ];

@@ -115,11 +115,11 @@ $sides-space: 1rem 2rem
     img
         transition: all 0.3s
         margin: 50% 0
-        filter: brightness(0.7)
+        filter: invert(1)
         &:hover
-            filter: brightness(1.2) drop-shadow(0 0 6px $accent-color)
+            filter: invert(1) drop-shadow(0 0 6px $accent-color)
         &:active
-            filter: brightness(1)
+            filter: invert(1)
             transform: none
 
 @media screen and (min-width: 768px)

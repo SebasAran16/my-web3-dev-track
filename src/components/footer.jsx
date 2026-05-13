@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "@/styles/layout/Footer.module.sass";
 import Link from "next/link";
-import Image from "next/image";
 import { useTranslation } from "next-i18next";
 
 export default function Footer() {
@@ -55,27 +54,27 @@ export default function Footer() {
           href="https://www.linkedin.com/in/sebastian-zambrano-arango-4335361b3/"
           target="_blank"
         >
-          <Image
-            src="/icons/linkedin.png"
-            alt="Linkin Icon"
-            width="30"
-            height="30"
+          <img
+            src="/icons/linkedin.svg"
+            alt="LinkedIn Icon"
+            width="24"
+            height="24"
           />
         </Link>
         <Link href="https://github.com/SebasAran16" target="_blank">
-          <Image
-            src="/icons/github.png"
-            alt="Github Icon"
-            width="30"
-            height="30"
+          <img
+            src="/icons/github.svg"
+            alt="GitHub Icon"
+            width="24"
+            height="24"
           />
         </Link>
         <Link href="https://twitter.com/Sebas_aran16" target="_blank">
-          <Image
-            src="/icons/twitter.png"
+          <img
+            src="/icons/twitter.svg"
             alt="Twitter Icon"
-            width="30"
-            height="30"
+            width="24"
+            height="24"
           />
         </Link>
       </div>

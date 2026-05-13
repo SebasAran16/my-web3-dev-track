@@ -12,6 +12,30 @@ const nextConfig = {
   compiler: {
     removeConsole: { exclude: ["error", "warn"] },
   },
+  async headers() {
+    return [
+      {
+        source: "/:all*(svg|jpg|jpeg|png|webp|avif|ico|woff|woff2|ttf|eot)",
+        locale: false,
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/(fonts|languagesAndTools|icons|teachers|projects|experience|backgrounds)/:all*",
+        locale: false,
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

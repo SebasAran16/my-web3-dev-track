@@ -72,30 +72,27 @@ export default function Header() {
             href="https://www.linkedin.com/in/sebastian-zambrano-arango-4335361b3/"
             target="_blank"
           >
-            <Image
-              src="/icons/linkedin.png"
-              alt="Linkin Icon"
-              width="30"
-              height="30"
-              priority
+            <img
+              src="/icons/linkedin.svg"
+              alt="LinkedIn Icon"
+              width="24"
+              height="24"
             />
           </Link>
           <Link href="https://github.com/SebasAran16" target="_blank">
-            <Image
-              src="/icons/github.png"
-              alt="Github Icon"
-              width="30"
-              height="30"
-              priority
+            <img
+              src="/icons/github.svg"
+              alt="GitHub Icon"
+              width="24"
+              height="24"
             />
           </Link>
           <Link href="https://twitter.com/Sebas_aran16" target="_blank">
-            <Image
-              src="/icons/twitter.png"
+            <img
+              src="/icons/twitter.svg"
               alt="Twitter Icon"
-              width="30"
-              height="30"
-              priority
+              width="24"
+              height="24"
             />
           </Link>
         </div>

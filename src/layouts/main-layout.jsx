@@ -3,7 +3,6 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import styles from "@/styles/layout/MainLayout.module.sass";
 import Head from "next/head";
-import "../../public/fonts/Montserrat.module.css";
 
 const SITE_URL = "https://sebastianarango.com";
 const OG_TITLE = "Sebastian Arango — Fullstack & Blockchain Developer";

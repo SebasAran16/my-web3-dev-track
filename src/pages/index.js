@@ -1,12 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import styles from "@/styles/Home.module.sass";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { dates } from "@/constants/dates";
@@ -21,6 +17,21 @@ import {
   projects,
   codeLanguages,
 } from "@/constants/portfolio";
+
+const ProjectSwiper = dynamic(() => import("@/components/ProjectSwiper"), { ssr: false });
+const CourseSwiper = dynamic(() => import("@/components/CourseSwiper"), { ssr: false });
+
+function ToolIcon({ src, alt, className }) {
+  return (
+    <Image
+      className={className}
+      src={src}
+      alt={`${alt} Icon`}
+      width="20"
+      height="20"
+    />
+  );
+}
 
 const formatExperienceTime = (timeDifference) => {
   const totalMonths = Math.floor(
@@ -45,151 +56,6 @@ const formatExperienceTime = (timeDifference) => {
     (remainingMonths === 1 ? " month" : " months")
   );
 };
-
-function ToolIcon({ src, alt, className }) {
-  return (
-    <Image
-      className={className}
-      src={src}
-      alt={`${alt} Icon`}
-      width="20"
-      height="20"
-    />
-  );
-}
-
-function ProjectSwiper({ projects: items, t }) {
-  return (
-    <Swiper
-      spaceBetween={50}
-      slidesPerView={1}
-      navigation
-      pagination={{ clickable: true }}
-      modules={[Navigation, Pagination]}
-      className={`${styles.swiper} ${styles.projectSwiper}`}
-    >
-      {items.map((project) => (
-        <SwiperSlide className={styles.swiperSlide} key={project.key}>
-          <div className={styles.project}>
-            <div className={styles.projectTitleAndFocus}>
-              <HexText
-                as="h4"
-                text={t(project.titleKey)}
-                staggerMs={30}
-                threshold={0.3}
-              />
-              <HexText
-                as="p"
-                text={t(project.skillKey)}
-                staggerMs={20}
-                threshold={0.3}
-              />
-            </div>
-            <div className={styles.projectImages}>
-              <Image
-                className={styles.projectImage}
-                src={project.image.src}
-                alt={project.image.alt}
-                width={640}
-                height={360}
-              />
-              <div className={styles.toolForProject}>
-                {project.tools.map((tool) => (
-                  <ToolIcon
-                    key={tool.src}
-                    src={tool.src}
-                    alt={tool.alt}
-                    className={styles.projectToolImage}
-                  />
-                ))}
-              </div>
-            </div>
-            <div className={styles.projectContent}>
-              <p>
-                {project.descriptionKeys.map((key, i) => (
-                  <React.Fragment key={key}>
-                    {i > 0 && (
-                      <>
-                        <br />
-                        <br />
-                      </>
-                    )}
-                    {t(key)}
-                  </React.Fragment>
-                ))}
-              </p>
-              <div className={styles.projectButtons}>
-                {project.siteUrl && (
-                  <Link href={project.siteUrl} target="_blank">
-                    <button>{t(project.siteButtonKey)}</button>
-                  </Link>
-                )}
-                {project.codeUrl && (
-                  <Link href={project.codeUrl} target="_blank">
-                    <button>{t(project.codeButtonKey)}</button>
-                  </Link>
-                )}
-              </div>
-            </div>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  );
-}
-
-function CourseSwiper({ courses, t }) {
-  return (
-    <Swiper
-      spaceBetween={50}
-      slidesPerView={1}
-      navigation
-      pagination={{ clickable: true, dynamicBullets: false }}
-      modules={[Navigation, Pagination]}
-      className={styles.swiper}
-    >
-      {courses.map((course) => {
-        const descriptionKeys = course.descriptionKeys || [course.descriptionKey];
-        return (
-          <SwiperSlide className={styles.swiperSlide} key={course.key}>
-            <div className={styles.swiperItem}>
-              <h4>
-                <Link href={course.href} target="_blank">
-                  {t(course.titleKey)}
-                </Link>
-              </h4>
-              <div>
-                {course.images.map((img) => (
-                  <img
-                    key={img.src}
-                    className={styles.slideImages}
-                    src={img.src}
-                    alt={img.alt}
-                    width="50"
-                    height="50"
-                  />
-                ))}
-              </div>
-              <p>
-                {descriptionKeys.map((key, i) => (
-                  <React.Fragment key={key}>
-                    {i > 0 && (
-                      <>
-                        <br />
-                        <br />
-                      </>
-                    )}
-                    {t(key)}
-                  </React.Fragment>
-                ))}
-              </p>
-            </div>
-          </SwiperSlide>
-        );
-      })}
-    </Swiper>
-  );
-}
 
 const PROJECT_TABS = [
   { key: "ethermail", labelKey: "portfolio.projectsMade.tabs.ethermail" },
