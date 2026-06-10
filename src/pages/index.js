@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -133,6 +134,32 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <link
+          rel="preload"
+          as="image"
+          type="image/webp"
+          href="/backgrounds/background-small.webp"
+          media="(max-width: 767px)"
+          fetchpriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          type="image/webp"
+          href="/backgrounds/background-medium.webp"
+          media="(min-width: 768px) and (max-width: 991px)"
+          fetchpriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
+          type="image/webp"
+          href="/backgrounds/background-big.webp"
+          media="(min-width: 992px)"
+          fetchpriority="high"
+        />
+      </Head>
       <section data-section="home" id={styles.homeSection}>
         <div id={styles.homeContent}>
           <h1>
@@ -402,6 +429,8 @@ export default function Home() {
                 className={styles.codeLanguage}
                 src={lang.src}
                 alt={lang.alt}
+                loading="lazy"
+                decoding="async"
               />
             ))}
           </div>
@@ -417,7 +446,6 @@ export const getStaticProps = async ({ locale }) => ({
       "common",
       "footer",
       "header",
-      "thanks",
     ])),
   },
 });

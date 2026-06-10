@@ -8,6 +8,7 @@ const nextConfig = {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [320, 480, 640, 828, 1080, 1200, 1440, 1920],
     imageSizes: [16, 32, 64, 96, 128, 192, 256, 384],
+    minimumCacheTTL: 31536000,
   },
   compiler: {
     removeConsole: { exclude: ["error", "warn"] },

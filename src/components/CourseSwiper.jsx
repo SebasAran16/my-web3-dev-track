@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
@@ -29,7 +30,7 @@ export default function CourseSwiper({ courses, t }) {
               </h4>
               <div>
                 {course.images.map((img) => (
-                  <img key={img.src} className={styles.slideImages} src={img.src} alt={img.alt} width="50" height="50" />
+                  <Image key={img.src} className={styles.slideImages} src={img.src} alt={img.alt} width="50" height="50" />
                 ))}
               </div>
               <p>
