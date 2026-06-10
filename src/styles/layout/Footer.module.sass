@@ -6,9 +6,8 @@ $sides-space: 1rem 2rem
 
 #footerContainer
     display: grid
-    grid-template-rows: 0.4fr 1fr
-    grid-template-columns: 1fr 0.2fr
-    grid-template-areas: "alias-title alias-socials" "alias-form alias-socials"
+    grid-template-columns: 1fr
+    grid-template-areas: "alias-title" "alias-form" "alias-socials"
     background: none
     padding: $sides-space
     border-top: 2px solid $secondary-color
@@ -82,6 +81,7 @@ $sides-space: 1rem 2rem
 
 .formInput
     padding: 0.5rem
+    font-size: 1rem
     color: white !important
     font-weight: 400 !important
     background: rgba(255, 255, 255, 0.03)
@@ -104,17 +104,22 @@ $sides-space: 1rem 2rem
 
 #messageInput
     height: 100px
+    resize: vertical
 
 #socialsIcons
     grid-area: alias-socials
     display: flex
-    flex-direction: column
-    align-self: center
+    flex-direction: row
+    align-items: center
     justify-content: center
-    margin: auto
+    gap: 2rem
+    margin: 1.5rem auto 0.5rem
+    a
+        display: inline-flex
+        align-items: center
+        padding: 0.4rem
     img
         transition: all 0.3s
-        margin: 50% 0
         filter: invert(1)
         &:hover
             filter: invert(1) drop-shadow(0 0 6px $accent-color)
@@ -123,7 +128,15 @@ $sides-space: 1rem 2rem
             transform: none
 
 @media screen and (min-width: 768px)
+    #footerContainer
+        grid-template-rows: 0.4fr 1fr
+        grid-template-columns: 1fr 0.2fr
+        grid-template-areas: "alias-title alias-socials" "alias-form alias-socials"
+
     #socialsIcons
+        flex-direction: column
+        gap: 2.5rem
+        margin: auto
         img
             transform: scale(1.3)
 

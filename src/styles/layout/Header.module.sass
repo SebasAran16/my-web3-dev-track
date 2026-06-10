@@ -55,6 +55,23 @@ $sides-space: 0 2rem
             filter: invert(1) drop-shadow(0 0 4px $accent-color)
             cursor: pointer
 
+#socials
+    display: flex
+    align-items: center
+    a
+        display: inline-flex
+        align-items: center
+        padding: 0.4rem
+
+.iconButton
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    background: none
+    border: none
+    padding: 0.35rem
+    cursor: pointer
+
 .navToggler
 
 // Nav Styling //
@@ -74,7 +91,9 @@ $sides-space: 0 2rem
     background: rgba(13, 13, 13, 0.95)
     border-left: 2px solid $secondary-color
     border-bottom: 2px solid $secondary-color
-    button
+    box-shadow: -4px 4px 0 rgba(0, 240, 255, 0.25)
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s
+    > button
         padding: 1rem
         border-radius: 0
         margin-bottom: 10%
@@ -124,7 +143,10 @@ $sides-space: 0 2rem
         box-shadow: none
 
 .hiddenNav
-    display: none !important
+    opacity: 0
+    transform: translateY(-14px)
+    visibility: hidden
+    pointer-events: none
 
 #firstsNav
     display: flex
@@ -142,7 +164,7 @@ $sides-space: 0 2rem
     a
         text-decoration: none
         margin: 0.5rem
-        color: #555
+        color: #8a8a8a
         transition: all 0.2s
         &:hover
             transform: scale(1.1)
@@ -164,9 +186,17 @@ $sides-space: 0 2rem
     backdrop-filter: blur(20px)
     background: rgba(13, 13, 13, 0.9) !important
     border-bottom: 1px solid $secondary-color !important
+    animation: headerDrop 0.25s ease
+
+@keyframes headerDrop
+    from
+        transform: translateY(-100%)
+    to
+        transform: translateY(0)
 
 @media screen and (min-width: 992px)
-    .navToggler
+    .navToggler,
+    .iconButton
         display: none
 
     #headerBar
@@ -186,7 +216,13 @@ $sides-space: 0 2rem
         backdrop-filter: none
         overflow: initial
         border: none
-        button
+        box-shadow: none
+        opacity: 1
+        transform: none
+        visibility: visible
+        pointer-events: auto
+        transition: none
+        > button
             padding: 0.5rem
             height: 60px
             margin: 0 1rem

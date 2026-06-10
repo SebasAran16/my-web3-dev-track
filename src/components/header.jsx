@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "@/styles/layout/Header.module.sass";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,16 +10,10 @@ export default function Header() {
   const router = useRouter();
   const { t } = useTranslation("header");
   const lenis = useLenis();
+  const [navOpen, setNavOpen] = useState(false);
 
-  const toggleNav = () => {
-    const nav = document.querySelector(`#${styles.navBar}`);
-    nav.classList.toggle(styles.hiddenNav);
-  };
-
-  const closeNav = () => {
-    const nav = document.querySelector(`#${styles.navBar}`);
-    nav.classList.add(styles.hiddenNav);
-  };
+  const toggleNav = () => setNavOpen((open) => !open);
+  const closeNav = () => setNavOpen(false);
 
   const navPressed = (e) => {
     const id = e.target.id;
@@ -30,13 +24,24 @@ export default function Header() {
       closeNav();
       return;
     }
+    // Keep the section top visible below the sticky desktop header
+    const offset = window.innerWidth >= 992 ? -80 : 0;
     if (lenis) {
-      lenis.scrollTo(el, { offset: 0, duration: 1.2 });
+      lenis.scrollTo(el, { offset, duration: 1.2 });
     } else {
       el.scrollIntoView({ behavior: "smooth" });
     }
     closeNav();
   };
+
+  useEffect(() => {
+    if (!navOpen) return undefined;
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setNavOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [navOpen]);
 
   useEffect(() => {
     const header = document.querySelector(`#${styles.headerBar}`);
@@ -96,18 +101,25 @@ export default function Header() {
             />
           </Link>
         </div>
-        <Image
-          className={styles.navToggler}
-          src="/icons/menu.png"
-          alt="Menu Image"
-          width="35"
-          height="35"
+        <button
+          type="button"
+          className={styles.iconButton}
+          aria-label={navOpen ? "Close menu" : "Open menu"}
+          aria-expanded={navOpen}
           onClick={toggleNav}
-          priority
-        />
+        >
+          <Image
+            className={styles.navToggler}
+            src="/icons/menu.png"
+            alt=""
+            width="35"
+            height="35"
+            priority
+          />
+        </button>
         <nav
           id={styles.navBar}
-          className={styles.hiddenNav}
+          className={navOpen ? "" : styles.hiddenNav}
           data-lenis-prevent
         >
           <div id={styles.firstsNav}>
@@ -128,14 +140,20 @@ export default function Header() {
                 <p>ES</p>
               </Link>
             </div>
-            <Image
-              className={styles.navToggler}
-              src="/icons/cross.png"
-              alt="Cross Image"
-              width="30"
-              height="30"
-              onClick={toggleNav}
-            />
+            <button
+              type="button"
+              className={styles.iconButton}
+              aria-label="Close menu"
+              onClick={closeNav}
+            >
+              <Image
+                className={styles.navToggler}
+                src="/icons/cross.png"
+                alt=""
+                width="30"
+                height="30"
+              />
+            </button>
           </div>
           <button
             id="home"

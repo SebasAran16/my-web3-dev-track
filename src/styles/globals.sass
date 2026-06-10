@@ -68,6 +68,17 @@ h5
     color: white
     letter-spacing: 0.05em
 
+::selection
+    background: $secondary-color
+    color: $main-color
+
+:focus-visible
+    outline: 2px solid $accent-color
+    outline-offset: 3px
+
+:focus:not(:focus-visible)
+    outline: none
+
 ::-webkit-scrollbar
     width: 8px
 
@@ -118,6 +129,14 @@ h5
 
     h5
         font-size: 29px
+
+@media (prefers-reduced-motion: reduce)
+    html
+        scroll-behavior: auto
+    *, *::before, *::after
+        animation-duration: 0.01ms !important
+        animation-iteration-count: 1 !important
+        transition-duration: 0.01ms !important
 
 @media print
     html, body

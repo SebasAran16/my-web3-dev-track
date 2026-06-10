@@ -22,22 +22,26 @@ export default function Footer() {
             className={styles.formInput}
             type="text"
             name="name"
+            autoComplete="name"
             placeholder={t("form.name")}
+            aria-label={t("form.name")}
             required
           />
           <input
             className={styles.formInput}
             type="email"
             name="email"
+            autoComplete="email"
             placeholder={t("form.mail")}
+            aria-label={t("form.mail")}
             required
           />
           <textarea
             id={styles.messageInput}
             className={styles.formInput}
-            type="text"
             name="message"
             placeholder={t("form.message")}
+            aria-label={t("form.message")}
             required
           />
           <input
