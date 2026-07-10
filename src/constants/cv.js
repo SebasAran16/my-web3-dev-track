@@ -4,7 +4,7 @@ const sharedName = {
   third: "ARANGO",
 };
 
-const sharedPhoto = "/my-pic.jpeg";
+const sharedPhoto = "/my-pic.png";
 
 const sharedContact = {
   email: "sebastianarango201316@hotmail.com",

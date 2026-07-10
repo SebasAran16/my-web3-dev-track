@@ -215,7 +215,7 @@ export default function Home() {
             <div ref={picParallaxRef} className={styles.picParallax}>
               <Image
                 id={styles.myPic}
-                src="/my-pic.jpeg"
+                src="/my-pic.png"
                 alt="Picture of me"
                 width="200"
                 height="280"
