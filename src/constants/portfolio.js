@@ -1,9 +1,21 @@
 export const experiences = [
   {
+    key: "htec",
+    name: "HTEC",
+    role: "Software Engineer",
+    image: { src: "/experience/htec.png", alt: "HTEC Logo" },
+    company_url: "https://htec.com",
+    tools: [],
+    description: [
+      "Recently joined HTEC as a Software Engineer — more details on the work coming soon.",
+    ],
+  },
+  {
     key: "ethermail-intern",
     name: "EtherMail",
     role: "Web3 Fullstack Intern Developer",
     image: { src: "/experience/ethermail.png", alt: "EtherMail Logo" },
+    company_url: "https://ethermail.io",
     tools: [
       { src: "/languagesAndTools/solidity.svg", alt: "Solidity" },
       { src: "/languagesAndTools/aws.svg", alt: "AWS" },
@@ -35,6 +47,7 @@ export const experiences = [
     name: "EtherMail",
     role: "Senior Web3 Fullstack Developer",
     image: { src: "/experience/ethermail.png", alt: "EtherMail Logo" },
+    company_url: "https://ethermail.io",
     tools: [
       { src: "/languagesAndTools/solidity.svg", alt: "Solidity" },
       { src: "/languagesAndTools/aws.svg", alt: "AWS" },
@@ -88,6 +101,7 @@ export const experiences = [
     key: "fiverr",
     name: "Fiverr",
     image: { src: "/experience/fiverr.jpg", alt: "Fiverr Logo" },
+    company_url: "https://www.fiverr.com",
     tools: [
       { src: "/languagesAndTools/solidity.svg", alt: "Solidity" },
       { src: "/languagesAndTools/nextjs.svg", alt: "NextJs" },

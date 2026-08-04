@@ -34,6 +34,33 @@ function ToolIcon({ src, alt, className }) {
   );
 }
 
+function ExperienceLogo({ image, companyUrl }) {
+  const logo = (
+    <Image
+      className={styles.experienceImage}
+      src={image.src}
+      alt={image.alt}
+      width="380"
+      height="300"
+      loading="eager"
+    />
+  );
+
+  if (!companyUrl) return logo;
+
+  return (
+    <Link
+      href={companyUrl}
+      target="_blank"
+      rel="noreferrer"
+      className={styles.experienceImageLink}
+      aria-label={image.alt}
+    >
+      {logo}
+    </Link>
+  );
+}
+
 const formatExperienceTime = (timeDifference) => {
   const totalMonths = Math.floor(
     timeDifference / (1000 * 60 * 60 * 24 * 30.44)
@@ -302,12 +329,9 @@ export default function Home() {
                       className={styles.experienceRole}
                     />
                   )}
-                  <Image
-                    src={exp.image.src}
-                    alt={exp.image.alt}
-                    width="380"
-                    height="300"
-                    loading="eager"
+                  <ExperienceLogo
+                    image={exp.image}
+                    companyUrl={exp.company_url}
                   />
                   <HexText
                     as="h5"
@@ -316,19 +340,21 @@ export default function Home() {
                     threshold={0.3}
                   />
                   <div>
-                    <div>
-                      <span>Required Skills: </span>
+                    {exp.tools.length > 0 && (
                       <div>
-                        {exp.tools.map((tool) => (
-                          <ToolIcon
-                            key={tool.src}
-                            src={tool.src}
-                            alt={tool.alt}
-                            className={styles.experienceToolImage}
-                          />
-                        ))}
+                        <span>Required Skills: </span>
+                        <div>
+                          {exp.tools.map((tool) => (
+                            <ToolIcon
+                              key={tool.src}
+                              src={tool.src}
+                              alt={tool.alt}
+                              className={styles.experienceToolImage}
+                            />
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
                     <p>
                       {exp.description.map((paragraph, i) => (
                         <React.Fragment key={i}>

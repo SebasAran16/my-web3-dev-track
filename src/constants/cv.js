@@ -64,7 +64,14 @@ export const cvWeb3Data = {
   additionalInformation: sharedAdditionalInformation,
   experience: [
     {
-      period: "06/09/25 - Current Position",
+      period: "03/08/26 - Current Position",
+      role: "Software Engineer",
+      location: "Barcelona, España",
+      company: "HTEC",
+      accomplishments: [],
+    },
+    {
+      period: "06/09/25 - 31/05/26",
       role: "Senior Web3 Fullstack Developer",
       location: "Barcelona, España",
       company: "EtherMail",
@@ -214,7 +221,14 @@ export const cvFullstackData = {
   additionalInformation: sharedAdditionalInformation,
   experience: [
     {
-      period: "06/09/25 - Current Position",
+      period: "03/08/26 - Current Position",
+      role: "Software Engineer",
+      location: "Barcelona, España",
+      company: "HTEC",
+      accomplishments: [],
+    },
+    {
+      period: "06/09/25 - 31/05/26",
       role: "Senior Fullstack Developer",
       location: "Barcelona, España",
       company: "EtherMail",
