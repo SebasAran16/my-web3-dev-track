@@ -85,6 +85,48 @@ const formatExperienceTime = (timeDifference) => {
   );
 };
 
+// Consecutive entries sharing a company name collapse into a single card, so a
+// promotion reads as one company with stacked roles instead of duplicate cards.
+const experienceGroups = experiences.reduce((groups, exp) => {
+  const current = groups[groups.length - 1];
+
+  if (current && current.name === exp.name) {
+    current.roles.push(exp);
+    return groups;
+  }
+
+  groups.push({
+    name: exp.name,
+    image: exp.image,
+    company_url: exp.company_url,
+    roles: [exp],
+  });
+
+  return groups;
+}, []);
+
+// A company is still ongoing if any of its roles has no end date.
+const groupPeriod = (roles) => ({
+  start: new Date(Math.min(...roles.map((role) => dates[role.key].start))),
+  end: roles.some((role) => !dates[role.key].end)
+    ? null
+    : new Date(Math.max(...roles.map((role) => dates[role.key].end))),
+});
+
+const formatPeriod = (start, end, currentDate, locale, compact = false) => {
+  const duration = formatExperienceTime((end || currentDate) - start);
+  const format = (date) =>
+    date.toLocaleDateString(locale, {
+      year: "numeric",
+      month: "long",
+      ...(compact ? {} : { day: "numeric" }),
+    });
+
+  return end
+    ? `~${duration} · ${format(start)} → ${format(end)}`
+    : `${duration} - Since: ${format(start)}`;
+};
+
 const PROJECT_TABS = [
   { key: "ethermail", labelKey: "portfolio.projectsMade.tabs.ethermail" },
   { key: "mutantApes", labelKey: "portfolio.projectsMade.tabs.mutantApes" },
@@ -278,113 +320,122 @@ export default function Home() {
             threshold={0.3}
           />
           <article id={styles.experienceContainer}>
-            {experiences.map((exp, i, arr) => {
-              const linksToPrev = i > 0 && arr[i - 1].name === exp.name;
-              const endDate = dates[exp.key].end;
-              const timeDiff =
-                (endDate || currentDate) - dates[exp.key].start;
-              const durationStr = formatExperienceTime(timeDiff);
-              const startDateStr = dates[exp.key].start.toLocaleDateString(
-                router.locale,
-                { year: "numeric", month: "long", day: "numeric" }
-              );
-              const endDateStr = endDate
-                ? endDate.toLocaleDateString(router.locale, {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })
-                : null;
-              const timeText = endDate
-                ? `~${durationStr} · ${startDateStr} → ${endDateStr}`
-                : `${durationStr} - Since: ${startDateStr}`;
+            {experienceGroups.map((group) => {
+              const period = groupPeriod(group.roles);
 
               return (
-                <React.Fragment key={exp.key}>
-                  {linksToPrev && (
-                    <div
-                      className={styles.experienceLink}
-                      aria-hidden="true"
-                    >
-                      <span className={styles.experienceLinkLine} />
-                      <span className={styles.experienceLinkLabel}>
-                        &gt; PROMOTED
-                      </span>
-                      <span className={styles.experienceLinkLine} />
-                    </div>
-                  )}
-                <div className={styles.experience}>
+                <div className={styles.experience} key={group.name}>
                   <HexText
                     as="h4"
-                    text={exp.name}
+                    text={group.name}
                     staggerMs={35}
                     threshold={0.3}
                   />
-                  {exp.role && (
-                    <HexText
-                      as="h5"
-                      text={exp.role}
-                      staggerMs={25}
-                      threshold={0.3}
-                      className={styles.experienceRole}
-                    />
-                  )}
                   <ExperienceLogo
-                    image={exp.image}
-                    companyUrl={exp.company_url}
+                    image={group.image}
+                    companyUrl={group.company_url}
                   />
                   <HexText
                     as="h5"
-                    text={timeText}
+                    text={formatPeriod(
+                      period.start,
+                      period.end,
+                      currentDate,
+                      router.locale,
+                      true
+                    )}
                     staggerMs={20}
                     threshold={0.3}
+                    className={styles.experienceCompanyTime}
                   />
-                  <div>
-                    {exp.tools.length > 0 && (
-                      <div>
-                        <span>Required Skills: </span>
-                        <div>
-                          {exp.tools.map((tool) => (
-                            <ToolIcon
-                              key={tool.src}
-                              src={tool.src}
-                              alt={tool.alt}
-                              className={styles.experienceToolImage}
-                            />
-                          ))}
+
+                  {group.roles.map((exp, roleIndex) => (
+                    <React.Fragment key={exp.key}>
+                      {roleIndex > 0 && (
+                        <div className={styles.promotion}>
+                          <span
+                            className={styles.promotionLine}
+                            aria-hidden="true"
+                          />
+                          <span
+                            className={styles.promotionArrow}
+                            aria-hidden="true"
+                          />
+                          <span className={styles.promotionLabel}>
+                            &gt; PROMOTED
+                          </span>
                         </div>
-                      </div>
-                    )}
-                    <p>
-                      {exp.description.map((paragraph, i) => (
-                        <React.Fragment key={i}>
-                          {i > 0 && (
-                            <>
-                              <br />
-                              <br />
-                            </>
+                      )}
+                      <section className={styles.experienceRoleBlock}>
+                        {exp.role && (
+                          <HexText
+                            as="h5"
+                            text={exp.role}
+                            staggerMs={25}
+                            threshold={0.3}
+                            className={styles.experienceRole}
+                          />
+                        )}
+                        <HexText
+                          as="h6"
+                          text={formatPeriod(
+                            dates[exp.key].start,
+                            dates[exp.key].end,
+                            currentDate,
+                            router.locale
                           )}
-                          {paragraph}
-                        </React.Fragment>
-                      ))}
-                    </p>
-                    {exp.projects && exp.projects.length > 0 && (
-                      <ul className={styles.experienceProjects}>
-                        {exp.projects.map((project) => (
-                          <li key={project.href}>
-                            <Link href={project.href} target="_blank">
-                              {project.name}
-                            </Link>
-                            {project.description && (
-                              <span> — {project.description}</span>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
+                          staggerMs={20}
+                          threshold={0.3}
+                          className={styles.experienceRoleTime}
+                        />
+                        <div className={styles.experienceRoleBody}>
+                          {exp.tools.length > 0 && (
+                            <div>
+                              <span>Required Skills: </span>
+                              <div>
+                                {exp.tools.map((tool) => (
+                                  <ToolIcon
+                                    key={tool.src}
+                                    src={tool.src}
+                                    alt={tool.alt}
+                                    className={styles.experienceToolImage}
+                                  />
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                          <p>
+                            {exp.description.map((paragraph, i) => (
+                              <React.Fragment key={i}>
+                                {i > 0 && (
+                                  <>
+                                    <br />
+                                    <br />
+                                  </>
+                                )}
+                                {paragraph}
+                              </React.Fragment>
+                            ))}
+                          </p>
+                          {exp.projects && exp.projects.length > 0 && (
+                            <ul className={styles.experienceProjects}>
+                              {exp.projects.map((project) => (
+                                <li key={project.href}>
+                                  <Link href={project.href} target="_blank">
+                                    {project.name}
+                                  </Link>
+                                  {project.description && (
+                                    <span> — {project.description}</span>
+                                  )}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      </section>
+                    </React.Fragment>
+                  ))}
                 </div>
-                </React.Fragment>
               );
             })}
           </article>
