@@ -22,11 +22,25 @@
   },
   "portfolio": {
     "title": "Portfolio:",
-    "web3": {
-      "title": "Web3 Courses Done:",
+    "certifications": {
+      "title": "Certifications:",
+      "issued": "Issued",
+      "expires": "Expires",
+      "expired": "Expired",
+      "noExpiration": "No expiration",
+      "throughCompany": "Earned at {{company}}",
+      "viewCertificate": "View certificate",
+      "verify": "Verify credential"
+    },
+    "courses": {
+      "title": "Courses Done:",
       "patrick": {
         "title": "Learn Blockchain, Solidity, and Full Stack Web3 Development with JavaScript (32-Hour Course)",
         "description": "This was the greatest, longest and most advanced course I have done on Solidity so far, this covered every aspect needed to be a Web3Fullstack, from Solidity Syntax to be able to code our own NFT Marketplace and deploy on a website! Also covered important topics as secuity, proxies and governance tokens."
+      },
+      "az": {
+        "title": "Solidity from A to Z",
+        "description": "This was the first course that I took from Solidity, it was very clear at explaning each of Solidity's functionalities, and at the end we ended up building several projects to consolidate what we learned."
       },
       "ethernaut": {
         "title": "Ethernaut - Openzeppelin",
@@ -36,13 +50,6 @@
         "title": "CryptoZombies",
         "description": "Great tool to consolidate Solidity's syntax, did it after my first Solidity course and it really help me to gain confidence with the language for being really intereactive as you learn coding a Crypto Zombies game!"
       },
-      "az": {
-        "title": "Solidity from A to Z",
-        "description": "This was the first course that I took from Solidity, it was very clear at explaning each of Solidity's functionalities, and at the end we ended up building several projects to consolidate what we learned."
-      }
-    },
-    "web2": {
-      "title": "Web2 Courses Done:",
       "nextjs": {
         "title": "Next.js React Framework Course",
         "description": {
@@ -61,10 +68,6 @@
       "freecode": {
         "title": "JavaScript Basics",
         "description": "First course I did when I started my journey for a Web3 Fullstack Dev, it was clear, helped me get and remember how the logic of programming works and some of the basic JavaScript functionalities, but as I had no background or guidance, I did not get it's potential and went to learn Solidity."
-      },
-      "sql": {
-        "title": "Databases for Developers: Foundations",
-        "description": "Oracle Dev Gym course covering the foundations of SQL — querying, joining, filtering, grouping and modifying relational data, plus the basics of schema design. Finished with a 95% grade."
       }
     },
     "projectsMade": {

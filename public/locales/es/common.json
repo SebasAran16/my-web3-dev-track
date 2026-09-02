@@ -22,11 +22,25 @@
   },
   "portfolio": {
     "title": "Portafolio:",
-    "web3": {
-      "title": "Cursos Web3 hechos:",
+    "certifications": {
+      "title": "Certificaciones:",
+      "issued": "Emitido",
+      "expires": "Expira",
+      "expired": "Expirado",
+      "noExpiration": "Sin caducidad",
+      "throughCompany": "Obtenido en {{company}}",
+      "viewCertificate": "Ver certificado",
+      "verify": "Verificar credencial"
+    },
+    "courses": {
+      "title": "Cursos hechos:",
       "patrick": {
         "title": "Aprende Blockchain, Solidity y Desarrollo Full Stack Web3 con JavaScript (32 horas)",
         "description": "Este fue el mejor curso, más largo y avanzado que he realizado sobre Solidity hasta ahora, cubrió todos los aspectos necesarios para ser un Web3Fullstack, desde la sintaxis de Solidity hasta poder codificar nuestro propio mercado de NFT y desplegarlo en un sitio web. También se trataron temas importantes como la seguridad, los proxies y los tokens de gobernanza."
+      },
+      "az": {
+        "title": "Solidity de la A a la Z",
+        "description": "Este fue el primer curso que tomé de Solidity, fue muy claro al explicar cada una de las funcionalidades de Solidity, y al final terminamos construyendo varios proyectos para consolidar lo que aprendimos."
       },
       "ethernaut": {
         "title": "Ethernaut - Openzeppelin",
@@ -36,13 +50,6 @@
         "title": "CryptoZombies",
         "description": "Una gran herramienta para consolidar la sintaxis de Solidity. Lo hice después de mi primer curso de Solidity y realmente me ayudó a ganar confianza con el lenguaje al ser muy interactivo mientras aprendía a codificar un juego de Crypto Zombies."
       },
-      "az": {
-        "title": "Solidity de la A a la Z",
-        "description": "Este fue el primer curso que tomé de Solidity, fue muy claro al explicar cada una de las funcionalidades de Solidity, y al final terminamos construyendo varios proyectos para consolidar lo que aprendimos."
-      }
-    },
-    "web2": {
-      "title": "Cursos Web2 hechos:",
       "nextjs": {
         "title": "Curso del framework de React: Next.js",
         "description": {
@@ -61,10 +68,6 @@
       "freecode": {
         "title": "JavaScript Básico",
         "description": "El primer curso que hice cuando comencé mi camino para convertirme en un desarrollador Web3 Fullstack. Fue claro y me ayudó a comprender y recordar cómo funciona la lógica de programación y algunas de las funcionalidades básicas de JavaScript. Sin embargo, como no tenía experiencia previa ni orientación, no comprendí todo su potencial y decidí aprender Solidity."
-      },
-      "sql": {
-        "title": "Databases for Developers: Foundations",
-        "description": "Curso de Oracle Dev Gym sobre los fundamentos de SQL — consultas, joins, filtrado, agrupaciones y modificación de datos relacionales, además de las bases del diseño de esquemas. Finalizado con una nota del 95%."
       }
     },
     "projectsMade": {

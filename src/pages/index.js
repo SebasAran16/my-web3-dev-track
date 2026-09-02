@@ -9,15 +9,25 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { dates } from "@/constants/dates";
 import { useRouter } from "next/router";
 import HexText from "@/components/HexText";
+import CertificationList from "@/components/CertificationList";
 import { useLenis, useLenisScroll } from "@/providers/LenisProvider";
 import { useParallax } from "@/hooks/useParallax";
 import {
   experiences,
-  web3Courses,
-  web2Courses,
+  courses,
   projects,
   codeLanguages,
 } from "@/constants/portfolio";
+import {
+  certifications,
+  getCompany,
+  getCompanyCertifications,
+} from "@/constants/companies";
+import {
+  certificationAnchorId,
+  experienceAnchorId,
+  useScrollToAnchor,
+} from "@/hooks/useScrollToAnchor";
 
 const ProjectSwiper = dynamic(() => import("@/components/ProjectSwiper"), { ssr: false });
 const CourseSwiper = dynamic(() => import("@/components/CourseSwiper"), { ssr: false });
@@ -85,20 +95,19 @@ const formatExperienceTime = (timeDifference) => {
   );
 };
 
-// Consecutive entries sharing a company name collapse into a single card, so a
+// Consecutive entries sharing a company collapse into a single card, so a
 // promotion reads as one company with stacked roles instead of duplicate cards.
 const experienceGroups = experiences.reduce((groups, exp) => {
   const current = groups[groups.length - 1];
 
-  if (current && current.name === exp.name) {
+  if (current && current.companyId === exp.companyId) {
     current.roles.push(exp);
     return groups;
   }
 
   groups.push({
-    name: exp.name,
-    image: exp.image,
-    company_url: exp.company_url,
+    companyId: exp.companyId,
+    company: getCompany(exp.companyId),
     roles: [exp],
   });
 
@@ -142,6 +151,7 @@ export default function Home() {
   const picParallaxRef = useParallax({ speed: 0.08, minWidth: 992 });
   const nameWrapRef = useRef(null);
   const burstTimeoutRef = useRef(null);
+  const scrollToAnchor = useScrollToAnchor();
   const [projectTab, setProjectTab] = useState("ethermail");
   const visibleProjects = useMemo(
     () => projects.filter((p) => p.category === projectTab),
@@ -322,18 +332,25 @@ export default function Home() {
           <article id={styles.experienceContainer}>
             {experienceGroups.map((group) => {
               const period = groupPeriod(group.roles);
+              const groupCertifications = getCompanyCertifications(
+                group.companyId
+              );
 
               return (
-                <div className={styles.experience} key={group.name}>
+                <div
+                  className={styles.experience}
+                  key={group.companyId}
+                  id={experienceAnchorId(group.companyId)}
+                >
                   <HexText
                     as="h4"
-                    text={group.name}
+                    text={group.company.name}
                     staggerMs={35}
                     threshold={0.3}
                   />
                   <ExperienceLogo
-                    image={group.image}
-                    companyUrl={group.company_url}
+                    image={group.company.image}
+                    companyUrl={group.company.url}
                   />
                   <HexText
                     as="h5"
@@ -348,6 +365,30 @@ export default function Home() {
                     threshold={0.3}
                     className={styles.experienceCompanyTime}
                   />
+
+                  {groupCertifications.length > 0 && (
+                    <div className={styles.experienceCertifications}>
+                      <span className={styles.experienceCertificationsLabel}>
+                        {t("portfolio.certifications.title")}
+                      </span>
+                      <ul>
+                        {groupCertifications.map((certification) => (
+                          <li key={certification.id}>
+                            <button
+                              type="button"
+                              onClick={() =>
+                                scrollToAnchor(
+                                  certificationAnchorId(certification.id)
+                                )
+                              }
+                            >
+                              {certification.name}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
                   {group.roles.map((exp, roleIndex) => (
                     <React.Fragment key={exp.key}>
@@ -474,21 +515,31 @@ export default function Home() {
           </h5>
         </article>
 
+        <article
+          data-section="certifications"
+          id={styles.certificationsContainer}
+        >
+          <HexText
+            as="h3"
+            text={t("portfolio.certifications.title")}
+            staggerMs={40}
+            threshold={0.3}
+          />
+          <CertificationList
+            certifications={certifications}
+            t={t}
+            locale={router.locale}
+          />
+        </article>
+
         <article id={styles.coursesContainer}>
           <HexText
             as="h3"
-            text={t("portfolio.web3.title")}
+            text={t("portfolio.courses.title")}
             staggerMs={40}
             threshold={0.3}
           />
-          <CourseSwiper courses={web3Courses} t={t} />
-          <HexText
-            as="h3"
-            text={t("portfolio.web2.title")}
-            staggerMs={40}
-            threshold={0.3}
-          />
-          <CourseSwiper courses={web2Courses} t={t} />
+          <CourseSwiper courses={courses} t={t} />
         </article>
 
         <article id={styles.languagesAndToolsContainer}>

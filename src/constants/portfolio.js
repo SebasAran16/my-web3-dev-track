@@ -1,10 +1,10 @@
+// Companies live in their own JSON keyed by id, so an experience and a
+// certification can point at the same company record.
 export const experiences = [
   {
     key: "htec",
-    name: "HTEC",
+    companyId: "htec",
     role: "Software Engineer",
-    image: { src: "/experience/htec.png", alt: "HTEC Logo" },
-    company_url: "https://htec.com",
     tools: [],
     description: [
       "Recently joined HTEC as a Software Engineer — more details on the work coming soon.",
@@ -12,10 +12,8 @@ export const experiences = [
   },
   {
     key: "ethermail-intern",
-    name: "EtherMail",
+    companyId: "ethermail",
     role: "Web3 Fullstack Intern Developer",
-    image: { src: "/experience/ethermail.png", alt: "EtherMail Logo" },
-    company_url: "https://ethermail.io",
     tools: [
       { src: "/languagesAndTools/solidity.svg", alt: "Solidity" },
       { src: "/languagesAndTools/aws.svg", alt: "AWS" },
@@ -44,10 +42,8 @@ export const experiences = [
   },
   {
     key: "ethermail-senior",
-    name: "EtherMail",
+    companyId: "ethermail",
     role: "Senior Web3 Fullstack Developer",
-    image: { src: "/experience/ethermail.png", alt: "EtherMail Logo" },
-    company_url: "https://ethermail.io",
     tools: [
       { src: "/languagesAndTools/solidity.svg", alt: "Solidity" },
       { src: "/languagesAndTools/aws.svg", alt: "AWS" },
@@ -99,9 +95,7 @@ export const experiences = [
   },
   {
     key: "fiverr",
-    name: "Fiverr",
-    image: { src: "/experience/fiverr.jpg", alt: "Fiverr Logo" },
-    company_url: "https://www.fiverr.com",
+    companyId: "fiverr",
     tools: [
       { src: "/languagesAndTools/solidity.svg", alt: "Solidity" },
       { src: "/languagesAndTools/nextjs.svg", alt: "NextJs" },
@@ -119,12 +113,12 @@ export const experiences = [
   },
 ];
 
-export const web3Courses = [
+export const courses = [
   {
     key: "patrick",
     href: "https://www.youtube.com/watch?v=gyMwXuJrbJQ",
-    titleKey: "portfolio.web3.patrick.title",
-    descriptionKey: "portfolio.web3.patrick.description",
+    titleKey: "portfolio.courses.patrick.title",
+    descriptionKey: "portfolio.courses.patrick.description",
     images: [
       { src: "/teachers/freecodecamp.png", alt: "FreeCodeCamp Logo" },
       { src: "/teachers/patrick-froggy.jpg", alt: "Patrick Collins" },
@@ -133,41 +127,31 @@ export const web3Courses = [
   {
     key: "az",
     href: "https://www.udemy.com/course/solidity-a-z/",
-    titleKey: "portfolio.web3.az.title",
-    descriptionKey: "portfolio.web3.az.description",
+    titleKey: "portfolio.courses.az.title",
+    descriptionKey: "portfolio.courses.az.description",
     images: [{ src: "/teachers/udemy.png", alt: "Udemy Logo" }],
   },
   {
     key: "ethernaut",
     href: "https://ethernaut.openzeppelin.com/",
-    titleKey: "portfolio.web3.ethernaut.title",
-    descriptionKey: "portfolio.web3.ethernaut.description",
+    titleKey: "portfolio.courses.ethernaut.title",
+    descriptionKey: "portfolio.courses.ethernaut.description",
     images: [{ src: "/teachers/ethernaut.svg", alt: "Openzeppelin Logo" }],
   },
   {
     key: "cryptozombies",
     href: "https://cryptozombies.io/",
-    titleKey: "portfolio.web3.cryptozombies.title",
-    descriptionKey: "portfolio.web3.ethernaut.description",
+    titleKey: "portfolio.courses.cryptozombies.title",
+    descriptionKey: "portfolio.courses.cryptozombies.description",
     images: [{ src: "/teachers/cryptozombies.webp", alt: "Cryptozombies Logo" }],
-  },
-];
-
-export const web2Courses = [
-  {
-    key: "sql",
-    href: "/certificates/sql-foundations.pdf",
-    titleKey: "portfolio.web2.sql.title",
-    descriptionKey: "portfolio.web2.sql.description",
-    images: [{ src: "/teachers/oracle-dev-gym.svg", alt: "Oracle Dev Gym Logo" }],
   },
   {
     key: "nextjs",
     href: "https://www.youtube.com/watch?v=KjY94sAKLlw",
-    titleKey: "portfolio.web2.nextjs.title",
+    titleKey: "portfolio.courses.nextjs.title",
     descriptionKeys: [
-      "portfolio.web2.nextjs.description.1",
-      "portfolio.web2.nextjs.description.2",
+      "portfolio.courses.nextjs.description.1",
+      "portfolio.courses.nextjs.description.2",
     ],
     images: [
       { src: "/teachers/freecodecamp.png", alt: "FreeCodeCamp Logo" },
@@ -177,8 +161,8 @@ export const web2Courses = [
   {
     key: "zach",
     href: "https://www.youtube.com/watch?v=zJSY8tbf_ys",
-    titleKey: "portfolio.web2.zach.title",
-    descriptionKey: "portfolio.web2.zach.description",
+    titleKey: "portfolio.courses.zach.title",
+    descriptionKey: "portfolio.courses.zach.description",
     images: [
       { src: "/teachers/freecodecamp.png", alt: "FreeCodeCamp Logo" },
       { src: "/teachers/zach.jpg", alt: "Zach Gollwitzer" },
@@ -187,17 +171,17 @@ export const web2Courses = [
   {
     key: "alchemy",
     href: "https://university.alchemy.com/home",
-    titleKey: "portfolio.web2.alchemy.title",
-    descriptionKey: "portfolio.web2.alchemy.description",
+    titleKey: "portfolio.courses.alchemy.title",
+    descriptionKey: "portfolio.courses.alchemy.description",
     images: [
       { src: "/teachers/alchemy-university.jpg", alt: "Alchemy University" },
     ],
   },
   {
     key: "freecode",
-    href: "https://cryptozombies.io/",
-    titleKey: "portfolio.web2.freecode.title",
-    descriptionKey: "portfolio.web2.freecode.description",
+    href: "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/",
+    titleKey: "portfolio.courses.freecode.title",
+    descriptionKey: "portfolio.courses.freecode.description",
     images: [{ src: "/teachers/freecodecamp.png", alt: "FreeCodeCamp Logo" }],
   },
 ];

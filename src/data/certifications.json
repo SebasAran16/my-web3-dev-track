@@ -1,0 +1,47 @@
+[
+  {
+    "id": "claude-certified-architect-foundations",
+    "companyId": "htec",
+    "name": "Claude Certified Architect – Foundations",
+    "issuer": "Anthropic",
+    "issuedOn": "2026-09-01",
+    "expiresOn": "2027-09-01",
+    "credentialUrl": "https://www.credly.com/badges/ff97d5c2-10cc-4d02-b050-56aac09de593",
+    "file": "/certificates/claude-certified-architect-foundations.pdf",
+    "description": {
+      "en": "Anthropic's foundational certification for practitioners building production-grade applications with Claude. It tests architectural decision-making and trade-offs across Claude Code, the Claude Agent SDK, the Claude API and the Model Context Protocol (MCP) — from designing agentic loops and tool interfaces to context management and structured outputs.",
+      "es": "Certificación foundations de Anthropic para quienes construyen aplicaciones con Claude en producción. Evalúa la toma de decisiones de arquitectura y sus trade-offs a través de Claude Code, el Claude Agent SDK, la Claude API y el Model Context Protocol (MCP) — desde el diseño de bucles agénticos e interfaces de herramientas hasta la gestión de contexto y las salidas estructuradas."
+    },
+    "skills": [
+      "Claude Code",
+      "Claude Agent SDK",
+      "Claude API",
+      "Model Context Protocol (MCP)",
+      "AI Agent Architecture",
+      "Tool Use & Function Calling",
+      "Prompt Engineering",
+      "Context Engineering"
+    ]
+  },
+  {
+    "id": "oracle-databases-for-developers-foundations",
+    "companyId": null,
+    "name": "Databases for Developers: Foundations",
+    "issuer": "Oracle Dev Gym",
+    "issuedOn": null,
+    "expiresOn": null,
+    "credentialUrl": null,
+    "file": "/certificates/sql-foundations.pdf",
+    "description": {
+      "en": "Oracle Dev Gym course covering the foundations of SQL — querying, joining, filtering, grouping and modifying relational data, plus the basics of schema design. Finished with a 95% grade.",
+      "es": "Curso de Oracle Dev Gym sobre los fundamentos de SQL — consultas, joins, filtrado, agrupaciones y modificación de datos relacionales, además de las bases del diseño de esquemas. Finalizado con una nota del 95%."
+    },
+    "skills": [
+      "SQL",
+      "Relational Databases",
+      "Database Design",
+      "Data Modeling",
+      "Oracle Database"
+    ]
+  }
+]

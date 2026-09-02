@@ -1,0 +1,20 @@
+[
+  {
+    "id": "htec",
+    "name": "HTEC",
+    "url": "https://htec.com",
+    "image": { "src": "/experience/htec.png", "alt": "HTEC Logo" }
+  },
+  {
+    "id": "ethermail",
+    "name": "EtherMail",
+    "url": "https://ethermail.io",
+    "image": { "src": "/experience/ethermail.png", "alt": "EtherMail Logo" }
+  },
+  {
+    "id": "fiverr",
+    "name": "Fiverr",
+    "url": "https://www.fiverr.com",
+    "image": { "src": "/experience/fiverr.jpg", "alt": "Fiverr Logo" }
+  }
+]

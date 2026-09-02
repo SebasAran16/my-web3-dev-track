@@ -180,6 +180,14 @@ export default function Header() {
             {t("buttons.portfolio")}
           </button>
           <button
+            id="certifications"
+            onClick={(e) => {
+              navPressed(e);
+            }}
+          >
+            {t("buttons.certifications")}
+          </button>
+          <button
             id="contact"
             onClick={(e) => {
               navPressed(e);
